@@ -1,5 +1,11 @@
+       /*  ------------------- GENERAL --------------------*/
+       p {
+        margin: 0px;
+       }
+      
+      
+      /*  ------------------- NAV BAR --------------------*/
       /* Add this CSS for button hover effect */
-
       .navbar-nav .nav-item .nav-link {
           border-radius: 15px 15px 15px 15px;
           /* Different corner radius for the bottom of the button */
@@ -29,6 +35,7 @@
       .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
           display: block;
       }
+      
       
 
       /**           SECTION MAIN **/
