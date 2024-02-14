@@ -16,9 +16,10 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/CSS/mycss.css">
-    <link rel="stylesheet" href="/OwlCarousel/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/OwlCarousel/dist/assets/owl.theme.default.min.css">
+    <link href="/CSS/mycss.css" rel="stylesheet">
+    <link href="/CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="/OwlCarousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/OwlCarousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
   </head>
   <!-- for the navbar: bg-body-tertiary-->
   <body>
@@ -120,32 +121,15 @@
     </section>
 
     <!----------------------------------------- MOVING DIV ------------------------------------------------------------>
-    <section id="">
-    <div class="container">
-      <div class="ball" id="ballID"></div>
-    </div>
-    <script>
-      let ball = document.getElementById("ballID");
-
-      var myVar = setInterval(spostaDiv, 90);
-      var margin = 0;
-
-      let l = window.screen.width;
-      let w = 1300;
-
-      function spostaDiv() {
-        console.log(w);
-        if (margin == w) {
-          margin = 0 + "px";
-        } else {
-          ball.style.marginLeft = margin + "px";
-        }
-        margin += 10;
-      }
-    </script>
+    <section id="moving-div">
+      <div class="moving-container">
+        <div class="left-div-cont" id="left-div-ID"></div>
+        <div class="right-div-cont" id="right-div-ID"></div>
+      </div>
     </section>
 
     <!------------------------------------ Screenshot Start -------------------------------------------------------->
+    <section id="screenshot-start">
     <div class="container-xxl py-5">
       <div class="container py-5 px-lg-5">
         <div class="row g-5 align-items-center">
@@ -181,17 +165,19 @@
             class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp"
             data-wow-delay="0.3s"
           >
-            <div class="owl-carousel owl-theme screenshot-carousel">
-              <img class="item img-fluid" src="/Resources/Assets/ss1.png" alt="" />
-              <img class="item img-fluid" src="/Resources/Assets/ss3.png" alt="" />
-              <img class="item img-fluid" src="/Resources/Assets/ss1.png" alt="" />
-              <img class="item img-fluid" src="/Resources/Assets/ss3.png" alt="" />
-              <img class="item img-fluid" src="/Resources/Assets/ss1.png" alt="" />
-            </div>
+          <div class="owl-carousel owl-theme screenshot-carousel">
+            <img class="img-fluid" src="/Resources/Assets/ss1.png" alt="" />
+            <img class="img-fluid" src="/Resources/Assets/ss3.png" alt="" />
+            <img class="img-fluid" src="/Resources/Assets/ss1.png" alt="" />
+            <img class="img-fluid" src="/Resources/Assets/ss3.png" alt="" />
+            <img class="img-fluid" src="/Resources/Assets/ss1.png" alt="" />
+          </div>
+
           </div>
         </div>
       </div>
     </div>
+  </section>
 
     <!---------------------------------------- PRICING SECTION ----------------------------------------->
     <section>
@@ -338,5 +324,16 @@
     <script src="/jquery-3.7.1.min.js"></script>
     <script src="/OwlCarousel/dist/owl.carousel.min.js"></script>
     <script src="/JS/main.js"></script>
+    <script>
+      $(document).ready(function(){
+         var owl = $('.owl-carousel');
+         owl.owlCarousel({
+            items:1,
+            loop:true,
+            autoplay:true,
+            smartSpeed:1000,
+         });
+      });
+   </script>
   </body>
 </html>

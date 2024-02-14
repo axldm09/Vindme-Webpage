@@ -1,9 +1,10 @@
        /*  ------------------- GENERAL --------------------*/
-       p {
-        margin: 0px;
-       }
-      
-      
+
+       body {
+        margin: 0;
+        padding: 0;
+      }
+
       /*  ------------------- NAV BAR --------------------*/
       /* Add this CSS for button hover effect */
       .navbar-nav .nav-item .nav-link {
@@ -65,12 +66,12 @@
 
       /*** Screenshot ***/
       .screenshot-carousel {
-          position: relative;
-          width: 253px;
-          height: 500px;
-          padding: 15px;
-          margin-right: 30px;
-      }
+        position: relative;
+        width: 253px;
+        height: 500px;
+        padding: 15px;
+        margin-right: 30px;
+    }
 
       .screenshot-carousel::before {
           position: absolute;
@@ -84,54 +85,82 @@
           z-index: 1;
       }
 
-      .screenshot-carousel .owl-item img {
-          position: relative;
-          width: 223px;
-          height: 470px;
-      }
-
-      .screenshot-carousel .owl-dots {
-          position: absolute;
-          top: 50%;
-          right: -30px;
-          transform: translateY(-50%);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-      }
-
-      .screenshot-carousel .owl-dot {
-          position: relative;
-          display: inline-block;
-          margin: 5px 0;
-          width: 15px;
-          height: 15px;
-          background: linear-gradient(to bottom right, var(--primary), var(--secondary));
-          border-radius: 15px;
-          transition: .5s;
-      }
-
-      .screenshot-carousel .owl-dot::after {
-          position: absolute;
-          content: "";
-          width: 5px;
-          height: 5px;
-          top: 5px;
-          left: 5px;
-          background: #FFFFFF;
-          border-radius: 5px;
-      }
-
-      .screenshot-carousel .owl-dot.active {
-          box-shadow: 0 0 10px var(--dark);
-      }
+      screenshot-carousel .owl-item img {
+        position: relative;
+        width: 223px;
+        height: 470px;
+    }
+    
+    .screenshot-carousel .owl-dots {
+        position: absolute;
+        top: 50%;
+        right: -30px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .screenshot-carousel .owl-dot {
+        position: relative;
+        display: inline-block;
+        margin: 5px 0;
+        width: 15px;
+        height: 15px;
+        background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+        border-radius: 15px;
+        transition: .5s;
+    }
+    
+    .screenshot-carousel .owl-dot::after {
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        top: 5px;
+        left: 5px;
+        background: #FFFFFF;
+        border-radius: 5px;
+    }
+    
+    .screenshot-carousel .owl-dot.active {
+        box-shadow: 0 0 10px var(--dark);
+    }
+    
 
       /** ----------------------------- MOVING DIV ----------------------------**/ 
-      .ball {
-        height: 12rem;
-        width: 12rem;
-        background-color: red;
-        border-radius: 50%;
-        margin-top: 20rem;
-    }
+      
+      .moving-container {
+        position: relative;
+        height: 100vh; /* Adjust this value based on your content */
+      }
+      
+      .left-div-cont,
+.right-div-cont {
+  height: 80vh;
+  width: 60%;
+  border-radius: 1%;
+  margin-top: 50px;
+  position: absolute;
+}
+
+.left-div-cont {
+  background-color: rgb(20, 243, 172);
+  left: 10%;
+  transform: translateX(-110%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 2s ease, transform 5s ease;
+}
+
+.right-div-cont {
+  background-color: rgb(110, 29, 250);
+  right: 10%; /* Adjust the right margin */
+  width: 60%;
+  z-index: 1;
+  opacity: 0;
+  transform: translateX(110%);
+  transition: opacity 2s ease, transform 5s ease;
+}
+      
