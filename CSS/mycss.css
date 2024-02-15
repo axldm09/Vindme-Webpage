@@ -35,9 +35,7 @@
       /* Add this CSS for dropdown menu */
       .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
           display: block;
-      }
-      
-      
+      }  
 
       /**           SECTION MAIN **/
       .gradient-background {
@@ -69,7 +67,7 @@
         position: relative;
         width: 253px;
         height: 500px;
-        padding: 15px;
+        padding: 20px;
         margin-right: 30px;
     }
 
@@ -80,14 +78,15 @@
           height: 100%;
           top: 0;
           left: 0;
-          background: url(../Resources/Assets/screenshot-frame.png) center center no-repeat;
+          background: url(../Assets/screenshot-frame.png) center center no-repeat;
           background-size: 253px 500px;
           z-index: 1;
       }
 
-      screenshot-carousel .owl-item img {
+      .screenshot-carousel .owl-item img {
+        border-radius: 5%;
         position: relative;
-        width: 223px;
+        width: 253px;
         height: 470px;
     }
     
@@ -128,7 +127,6 @@
         box-shadow: 0 0 10px var(--dark);
     }
     
-
       /** ----------------------------- MOVING DIV ----------------------------**/ 
       
       .moving-container {

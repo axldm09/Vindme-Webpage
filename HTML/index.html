@@ -85,12 +85,12 @@
             class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp"
             data-wow-delay="0.3s"
           >
-          <div class="owl-carousel owl-theme screenshot-carousel">
-            <img class="img-fluid" src="/Resources/Assets/ss1.png" alt="" />
-            <img class="img-fluid" src="/Resources/Assets/ss3.png" alt="" />
-            <img class="img-fluid" src="/Resources/Assets/ss1.png" alt="" />
-            <img class="img-fluid" src="/Resources/Assets/ss3.png" alt="" />
-            <img class="img-fluid" src="/Resources/Assets/ss1.png" alt="" />
+          <div class="owl-carousel screenshot-carousel">
+            <img class="item img-fluid" src="../Assets/ss1.png" alt="" />
+            <img class="item img-fluid" src="../Assets/ss3.png" alt="" />
+            <img class="item img-fluid" src="../Assets/ss1.png" alt="" />
+            <img class="item img-fluid" src="../Assets/ss3.png" alt="" />
+            <img class="item img-fluid" src="../Assets/ss1.png" alt="" />
           </div>
           </div>
 
@@ -166,11 +166,11 @@
             data-wow-delay="0.3s"
           >
           <div class="owl-carousel owl-theme screenshot-carousel">
-            <img class="img-fluid" src="/Resources/Assets/ss1.png" alt="" />
-            <img class="img-fluid" src="/Resources/Assets/ss3.png" alt="" />
-            <img class="img-fluid" src="/Resources/Assets/ss1.png" alt="" />
-            <img class="img-fluid" src="/Resources/Assets/ss3.png" alt="" />
-            <img class="img-fluid" src="/Resources/Assets/ss1.png" alt="" />
+            <img class="item img-fluid" src="../Assets/ss1.png" alt="" />
+            <img class="item img-fluid" src="../Assets/ss3.png" alt="" />
+            <img class="item img-fluid" src="../Assets/ss1.png" alt="" />
+            <img class="item img-fluid" src="../Assets/ss3.png" alt="" />
+            <img class="item img-fluid" src="../Assets/ss1.png" alt="" />
           </div>
 
           </div>
@@ -325,15 +325,25 @@
     <script src="/OwlCarousel/dist/owl.carousel.min.js"></script>
     <script src="/JS/main.js"></script>
     <script>
-      $(document).ready(function(){
-         var owl = $('.owl-carousel');
-         owl.owlCarousel({
-            items:1,
-            loop:true,
-            autoplay:true,
-            smartSpeed:1000,
-         });
-      });
+      $(document).ready(function () {
+          var owl = $('.owl-carousel');
+          owl.owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            smartSpeed: 1000,
+            onTranslated: function (event) {
+              // Remove the 'center' class from all items
+              $(".owl-carousel .owl-item").removeClass("center");
+
+              // Add the 'center' class to the currently centered item
+              $(".owl-carousel .owl-item.active.center").each(function () {
+                $(this).find(".owl-item").addClass("center");
+              });
+            },
+          });
+
+        });
    </script>
   </body>
 </html>
