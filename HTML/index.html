@@ -21,7 +21,7 @@
 <!-- for the navbar: bg-body-tertiary-->
 
 <body>
-  <!---------------------- NAV BAR ---------------------->
+  <!------------------------------------------- NAV BAR   -------------------------------------------------->
   <nav class="navbar navbar-expand-md navbar-dark sticky-top gradient-background">
     <div class="container-fluid justify-content-center">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -32,13 +32,13 @@
       <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link scroll-link active" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link scroll-link " href="#features">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link scroll-link" href="#pricing">Pricing</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,53 +53,29 @@
             </ul>
           </li>
         </ul>
+        <a href="login.html" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
       </div>
     </div>
   </nav>
-  <!--------------------- SECTION  MAIN ---------------------------->
+
+  <!--------------------------------- SECTION MAIN   -------------------------------------->
   <section id="title" class="gradient-background">
     <!--  Principal Page -->
-    <div class="container col-xxl-8 px-4 py-5 main_page">
+    <div class="container col-xxl-8 px-4 py-5" id="home">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        
-        <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end">
 
-        <div class="owl-carousel screenshot-carousel owl-loaded">
-          <div class="owl-stage-outer">
-            <div class="owl-stage"
-              style="transform: translate3d(-1338px, 0px, 0px); transition: all 1s ease 0s; width: 2453px;">
-
-              <div class="owl-item" style="width: 223px;">
-                <img class="img-fluid" src="../Assets/ss1.png" alt="">
-              </div>
-              <div class="owl-item" style="width: 223px;">
-                <img class="img-fluid" src="../Assets/ss3.png" alt="">
-              </div>
-              <div class="owl-item" style="width: 223px;">
-                <img class="img-fluid" src="../Assets/ss1.png" alt="">
-              </div>
-              <div class="owl-item" style="width: 223px;">
-                <img class="img-fluid" src="../Assets/ss3.png" alt="">
-              </div>
-            </div>
+        <div class="col-lg-5 d-flex justify-content-center justify-content-lg-end">
+          <!------------------------------ CAROUSEL BEGIN   -------------------------------------->
+          <div class="owl-carousel screenshot-carousel">
+            <img class="img-fluid" src="/Assets/ss1.png" alt="">
+            <img class="img-fluid" src="/Assets/ss2.png" alt="">
+            <img class="img-fluid" src="/Assets/ss3.png" alt="">
+            <img class="img-fluid" src="/Assets/ss4.gif" alt="">
+            <img class="img-fluid" src="/Assets/ss1.png" alt="">
           </div>
 
-          <div class="owl-nav disabled">
-            <div class="owl-prev">prev</div>
-            <div class="owl-next">next</div>
-          </div>
-
-          <div class="owl-dots">
-            <div class="owl-dot"><span></span></div>
-            <div class="owl-dot"><span></span></div>
-            <div class="owl-dot"><span></span></div>
-            <div class="owl-dot">
-              <span></span>
-            </div>
-          </div>
-
+          <!------------------------------ CAROUSEL END   -------------------------------------->
         </div>
-      </div>
 
         <div class="col-lg-6">
           <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
@@ -111,6 +87,7 @@
             featuring Sass variables and mixins, responsive grid system,
             extensive prebuilt components, and powerful JavaScript plugins.
           </p>
+
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
               Primary
@@ -119,22 +96,54 @@
               Default
             </button>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!----------------------------------------- MOVING DIV ------------------------------------------------------------>
+  <!----------------------------------------- MOVING DIV ---------------------------------------------------------->
   <section id="moving-div">
     <div class="moving-container">
       <div class="left-div-cont" id="left-div-ID"></div>
       <div class="right-div-cont" id="right-div-ID"></div>
+
+      <div class="third-container" id="third-container-ID">
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+          <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-7 text-center text-lg-start">
+              <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
+              <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+            </div>
+            <div class="col-md-10 mx-auto col-lg-5">
+              <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+                <hr class="my-4">
+                <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!------------------------------------ Screenshot Start -------------------------------------------------------->
-  <section id="screenshot-start">
-    
+  <section id="screenshot-start" class="section-background">
+
     <div class="container-xxl py-5">
       <div class="container py-5 px-lg-5">
         <div class="row g-5 align-items-center">
@@ -148,13 +157,13 @@
             <p class="mb-4"><i class="fa fa-check text-primary-gradient me-3"></i>Clita erat ipsum et lorem et sit</p>
             <a href="" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill mt-3">Read More</a>
           </div>
+          <!------------------------------ CAROUSEL BEGIN   -------------------------------------->
+          <div class="col-sm 2 col-lg-4 d-flex justify-content-center justify-content-lg-end wow ">
 
-          <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end">
-
-            <div class="owl-carousel screenshot-carousel owl-loaded owl-drag">
+            <div class="owl-carousel screenshot-carousel owl-loaded">
               <div class="owl-stage-outer">
                 <div class="owl-stage">
-    
+
                   <div class="owl-item" style="width: 223px;">
                     <img class="img-fluid" src="../Assets/ss1.png" alt="">
                   </div>
@@ -169,12 +178,12 @@
                   </div>
                 </div>
               </div>
-    
+
               <div class="owl-nav disabled">
                 <div class="owl-prev">prev</div>
                 <div class="owl-next">next</div>
               </div>
-    
+
               <div class="owl-dots">
                 <div class="owl-dot"><span></span></div>
                 <div class="owl-dot"><span></span></div>
@@ -183,18 +192,20 @@
                   <span></span>
                 </div>
               </div>
-    
+
             </div>
           </div>
-
+          <!------------------------------ CAROUSEL END   -------------------------------------->
         </div>
       </div>
     </div>
   </section>
 
   <!---------------------------------------- PRICING SECTION ----------------------------------------->
-  <section>
-    <div class="container">
+
+  <section id="pricing" class="section-background">
+    <div class="container pricing">
+
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
@@ -203,7 +214,7 @@
             </div>
             <div class="card-body">
               <h1 class="card-title pricing-card-title">
-                $0<small class="text-body-secondary fw-light">/mo</small>
+                $0<small class="text-body-secondary fw-light"></small>
               </h1>
               <ul class="list-unstyled mt-3 mb-4">
                 <li>10 users included</li>
@@ -211,20 +222,18 @@
                 <li>Email support</li>
                 <li>Help center access</li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-outline-primary">
-                Sign up for free
-              </button>
+
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Pro</h4>
+              <h4 class="my-0 fw-normal">Monthly</h4>
             </div>
             <div class="card-body">
               <h1 class="card-title pricing-card-title">
-                $15<small class="text-body-secondary fw-light">/mo</small>
+                $3.99<small class="text-body-secondary fw-light">/mo</small>
               </h1>
               <ul class="list-unstyled mt-3 mb-4">
                 <li>20 users included</li>
@@ -232,90 +241,90 @@
                 <li>Priority email support</li>
                 <li>Help center access</li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">
-                Get started
-              </button>
+
             </div>
           </div>
         </div>
+
         <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm border-primary">
-            <div class="card-header py-3 text-bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Enterprise</h4>
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header text-white py-3 border-primary ph-card-header">
+              <h4 class="my-0 fw-normal">Yearly</h4>
             </div>
             <div class="card-body">
               <h1 class="card-title pricing-card-title">
-                $29<small class="text-body-secondary fw-light">/mo</small>
+                $42<small class="text-body-secondary fw-light">/yr</small>
               </h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>✅ 30 GB included</li>
-                <li>✅ 1 User</li>
+                <li> 30 GB included</li>
+                <li> 1 User</li>
                 <li>Phone and email support</li>
                 <li>Help center access</li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">
-                Contact us
-              </button>
             </div>
           </div>
         </div>
       </div>
+
     </div>
+
   </section>
 
   <!------------------------------------- FOOTER SECTION -------------------------------------------->
-  <div class="container">
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-      <div class="col mb-3">
-        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-          <svg class="bi me-2" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
-        </a>
-        <p class="text-body-secondary">Vindme© 2023</p>
-      </div>
+  <section id="footer-section" class="footer-bg">
+    <div class="container">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 border-top">
+        <div class="col mb-3">
+          <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+          <p class="text-body-secondary">Vindme© 2023</p>
+        </div>
 
-      <div class="col mb-3"></div>
+        <div class="col mb-3"></div>
 
-      <div class="col mb-3"></div>
+        <div class="col mb-3"></div>
 
-      <div class="col mb-3">
-        <h5>Legal</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Privacy</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Terms of use</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Use of cookies</a>
-          </li>
-        </ul>
-      </div>
+        <div class="col mb-3">
+          <h5>Legal</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-body-secondary">Privacy</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-body-secondary">Terms of use</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-body-secondary">Use of cookies</a>
+            </li>
+          </ul>
+        </div>
 
-      <div class="col mb-3">
-        <h5>About</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-body-secondary">About</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-  </div>
+        <div class="col mb-3">
+          <h5>About</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -330,9 +339,8 @@
         items: 1,
         loop: true,
         autoplay: true,
-        autoHeight: true,
-        margin: 20,
-        smartSpeed: 1000,
+        margin: 30,
+        smartSpeed: 2000,
         onTranslated: function (event) {
           // Remove the 'center' class from all items
           $(".owl-carousel .owl-item").removeClass("center");
