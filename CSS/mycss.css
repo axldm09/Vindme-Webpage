@@ -6,10 +6,10 @@
        }
 
        :root {
-         --primary: #c448f9;
-         --secondary: #3af8b6;
-         --light: #abcdff;
-         --dark: #262B47;
+         --primary: #97fffd;
+         --secondary: #9ec3ff;
+         --light: #b8d5ff;
+         --dark: #2d3253;
        }
 
        .btn {
@@ -54,8 +54,41 @@
          opacity: 1;
        }
 
+       /**------------------------------------------------- FONTS IN GENERAL -----------------------------------------------------**/
+
+       /* ---------- HEADERS -------------*/
+
+       .first-header {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        color: #191d5a;
+       }
+
+       .second-header {
+         font-family: "Montserrat", sans-serif;
+         font-optical-sizing: auto;
+         font-weight: 500;
+         font-style: normal;
+       }
+
+       /* ---------- PARAGRAPHS -------------*/
+       .main-font {
+         font-family: "Montserrat", sans-serif;
+         font-optical-sizing: auto;
+         font-weight: 500;
+         font-style: normal;
+         font-size: 1.4rem;
+         color: #4e4e4e;
+       }
+
        .main-typo {
          font-family: "Montserrat", sans-serif;
+         font-optical-sizing: auto;
+         font-weight: 500;
+         font-style: normal;
+         color: #333;
        }
 
        /**------------------------------------------------- SECTIONS IN GENERAL -----------------------------------------------------**/
@@ -69,12 +102,16 @@
        }
 
        #pricing,
-      #footer-section {
-        margin-top: 0; /* Remove top margin */
-        margin-bottom: 0; /* Remove bottom margin */
-        padding-top: 0; /* Remove top padding */
-        padding-bottom: 0; /* Remove bottom padding */  
-      }
+       #footer-section {
+         margin-top: 0;
+         /* Remove top margin */
+         margin-bottom: 0;
+         /* Remove bottom margin */
+         padding-top: 0;
+         /* Remove top padding */
+         padding-bottom: 0;
+         /* Remove bottom padding */
+       }
 
        /**------------------------------------------------- NAV BAR -----------------------------------------------------**/
 
@@ -97,7 +134,7 @@
        }
 
        .navbar-nav .nav-item:hover .nav-link {
-         background-color: #d59cf8;
+         background-color: #9ec3ff;
        }
 
        .nav-link::after {
@@ -129,7 +166,7 @@
        }
 
        .navbar-nav>li>.dropdown-menu a:hover {
-         background-color: #dec8f8;
+         background-color: #9ec3ff;
          color: #fff;
        }
 
@@ -179,7 +216,7 @@
        }
 
        .screenshot-carousel .owl-item img {
-         border-radius: 5%;
+         border-radius: 6%;
          position: relative;
          max-width: 265px;
          height: 545px;
@@ -231,15 +268,12 @@
          display: flex;
          justify-content: center;
          align-items: center;
+         margin: 50px 0 50px 0;
        }
-
 
        .left-div-cont,
        .right-div-cont {
          height: 100%;
-         width: 60%;
-         padding-top: 120px;
-         padding-bottom: 10px;
          border-radius: 3%;
          position: absolute;
        }
@@ -247,11 +281,11 @@
        .third-container {
          margin: 2.5%;
          position: absolute;
-         border-radius: 30px 20px 30px 20px;
        }
 
        .left-div-cont {
          background-color: rgb(162, 250, 222);
+         border-radius: 50% 50% 33% 67% / 39% 67% 33% 61%;
          width: 50%;
          left: 10%;
          transform: translateX(-110%);
@@ -261,6 +295,7 @@
        }
 
        .right-div-cont {
+        border-radius: 62% 38% 34% 66% / 57% 33% 67% 43% ;
          background-color: rgba(183, 147, 247, 0.733);
          right: 10%;
          width: 60%;
@@ -271,7 +306,8 @@
        }
 
        .third-container {
-         background-color: rgba(254, 208, 208, 0.7);
+        /* background-color: rgba(254, 208, 208, 0.7); */
+         background-color: transparent;
          left: 50%;
          transform: translate(-50%, 50%) scale(0);
          width: 70%;

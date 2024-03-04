@@ -15,7 +15,7 @@ $(document).ready(function () {
     items: 1,
     loop: true,
     autoplay: true,
-    margin: 30,
+    margin: 25,
     smartSpeed: 2000,
     onTranslated: function (event) {
       // Remove the 'center' class from all items
