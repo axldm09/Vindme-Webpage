@@ -23,6 +23,7 @@
          border: none;
          color: #FFFFFF;
          z-index: 1;
+         padding: 5px;
        }
 
        .btn.btn-primary-gradient::after,
@@ -53,15 +54,27 @@
          opacity: 1;
        }
 
+       .main-typo {
+         font-family: "Montserrat", sans-serif;
+       }
+
        /**------------------------------------------------- SECTIONS IN GENERAL -----------------------------------------------------**/
 
-       .section-background {
+       .pricing-section-background {
          background-color: hsl(176, 94%, 93%);
        }
 
        .footer-bg {
          background-color: hsl(220, 77%, 92%);
        }
+
+       #pricing,
+      #footer-section {
+        margin-top: 0; /* Remove top margin */
+        margin-bottom: 0; /* Remove bottom margin */
+        padding-top: 0; /* Remove top padding */
+        padding-bottom: 0; /* Remove bottom padding */  
+      }
 
        /**------------------------------------------------- NAV BAR -----------------------------------------------------**/
 
@@ -71,29 +84,53 @@
          /* Different corner radius for the bottom of the button */
          transition: background-color 0.3s ease;
          /* Add transition for smoother hover effect */
-         width: 130px;
+         width: 160px;
          /* Adjust the width of the buttons */
          text-align: center;
          /* Center text in the button */
          line-height: 20px;
          /* Set line height to the desired button height */
-         padding: 5px;
+         padding: 5px 0px 5px 0px;
          /* Adjust padding to ensure corners fit within the button width */
+         font-family: "Montserrat", sans-serif;
+         font-size: 1.2rem;
        }
 
        .navbar-nav .nav-item:hover .nav-link {
          background-color: #d59cf8;
        }
 
+       .nav-link::after {
+         transition: transform 0.5s ease;
+       }
+
+       .nav-item.dropdown:hover .nav-link::after {
+         transform: rotate(180deg);
+       }
+
        /* Add this CSS for spacing to the left of the navbar brand */
        .navbar-brand {
          margin-left: 20px;
-         /* Adjust the spacing to the left of the navbar brand */
+         font-family: "Montserrat", sans-serif;
        }
 
        /* Add this CSS for dropdown menu */
        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
          display: block;
+       }
+
+       .dropdown-menu .dropdown-item {
+         font-family: "Montserrat", sans-serif;
+         font-size: 1.2rem;
+         padding: 10px;
+         text-decoration: none;
+         color: #333;
+         transition: background-color 0.3s;
+       }
+
+       .navbar-nav>li>.dropdown-menu a:hover {
+         background-color: #dec8f8;
+         color: #fff;
        }
 
        /**----------------------------------------------------------   SECTION MAIN --------------------------------------------------**/
@@ -189,13 +226,13 @@
        /** ----------------------------- MOVING DIV ----------------------------**/
 
        .moving-container {
-        position: relative;
-        height: 80vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      
+         position: relative;
+         height: 80vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+       }
+
 
        .left-div-cont,
        .right-div-cont {
@@ -208,68 +245,75 @@
        }
 
        .third-container {
-        margin: 2.5%;
-        position: absolute;
-        border-radius: 30px 20px 30px 20px;
+         margin: 2.5%;
+         position: absolute;
+         border-radius: 30px 20px 30px 20px;
        }
 
        .left-div-cont {
-        background-color: rgb(162, 250, 222);
-        width: 50%;
-        left: 10%;
-        transform: translateX(-110%);
-        z-index: 2;
-        opacity: 0;
-        transition: opacity 2s ease, transform 5s ease;
-      }
-      
-      .right-div-cont {
-        background-color: rgba(183, 147, 247, 0.733);
-        right: 10%;
-        width: 60%;
-        z-index: 1;
-        opacity: 0;
-        transform: translateX(110%);
-        transition: opacity 2s ease, transform 5s ease;
-      }
-      
-      .third-container {
-        background-color: rgba(254, 208, 208, 0.7);
-        left: 50%;
-        transform: translate(-50%, 50%) scale(0);
-        width: 70%;
-        height: 90%;
-        z-index: 3;
-        position: absolute;
-        opacity: 0;
-        transition: opacity 2s ease, transform 5s ease;
-      }
-      
-      .third-container {
-        height: 90%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
+         background-color: rgb(162, 250, 222);
+         width: 50%;
+         left: 10%;
+         transform: translateX(-110%);
+         z-index: 2;
+         opacity: 0;
+         transition: opacity 2s ease, transform 5s ease;
+       }
 
-      @media (min-width: 769px) and (max-width: 1024px) {
-        .moving-container {
-          height: 110vh;
-        }
-      }
+       .right-div-cont {
+         background-color: rgba(183, 147, 247, 0.733);
+         right: 10%;
+         width: 60%;
+         z-index: 1;
+         opacity: 0;
+         transform: translateX(110%);
+         transition: opacity 2s ease, transform 5s ease;
+       }
 
-      @media (max-width: 768px) {
-        .moving-container {
-          height: 120vh;
-        }
-      }
+       .third-container {
+         background-color: rgba(254, 208, 208, 0.7);
+         left: 50%;
+         transform: translate(-50%, 50%) scale(0);
+         width: 70%;
+         height: 90%;
+         z-index: 3;
+         position: absolute;
+         opacity: 0;
+         transition: opacity 2s ease, transform 5s ease;
+       }
 
-      @media (max-width: 564px) {
-        .moving-container {
-          height: 150vh;
-        }
-      }
+       .third-container {
+         height: 90%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+       }
+
+       @media (min-width: 769px) and (max-width: 1024px) {
+         .moving-container {
+           height: 110vh;
+         }
+       }
+
+       @media (max-width: 768px) {
+         .moving-container {
+           height: 120vh;
+         }
+       }
+
+       @media (max-width: 564px) {
+         .moving-container {
+           height: 150vh;
+         }
+       }
+
+       .container .family-img {
+         border-radius: 57% 43% 44% 56% / 23% 65% 35% 77%;
+         width: 100%;
+         height: auto;
+         display: block;
+       }
 
        /* ---------------------------  SCREEN SHOT ----------------------------------------------*/
 
@@ -309,8 +353,3 @@
        }
 
        /* ---------------------------  PRICING  ----------------------------------------------*/
-
-       .footer {
-        margin: 0px;
-        padding: 0px;
-       }

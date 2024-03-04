@@ -9,6 +9,26 @@
 
 })(jQuery);
 
+$(document).ready(function () {
+  var owl = $('.owl-carousel');
+  owl.owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    margin: 30,
+    smartSpeed: 2000,
+    onTranslated: function (event) {
+      // Remove the 'center' class from all items
+      $(".owl-carousel .owl-item").removeClass("center");
+
+      // Add the 'center' class to the currently centered item
+      $(".owl-carousel .owl-item.active.center").each(function () {
+        $(this).find(".owl-item").addClass("center");
+      });
+    },
+  });
+
+});
  
 document.body.style.overflowX = "hidden";
 

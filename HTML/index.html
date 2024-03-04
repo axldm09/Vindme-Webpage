@@ -9,6 +9,10 @@
   <!-- Favicon -->
 
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -42,7 +46,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
+              Resources
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
@@ -66,12 +70,39 @@
 
         <div class="col-lg-5 d-flex justify-content-center justify-content-lg-end">
           <!------------------------------ CAROUSEL BEGIN   -------------------------------------->
-          <div class="owl-carousel screenshot-carousel">
-            <img class="img-fluid" src="/Assets/ss1.png" alt="">
-            <img class="img-fluid" src="/Assets/ss2.png" alt="">
-            <img class="img-fluid" src="/Assets/ss3.png" alt="">
-            <img class="img-fluid" src="/Assets/ss4.gif" alt="">
-            <img class="img-fluid" src="/Assets/ss1.png" alt="">
+          <div class="owl-carousel screenshot-carousel owl-loaded">
+            <div class="owl-stage-outer">
+              <div class="owl-stage">
+
+                <div class="owl-item" style="width: 223px;">
+                  <img class="img-fluid" src="../Assets/ss1.png" alt="">
+                </div>
+                <div class="owl-item" style="width: 223px;">
+                  <img class="img-fluid" src="../Assets/ss3.png" alt="">
+                </div>
+                <div class="owl-item" style="width: 223px;">
+                  <img class="img-fluid" src="../Assets/ss1.png" alt="">
+                </div>
+                <div class="owl-item" style="width: 223px;">
+                  <img class="img-fluid" src="../Assets/ss3.png" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="owl-nav disabled">
+              <div class="owl-prev">prev</div>
+              <div class="owl-next">next</div>
+            </div>
+
+            <div class="owl-dots">
+              <div class="owl-dot"><span></span></div>
+              <div class="owl-dot"><span></span></div>
+              <div class="owl-dot"><span></span></div>
+              <div class="owl-dot">
+                <span></span>
+              </div>
+            </div>
+
           </div>
 
           <!------------------------------ CAROUSEL END   -------------------------------------->
@@ -81,7 +112,7 @@
           <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
             Responsive left-aligned hero with image
           </h1>
-          <p class="lead">
+          <p class="lead main-typo">
             Quickly design and customize responsive mobile-first sites with
             Bootstrap, the world’s most popular front-end open source toolkit,
             featuring Sass variables and mixins, responsive grid system,
@@ -92,7 +123,7 @@
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <a href="./download-app.html"><button type="button" class="btn btn-light btn-lg px-4 me-md-2">
               <svg xmlns="http://www.w3.org/2000/svg"
-              width="30" height="30" fill="currentColor" class="bi bi-apple mb-1" viewBox="0 0 16 16">
+              width="26px" height="26px" fill="currentColor" class="bi bi-apple mb-1" viewBox="0 0 16 16">
               <path
                 d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
               <path
@@ -113,33 +144,17 @@
       <!-------------------------------------- THIRD CONTAINER ----------------------------------------------------->
 
       <div class="container third-container" id="third-container-ID">
-        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-          <div class="row align-items-center g-lg-5 py-5">
+        <div class="container col-lg-12 col-xl-10 col-xxl-8 px-4 py-5">
+          <div class="row align-items-center g-lg-10 py-5">
+
             <div class="col-lg-7 text-center text-lg-start">
               <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
-              <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each
+              <p class="col-lg-10 fs-4 main-typo">Below is an example form built entirely with Bootstrap’s form controls. Each
                 required form group has a validation state that can be triggered by attempting to submit the form
                 without completing it.</p>
             </div>
-            <div class="col-md-10 mx-auto col-lg-5">
-              <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                  <label for="floatingInput">Email address</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                  <label for="floatingPassword">Password</label>
-                </div>
-                <div class="checkbox mb-3">
-                  <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                  </label>
-                </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-                <hr class="my-4">
-                <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-              </form>
+            <div class=" container col-md-10 mx-auto col-lg-5">
+                <img src="/Assets/couple_phone.png" class="family-img">
             </div>
           </div>
         </div>
@@ -210,8 +225,8 @@
 
   <!---------------------------------------- PRICING SECTION ----------------------------------------->
 
-  <section id="pricing" class="section-background">
-    <div class="container pricing">
+  <section id="pricing" class="pricing-section-background">
+    <div class="container">
 
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
@@ -339,28 +354,7 @@
   <script src="/jquery-3.7.1.min.js"></script>
   <script src="/OwlCarousel/dist/owl.carousel.min.js"></script>
   <script src="/JS/main.js"></script>
-  <script>
-    $(document).ready(function () {
-      var owl = $('.owl-carousel');
-      owl.owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        margin: 30,
-        smartSpeed: 2000,
-        onTranslated: function (event) {
-          // Remove the 'center' class from all items
-          $(".owl-carousel .owl-item").removeClass("center");
 
-          // Add the 'center' class to the currently centered item
-          $(".owl-carousel .owl-item.active.center").each(function () {
-            $(this).find(".owl-item").addClass("center");
-          });
-        },
-      });
-
-    });
-  </script>
 </body>
 
 </html>
