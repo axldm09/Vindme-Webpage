@@ -10,8 +10,9 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
 
   <!-- Bootstrap -->
@@ -33,7 +34,7 @@
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown">
+      <div class="navbar-collapse flex-grow-0 collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link scroll-link active" aria-current="page" href="#home">Home</a>
@@ -42,7 +43,7 @@
             <a class="nav-link scroll-link " href="#features">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link scroll-link" href="#pricing">Pricing</a>
+            <a class="nav-link scroll-link" href="#pricing-section">Pricing</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,7 +59,8 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="login.html" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block"> Get started </a></li>
+          <li><a href="login.html" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block"> Get
+              started </a></li>
         </ul>
       </div>
     </div>
@@ -150,7 +152,8 @@
           <div class="row align-items-center g-lg-10 py-5">
 
             <div class="col-lg-7 text-center text-lg-start">
-              <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3 second-header">Vertically centered hero sign-up form</h1>
+              <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3 second-header">Vertically centered hero sign-up
+                form</h1>
               <p class="col-lg-10 fs-4 main-typo">Below is an example form built entirely with Bootstrap’s form
                 controls. Each
                 required form group has a validation state that can be triggered by attempting to submit the form
@@ -183,7 +186,7 @@
             <a href="" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill mt-3">Read More</a>
           </div>
           <!------------------------------ CAROUSEL BEGIN   -------------------------------------->
-          <div class="col-sm 2 col-lg-4 d-flex justify-content-center justify-content-lg-end wow ">
+          <div class="col-sm 2 col-lg-4 d-flex justify-content-center justify-content-lg-end ">
 
             <div class="owl-carousel screenshot-carousel owl-loaded">
               <div class="owl-stage-outer">
@@ -227,10 +230,14 @@
   </section>
 
   <!---------------------------------------- PRICING SECTION ----------------------------------------->
-
-  <section id="pricing" class="pricing-section-background">
+  <section>
     <div class="container">
-
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
+        <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers with
+          this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.
+        </p>
+      </div>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
@@ -238,75 +245,122 @@
               <h4 class="my-0 fw-normal">Free</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">
-                $0<small class="text-body-secondary fw-light"></small>
-              </h1>
+              <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
                 <li>10 users included</li>
                 <li>2 GB of storage</li>
                 <li>Email support</li>
                 <li>Help center access</li>
               </ul>
-
+              <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Monthly</h4>
+              <h4 class="my-0 fw-normal">Pro</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">
-                $3.99<small class="text-body-secondary fw-light">/mo</small>
-              </h1>
+              <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
                 <li>20 users included</li>
                 <li>10 GB of storage</li>
                 <li>Priority email support</li>
                 <li>Help center access</li>
               </ul>
-
+              <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
             </div>
           </div>
         </div>
-
         <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header text-white py-3 border-primary ph-card-header">
-              <h4 class="my-0 fw-normal">Yearly</h4>
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Enterprise</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">
-                $42<small class="text-body-secondary fw-light">/yr</small>
-              </h1>
+              <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li> 30 GB included</li>
-                <li> 1 User</li>
+                <li>30 users included</li>
+                <li>15 GB of storage</li>
                 <li>Phone and email support</li>
                 <li>Help center access</li>
               </ul>
+              <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!------------------------------------- LAST SECTION -------------------------------------------->
+  <section id="last-section" class="last-section">
+    <div class="wrapper">
+      <div class="container first-container">
+        <!-- Content for the first container -->
+        <p>This is the content of the first container.</p>
+      </div>
+      <div class="container second-container">
+        <!-- Content for the second container -->
+        
+      </div>
+
+
+      <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 590" xmlns="http://www.w3.org/2000/svg"
+        class="transition duration-300 ease-in-out delay-150">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="5%" stop-color="#f78da7"></stop>
+            <stop offset="95%" stop-color="#9aaef2"></stop>
+          </linearGradient>
+        </defs>
+        <path
+          d="M 0,600 L 0,112 C 62.44102564102565,122.36666666666667 124.8820512820513,132.73333333333335 197,127 C 269.1179487179487,121.26666666666667 350.91282051282053,99.43333333333335 446,98 C 541.0871794871795,96.56666666666665 649.4666666666667,115.53333333333333 740,110 C 830.5333333333333,104.46666666666667 903.2205128205128,74.43333333333332 976,66 C 1048.7794871794872,57.56666666666668 1121.651282051282,70.73333333333333 1199,82 C 1276.348717948718,93.26666666666667 1358.1743589743592,102.63333333333333 1440,112 L 1440,600 L 0,600 Z"
+          stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.4"
+          class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="5%" stop-color="#f78da7"></stop>
+            <stop offset="95%" stop-color="#9aaef2"></stop>
+          </linearGradient>
+        </defs>
+        <path
+          d="M 0,600 L 0,262 C 90.24358974358975,285.82564102564106 180.4871794871795,309.65128205128207 255,300 C 329.5128205128205,290.34871794871793 388.2948717948718,247.2205128205128 471,246 C 553.7051282051282,244.7794871794872 660.3333333333334,285.4666666666667 748,286 C 835.6666666666666,286.5333333333333 904.3717948717947,246.9128205128205 977,228 C 1049.6282051282053,209.0871794871795 1126.1794871794873,210.8820512820513 1204,220 C 1281.8205128205127,229.1179487179487 1360.9102564102564,245.55897435897435 1440,262 L 1440,600 L 0,600 Z"
+          stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53"
+          class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="5%" stop-color="#f78da7"></stop>
+            <stop offset="95%" stop-color="#9aaef2"></stop>
+          </linearGradient>
+        </defs>
+        <path
+          d="M 0,600 L 0,412 C 67.12051282051283,422.0948717948718 134.24102564102566,432.18974358974356 226,420 C 317.75897435897434,407.81025641025644 434.15641025641037,373.33589743589744 514,383 C 593.8435897435896,392.66410256410256 637.1333333333334,446.4666666666667 705,446 C 772.8666666666666,445.5333333333333 865.3102564102564,390.79743589743583 948,368 C 1030.6897435897436,345.20256410256417 1103.625641025641,354.3435897435898 1184,367 C 1264.374358974359,379.6564102564102 1352.1871794871795,395.8282051282051 1440,412 L 1440,600 L 0,600 Z"
+          stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1"
+          class="transition-all duration-300 ease-in-out delay-150 path-2">
+        </path>
+      </svg>
+
+    </div>
+
+    <div class="py-5 cta-section">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h2 class="mb-2 text-white">Lets you Explore the Best. Contact Us Now</h2>
+            <p class="mb-0"><a href="booking.html" class="cta-button">Download now</a></p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </section>
 
-   <!------------------------------------- LAST SECTION -------------------------------------------->
-   <section id="footer-section" class=""> 
-    <div class="">
-      <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 590" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#F78DA7"></stop><stop offset="95%" stop-color="#8ED1FC"></stop></linearGradient></defs><path d="M 0,600 L 0,112 C 113.24401913875596,85.00478468899522 226.48803827751192,58.009569377990445 330,73 C 433.5119617224881,87.99043062200955 527.2918660287081,144.9665071770335 618,157 C 708.7081339712919,169.0334928229665 796.3444976076556,136.1244019138756 871,112 C 945.6555023923444,87.8755980861244 1007.3301435406697,72.53588516746412 1100,74 C 1192.6698564593303,75.46411483253588 1316.3349282296651,93.73205741626793 1440,112 L 1440,600 L 0,600 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.4" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#F78DA7"></stop><stop offset="95%" stop-color="#8ED1FC"></stop></linearGradient></defs><path d="M 0,600 L 0,262 C 95.53110047846889,270.3349282296651 191.06220095693777,278.66985645933016 280,284 C 368.9377990430622,289.33014354066984 451.28229665071785,291.65550239234454 556,283 C 660.7177033492821,274.34449760765546 787.8086124401912,254.7081339712919 895,261 C 1002.1913875598088,267.2918660287081 1089.4832535885168,299.511961722488 1177,304 C 1264.5167464114832,308.488038277512 1352.2583732057415,285.244019138756 1440,262 L 1440,600 L 0,600 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-1"></path><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#F78DA7"></stop><stop offset="95%" stop-color="#8ED1FC"></stop></linearGradient></defs><path d="M 0,600 L 0,412 C 128.74641148325358,415.6555023923445 257.49282296650716,419.311004784689 341,418 C 424.50717703349284,416.688995215311 462.77511961722485,410.4114832535886 545,406 C 627.2248803827752,401.5885167464114 753.4066985645934,399.0430622009569 866,395 C 978.5933014354066,390.9569377990431 1077.5980861244018,385.4162679425838 1171,388 C 1264.4019138755982,390.5837320574162 1352.2009569377992,401.2918660287081 1440,412 L 1440,600 L 0,600 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-2"></path></svg>
-    </div>
-
-   </section>
-
   <!------------------------------------- FOOTER SECTION -------------------------------------------->
   <section id="footer-section" class="footer-bg">
     <div class="container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 border-top">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5">
         <div class="col mb-3">
           <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
             <svg class="bi me-2" width="40" height="32">
@@ -324,7 +378,7 @@
           <h5>Legal</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
-              <a href="#" class="nav-link p-0 text-body-secondary">Privacy</a>
+              <a href="/HTML/privacy_policy.html" class="nav-link p-0 text-body-secondary">Privacy</a>
             </li>
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-body-secondary">Terms of use</a>

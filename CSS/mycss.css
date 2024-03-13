@@ -1,8 +1,13 @@
        /*  ------------------- GENERAL --------------------*/
 
        body {
-         margin: 0;
-         padding: 0;
+         margin: 0px;
+         padding: 0px;
+       }
+
+       p {
+        margin: 0px;
+        padding: 0px;
        }
 
        :root {
@@ -59,11 +64,11 @@
        /* ---------- HEADERS -------------*/
 
        .first-header {
-        font-family: "Montserrat", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-        color: #191d5a;
+         font-family: "Montserrat", sans-serif;
+         font-optical-sizing: auto;
+         font-weight: 500;
+         font-style: normal;
+         color: #191d5a;
        }
 
        .second-header {
@@ -93,24 +98,8 @@
 
        /**------------------------------------------------- SECTIONS IN GENERAL -----------------------------------------------------**/
 
-       .pricing-section-background {
-         background-color: hsl(176, 94%, 93%);
-       }
-
        .footer-bg {
-         background-color: hsl(220, 77%, 92%);
-       }
-
-       #pricing,
-       #footer-section {
-         margin-top: 0;
-         /* Remove top margin */
-         margin-bottom: 0;
-         /* Remove bottom margin */
-         padding-top: 0;
-         /* Remove top padding */
-         padding-bottom: 0;
-         /* Remove bottom padding */
+         background-color: hsl(256, 88%, 90%);
        }
 
        /**------------------------------------------------- NAV BAR -----------------------------------------------------**/
@@ -295,7 +284,7 @@
        }
 
        .right-div-cont {
-        border-radius: 62% 38% 34% 66% / 57% 33% 67% 43% ;
+         border-radius: 62% 38% 34% 66% / 57% 33% 67% 43%;
          background-color: rgba(183, 147, 247, 0.733);
          right: 10%;
          width: 60%;
@@ -306,7 +295,7 @@
        }
 
        .third-container {
-        /* background-color: rgba(254, 208, 208, 0.7); */
+         /* background-color: rgba(254, 208, 208, 0.7); */
          background-color: transparent;
          left: 50%;
          transform: translate(-50%, 50%) scale(0);
@@ -326,9 +315,18 @@
          justify-content: center;
        }
 
+       .container .family-img {
+         border-radius: 57% 43% 44% 56% / 23% 65% 35% 77%;
+       }
+
        @media (min-width: 769px) and (max-width: 1024px) {
          .moving-container {
            height: 110vh;
+         }
+
+         .container .family-img {
+           height: auto;
+           width: 530px;
          }
        }
 
@@ -336,56 +334,101 @@
          .moving-container {
            height: 120vh;
          }
+
+         .container .family-img {
+           height: auto;
+           width: 430px;
+         }
        }
 
        @media (max-width: 564px) {
          .moving-container {
            height: 150vh;
          }
-       }
 
-       .container .family-img {
-         border-radius: 57% 43% 44% 56% / 23% 65% 35% 77%;
-         width: 100%;
-         height: auto;
-         display: block;
+         .container .family-img {
+           height: auto;
+           width: 370px;
+         }
        }
 
        /* ---------------------------  SCREEN SHOT ----------------------------------------------*/
 
+       /* ---------------------------  FEATURES SHOT ----------------------------------------------*/
+       .featurette-divider {
+         margin: 5rem 0;
+       }
 
        /* ---------------------------  PRICING  ----------------------------------------------*/
-
-       .card-header {
-         background-color: #007bff;
-         color: #fff;
-         text-align: center;
-         padding: 10px;
-       }
-
-       .pricing-card-title {
-         font-size: 24px;
-       }
-
-       .list-unstyled li {
-         margin-bottom: 10px;
-         position: relative;
-       }
-
-       .list-unstyled li::before {
-         content: '\2713';
-         /* Unicode check mark character */
-         color: green;
-         font-size: 16px;
-         position: absolute;
-         left: 20px;
-         top: 50%;
-         transform: translateY(-50%);
+       .pricing-section {
+        background-color: hsl(220, 93%, 94%);
        }
 
        .ph-card-header {
          color: white !important;
-         background-color: rgb(160, 160, 251) !important;
+         background-color: #9AAEF2 !important;
        }
 
-       /* ---------------------------  PRICING  ----------------------------------------------*/
+       /* -------------------------------  PRICING  ----------------------------------------------*/
+
+       /* ---------------------------  LAST CONTAINER  ----------------------------------------------*/
+       .last-section{
+        background-color: hsl(220, 93%, 94%);
+       }
+
+       .wrapper {
+         position: relative;
+       }
+
+       .first-container {
+
+       }
+
+       .second-container {
+        position: absolute;
+        z-index: 3;
+        background: gold;
+        top: 30%; /* Adjust this value according to your design */
+        left: 50%; /* Adjust this value according to your design */
+        transform: translate(-50%, -50%);
+       }
+
+       .sv-bg {
+         position: absolute;
+         z-index: 2;
+         
+       }
+
+       .cta-section {
+        background: #1A374D;
+    }
+
+    /* Add this to your existing CSS or create a new style block */
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 22px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #fff;
+  color: #000; /* Change the color to your preferred hover color */
+}
+
+
+       @media (min-width: 769px) and (max-width: 1024px) {
+
+      }
+
+      @media (max-width: 768px) {
+
+      }
+
+      @media (max-width: 564px) {
+      }
