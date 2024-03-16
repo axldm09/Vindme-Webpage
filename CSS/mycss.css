@@ -6,13 +6,14 @@
        }
 
        p {
-        margin: 0px;
-        padding: 0px;
+         margin: 0px;
+         padding: 0px;
        }
 
        :root {
-         --primary: #97fffd;
-         --secondary: #9ec3ff;
+         --primary: #7ADFBB;
+         --secondary: #9AAEF2;
+         --third: #2B3A67;
          --light: #b8d5ff;
          --dark: #2d3253;
        }
@@ -96,11 +97,15 @@
          color: #333;
        }
 
-       /**------------------------------------------------- SECTIONS IN GENERAL -----------------------------------------------------**/
-
-       .footer-bg {
-         background-color: hsl(256, 88%, 90%);
+       .slogan {
+         font-family: "Montserrat", sans-serif;
+         font-optical-sizing: auto;
+         font-weight: 500;
+         font-size: 1.1rem;
+         color: #4e4e4e;
        }
+
+       /**------------------------------------------------- BODY HTML -----------------------------------------------------**/
 
        /**------------------------------------------------- NAV BAR -----------------------------------------------------**/
 
@@ -108,7 +113,7 @@
        .navbar-nav .nav-item .nav-link {
          border-radius: 15px 15px 15px 15px;
          /* Different corner radius for the bottom of the button */
-         transition: background-color 0.3s ease;
+         /*transition: background-color 0.3s ease;*/
          /* Add transition for smoother hover effect */
          width: 160px;
          /* Adjust the width of the buttons */
@@ -123,7 +128,7 @@
        }
 
        .navbar-nav .nav-item:hover .nav-link {
-         background-color: #9ec3ff;
+         background-color: #7ADFBB;
        }
 
        .nav-link::after {
@@ -137,6 +142,7 @@
        /* Add this CSS for spacing to the left of the navbar brand */
        .navbar-brand {
          margin-left: 20px;
+         margin-bottom: 10px;
          font-family: "Montserrat", sans-serif;
        }
 
@@ -155,8 +161,12 @@
        }
 
        .navbar-nav>li>.dropdown-menu a:hover {
-         background-color: #9ec3ff;
+         background-color: #7ADFBB;
          color: #fff;
+       }
+
+       .nav-background {
+         background-color: #2B3A67;
        }
 
        /**----------------------------------------------------------   SECTION MAIN --------------------------------------------------**/
@@ -182,6 +192,37 @@
 
        .lead {
          color: #262B47;
+       }
+
+
+       #title {
+         position: relative;
+         background-color: #e4e3e3;
+       }
+
+       #title::before,
+       #title::after {
+         content: '';
+         position: absolute;
+         width: 140px;
+         height: 140px;
+         background: #7ADFBB;
+       }
+
+       #title::before {
+         bottom: 0;
+         left: 0;
+         border-radius: 0 140px 0 0;
+         -moz-border-radius: 0 140px 0 0;
+         -webkit-border-radius: 0 140px 0 0;
+       }
+
+       #title::after {
+         bottom: 0;
+         right: 0;
+         border-radius: 140px 0 0 0;
+         -moz-border-radius: 140px 0 0 0;
+         -webkit-border-radius: 140px 0 0 0;
        }
 
        /**------------------------------------------------- SCREENSHOT -----------------------------------------------------**/
@@ -249,7 +290,55 @@
          box-shadow: 0 0 10px var(--dark);
        }
 
-       /** ----------------------------- MOVING DIV ----------------------------**/
+       /** ----------------------------------------------------------- END OF CAROUSEL -------------------------------------------------------------------------**/
+
+       /** ----------------------------------------------------------- STATS -------------------------------------------------------------------------**/
+
+       #hanging-icons {
+         text-align: center;
+       }
+
+       footer {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+       }
+
+       .content {
+         margin: 0 20;
+         padding: 20px;
+         /* Added padding */
+         line-height: 1.5;
+         /* Increased line height */
+       }
+
+       .divider {
+         border-left: 0.5px solid #7c7b7b;
+         height: 100px;
+         /* Adjust this value to control the height of the divider */
+         margin: 0 10px;
+       }
+
+       .content h2 {
+         margin-bottom: 30px;
+         /* Add margin between h2 and p */
+         font-family: "Montserrat", sans-serif;
+         font-weight: 500;
+         font-style: normal;
+         color: var(--third);
+       }
+
+       .content p {
+         margin-top: 10px;
+         /* Add margin between h2 and p */
+         font-family: "Montserrat", sans-serif;
+         font-weight: 300;
+         font-style: normal;
+         font-size: 1.2rem;
+         color: #4e4e4e;
+       }
+
+       /** ----------------------------------------------------------- MOVING DIV --------------------------------------------------------------------------------**/
 
        .moving-container {
          position: relative;
@@ -360,8 +449,25 @@
        }
 
        /* ---------------------------  PRICING  ----------------------------------------------*/
+
+       .pricing-card-title {
+        color: var(--third);
+       }
+
+       .sign-up-btn {
+        border-color: var(--secondary) !important;
+        border-width: 1px;
+        color: #8e8e8e !important;
+       }
+
+       .sign-up-btn:hover {
+        background-color: var(--secondary);
+        border-color: var(--third);
+        color: #FFFFFF !important;
+       }
+
        .pricing-section {
-        background-color: hsl(220, 93%, 94%);
+         background-color: hsl(220, 93%, 94%);
        }
 
        .ph-card-header {
@@ -369,66 +475,71 @@
          background-color: #9AAEF2 !important;
        }
 
+       .ph-title {
+        color: var(--third) !important;
+       }
+
        /* -------------------------------  PRICING  ----------------------------------------------*/
 
        /* ---------------------------  LAST CONTAINER  ----------------------------------------------*/
-       .last-section{
-        background-color: hsl(220, 93%, 94%);
+       .last-section {
+         background-color: hsl(220, 93%, 94%);
        }
 
        .wrapper {
          position: relative;
        }
 
-       .first-container {
-
-       }
-
        .second-container {
-        position: absolute;
-        z-index: 3;
-        background: gold;
-        top: 30%; /* Adjust this value according to your design */
-        left: 50%; /* Adjust this value according to your design */
-        transform: translate(-50%, -50%);
-       }
-
-       .sv-bg {
          position: absolute;
-         z-index: 2;
-         
+         z-index: 3;
+         background: gold;
+         top: 10%;
+         /* Adjust this value according to your design */
+         left: 50%;
+         /* Adjust this value according to your design */
+         transform: translate(-50%, -50%);
        }
 
-       .cta-section {
-        background: #1A374D;
-    }
+       .spacer {
+         aspect-ratio: 960/500;
+         width: 100%;
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+       }
 
-    /* Add this to your existing CSS or create a new style block */
-.cta-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 22px;
-  text-align: center;
-  text-decoration: none;
-  border: 2px solid #fff;
-  border-radius: 30px;
-  color: #fff;
-  transition: background-color 0.3s, color 0.3s;
-}
+       .layer-bg {
+         background-image: url('/Assets/waves.svg');
+       }
 
-.cta-button:hover {
-  background-color: #fff;
-  color: #000; /* Change the color to your preferred hover color */
-}
+       /* Add this to your existing CSS or create a new style block */
+       .cta-button {
+         display: inline-block;
+         padding: 10px 20px;
+         font-size: 22px;
+         text-align: center;
+         text-decoration: none;
+         border: 2px solid #fff;
+         border-radius: 30px;
+         color: #fff;
+         transition: background-color 0.3s, color 0.3s;
+       }
+
+       .cta-button:hover {
+         background-color: #fff;
+         color: #000;
+       }
 
 
-       @media (min-width: 769px) and (max-width: 1024px) {
+       @media (min-width: 769px) and (max-width: 1024px) {}
 
-      }
+       @media (max-width: 768px) {}
 
-      @media (max-width: 768px) {
+       @media (max-width: 564px) {}
 
-      }
+       /**------------------------------------------------- FOOTER SECTION -----------------------------------------------------**/
 
-      @media (max-width: 564px) {
-      }
+       .footer-bg {
+         background-color: #ecf3fa;
+       }
