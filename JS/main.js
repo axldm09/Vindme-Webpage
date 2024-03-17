@@ -31,7 +31,7 @@ $(document).ready(function () {
 });
  
 document.body.style.overflowX = "hidden";
-
+/*
 const leftDiv = document.getElementById("left-div-ID");
 const rightDiv = document.getElementById("right-div-ID");
 const thirdContainer = document.getElementById("third-container-ID");
@@ -56,4 +56,4 @@ function handleScroll() {
   }
 }
 
-window.addEventListener("scroll", handleScroll);
+window.addEventListener("scroll", handleScroll);*/
