@@ -9,6 +9,7 @@
 
 })(jQuery);
 
+
 $(document).ready(function () {
   var owl = $('.owl-carousel');
   owl.owlCarousel({
@@ -30,7 +31,9 @@ $(document).ready(function () {
 
 });
  
-document.body.style.overflowX = "hidden";
+
+
+
 /*
 const leftDiv = document.getElementById("left-div-ID");
 const rightDiv = document.getElementById("right-div-ID");

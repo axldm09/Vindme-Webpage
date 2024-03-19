@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vindme</title>
 
   <!-- Favicon -->
@@ -18,12 +18,12 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link href="/CSS/mycss.css" rel="stylesheet">
   <link href="/CSS/bootstrap.min.css" rel="stylesheet">
   <link href="/OwlCarousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="/OwlCarousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="/CSS/mycss.css" rel="stylesheet">
 </head>
 <!-- for the navbar: bg-body-tertiary-->
 
@@ -64,7 +64,7 @@
         </ul>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.html" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block" > Get
+        <li><a href="login.html" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block"> Get
             started </a></li>
       </ul>
     </div>
@@ -145,8 +145,8 @@
     </div>
   </section>
 
-  <!--------------------------------------------------------------------- Features --------------------------------------------------------------------------->
-  <section id="features">
+  <!------------------------------------------------------------------------------- STATS --------------------------------------------------------------------------->
+  <section id="stats">
     <div class="container px-4 py-5" id="hanging-icons" data-aos="fade-up" data-aos-duration="2000">
       <footer class="d-flex justify-content-center">
         <div class="content">
@@ -167,54 +167,85 @@
     </div>
 
   </section>
-
-  <!----------------------------------------- MOVING DIV ---------------------------------------------------------->
+  <!----------------------------------------------------------------------------- MOVING DIV ------------------------------------------------------------------------>
   <section id="moving-div">
+    <style>
+      .moving-container {
+        position: relative;
+      }
+
+      #left-div-ID {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #fdd2d2;
+        z-index: 1;
+        clip-path: polygon(100% 0, 0 0, 0% 100%, 0 60%);
+      }
+
+      #right-div-ID {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        background-color: #f3f0fe;
+        z-index: 2;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+      }
+
+      #third-container-ID {
+        position: relative;
+        z-index: 3;
+      }
+    </style>
+
     <div class="moving-container">
-      <div class="left-div-cont" id="left-div-ID" data-aos="fade-left" data-aos-duration="2000"></div>
-      <div class="right-div-cont" id="right-div-ID" data-aos="fade-right" data-aos-duration="2000"></div>
+      <div class="left-div-cont" id="left-div-ID"></div>
+      <div class="right-div-cont" id="right-div-ID"></div>
       <!-------------------------------------- THIRD CONTAINER ----------------------------------------------------->
 
-      <div class="container third-container" id="third-container-ID" data-aos="fade-up" data-aos-duration="2000">
-
-        <div class="row align-items-center g-lg-10 py-5">
-
-          <div class="col-lg-7 text-center text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3 second-header">Vertically centered hero sign-up
-              form</h1>
-            <p class="col-lg-10 fs-4 main-typo">Below is an example form built entirely with Bootstrap’s form
-              controls. Each
-              required form group has a validation state that can be triggered by attempting to submit the form
-              without completing it.</p>
-          </div>
-          <div class=" container col-md-10 mx-auto col-lg-5">
-            <img src="/Assets/couple_phone.png" class="family-img">
+      <div class="container third-container" id="third-container-ID">
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+          <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-7 text-center text-lg-start">
+              <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
+              <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each
+                required form group has a validation state that can be triggered by attempting to submit the form
+                without completing it.</p>
+            </div>
+            <div class="col-md-10 mx-auto col-lg-5">
+              <img src="/Assets/smartphone-woman-typing.jpg" width="400px" height="400px">
+            </div>
           </div>
         </div>
-
         <!--------------------------------------THIRD CONTAINER END ----------------------------------------------------->
       </div>
     </div>
   </section>
 
 
-
   <!---------------------------------------- LAST SECTION ----------------------------------------->
-  <section id="about-section">
-    <div class="container col-xxl-8 px-4 py-5">
+  <section class="about-section" id="about-section">
+    <div class="container col-xxl-8 px-4 py-5 about">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
-          <img src="/Assets/young-diverse-people-.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+          <img class="young-people-img" src="/Assets/young-diverse-people-.jpg" class="d-block mx-lg-auto img-fluid"
+            alt="Bootstrap Themes" width="700" height="500" loading="lazy">
         </div>
         <div class="col-lg-6">
           <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
-          <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+          <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most
+            popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
+            extensive prebuilt components, and powerful JavaScript plugins.</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -298,7 +329,8 @@
         <div class="container">
           <div class="row text-center">
             <div class="col-md-12" data-aos="fade-down" data-aos-duration="2000">
-              <p class="mb-0"><a href="booking.html" class="cta-button" style="font-family: Montserrat; font-weight: 500; font-size: 1.7rem;">Download now</a></p>
+              <p class="mb-0"><a href="booking.html" class="cta-button"
+                  style="font-family: Montserrat; font-weight: 500; font-size: 1.7rem;">Download now</a></p>
             </div>
           </div>
         </div>
@@ -313,7 +345,7 @@
         <div class="col mb-3">
           <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
             <img src="/Assets/icon_01.png" width="50" height="50">
-            
+
           </a>
           <p class="text-body-secondary">Vindme© 2024</p>
         </div>
@@ -361,32 +393,41 @@
         </div>
       </footer>
       <div class="container justify-content-center">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
           <ul class="nav col-md-12 justify-content-center list-unstyled d-flex">
-            <li class="ms-3"><a class="text-body-secondary" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-            </svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/vindme_app/"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-            </svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="40"
+                  height="40" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                </svg></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/vindme_app/"> <svg
+                  xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-instagram"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                </svg></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="#facebook"></use>
+                </svg></a></li>
           </ul>
         </footer>
       </div>
-      
-      
+
+
   </section>
 
   <script src="/jquery-3.7.1.min.js"></script>
   <script src="/OwlCarousel/dist/owl.carousel.min.js"></script>
-  <script src="/JS/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
-
+  <script src="/JS/main.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+  </script>
+  <script>
+    document.body.style.overflowX = "hidden";
   </script>
 
 </body>
