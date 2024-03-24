@@ -301,3 +301,42 @@ M42.4,-69.5C54.5,-66.4,63.6,-54.2,59.1,-41.1C54.6,-28,36.6,-14,38.4,1C40.2,16.1,
                 <img src="/Assets/young-man-working.jpg" />
               </div>
 -->
+
+<!--  CLIP PATH TRANSITION
+
+  HAVE TWO IMG: ONE WITH CLIP PATH AND ANOTHER WITHOUT CLIP PATH
+  ON HOVER, TRANSITION THE CLIP PATH TO THE OTHER IMG
+   <img src="/Assets/young-man-working.jpg" class="d-block mx-lg-auto img-fluid working-img"
+                alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+              <img src="/Assets/young-man-working.jpg" class="d-block mx-lg-auto img-fluid working-img"
+                alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    
+    CSS:
+    .working-img {
+        position: absolute;
+        top: 20%;
+        right: 20%;
+        bottom: 0;
+        left: 0;
+        height: 400px;
+        width: 400px;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+
+      .working-img:nth-of-type(1) {
+        filter: grayscale(1) brightness(0.5);
+      }
+
+      .working-img:nth-of-type(2) {
+        -webkit-clip-path: circle(calc(var(--radius, 0) * 1%) at calc(var(--x, 50) * 1%) calc(var(--y, 50) * 1%));
+        clip-path: circle(calc(var(--radius, 0) * 1%) at calc(var(--x, 50) * 1%) calc(var(--y, 50) * 1%));
+        transition: -webkit-clip-path calc(3 * 1s);
+        transition: clip-path calc(3 * 1s);
+        transition: clip-path calc(3 * 1s), -webkit-clip-path calc(3 * 1s);
+      }
+
+      .img-container:hover {
+        --radius: var(--reveal-radius, 150);
+      }
+-->

@@ -31,7 +31,19 @@ $(document).ready(function () {
 
 });
  
+$(window).scroll(function() {
+  var aboutSectionOffset = $('#moving-div').offset().top;
+  var scrollPosition = $(window).scrollTop();
 
+  if (scrollPosition >= aboutSectionOffset) {
+    $('body').css('background-color', '#d3d4f5');
+    $('body').css('transition', 'background-color 4s ease, opacity 3.5s ease');
+    $('body').css('opacity', '1');
+  } else {
+    $('body').css('background-color', '#ffffff');
+    $('body').css('transition', 'background-color 2s ease, opacity 1.5s ease');
+  }
+});
 
 
 /*
