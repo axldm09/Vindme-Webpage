@@ -37,7 +37,7 @@ $(window).scroll(function() {
 
   if (scrollPosition >= aboutSectionOffset) {
     $('body').css('background-color', '#d3d4f5');
-    $('body').css('transition', 'background-color 4s ease, opacity 3.5s ease');
+    $('body').css('transition', 'background-color 4s ease, opacity 2.5s ease');
     $('body').css('opacity', '1');
   } else {
     $('body').css('background-color', '#ffffff');

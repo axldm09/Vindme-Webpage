@@ -498,7 +498,8 @@
        }
 
        .young-people-img {
-         clip-path: polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%)
+         /*clip-path: polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%)*/
+         border-radius: 5%;
        }
 
        .green-line {
