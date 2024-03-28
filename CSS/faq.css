@@ -9,7 +9,7 @@ html, body {
     width: 160px;
     text-align: center;
     line-height: 20px;
-    padding: 5px 0px 5px 0px;
+    padding: 5px;
     font-family: "Montserrat", sans-serif;
     font-size: 1.4rem;
     color: #2B3A67;
@@ -95,6 +95,23 @@ html, body {
         font-size: 1.4rem;
     }
 }
+
+@media (max-width: 950px) {
+	.navbar-collapse .nav-item .nav-link {
+	   justify-content: flex-end;
+	   width: 150px;
+	   margin-left: 30px;
+	   text-align: left;
+	}
+	
+	.navbar-collapse > .nav-item > li > .dropdown-item {
+	   justify-content: flex-end;
+	   font-size: 1.4rem;
+	   width: 150px;
+	   margin-left: 20px;
+	   text-align: left;
+	}
+ }
 
 /*#footer-section {
     position: relative;

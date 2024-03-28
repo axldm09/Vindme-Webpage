@@ -151,21 +151,16 @@
 
        /**------------------------------------------------- NAV BAR -----------------------------------------------------**/
 
-       /* Add this CSS for button hover effect */
        .navbar-nav .nav-item .nav-link {
          border-radius: 15px 15px 15px 15px;
-         /* Different corner radius for the bottom of the button */
          /*transition: background-color 0.3s ease;*/
          width: 160px;
-         /* Adjust the width of the buttons */
          text-align: center;
-         /* Center text in the button */
          line-height: 20px;
-         /* Set line height to the desired button height */
          padding: 5px 0px 5px 0px;
-         /* Adjust padding to ensure corners fit within the button width */
          font-family: "Montserrat", sans-serif;
          font-size: 1.4rem;
+         color: #2B3A67;
        }
 
        .navbar-nav .nav-item:hover .nav-link {
@@ -206,7 +201,7 @@
        }
 
        .nav-background {
-         background-color: #2B3A67;
+         background-color: #ffffff;
        }
 
        @media (min-width: 1200px) and (max-width: 1000px) {
@@ -222,6 +217,23 @@
           height: "50px";
          }
        }
+
+       @media (max-width: 950px) {
+        .navbar-collapse .nav-item .nav-link {
+           justify-content: flex-end;
+           width: 150px;
+           margin-left: 30px;
+           text-align: left;
+        }
+        
+        .navbar-collapse > .nav-item > li > .dropdown-item {
+           justify-content: flex-end;
+           font-size: 1.4rem;
+           width: 150px;
+           margin-left: 20px;
+           text-align: left;
+        }
+     }
 
        /**----------------------------------------------------------   SECTION MAIN --------------------------------------------------**/
        .gradient-background {
@@ -481,6 +493,30 @@
          color: #4e4e4e;
        }
 
+       .icon-square {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 0.75rem;
+      }
+
+      .feat-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 2.3em;
+        color: #E84855;  
+        text-align: left;
+      }
+      
+      .feat-content {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5em;
+        color: var(--third);
+        text-align: justify;
+      }
+      
        /** ----------------------------------------------------------- MOVING DIV --------------------------------------------------------------------------------**/
 
        /* ---------------------------------------------------------  END OF MOVING DIV ---------------------------------------------------------------------------*/
@@ -492,9 +528,9 @@
 
        /* -------------------------------------------------------------  ABOUT SECTION  ---------------------------------------------------------------------*/
        #about-section {
-        height: 55vh;
-         background-color: hsl(219, 35%, 58%);
-         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+        
+        background-color: hsl(219, 35%, 58%);
+         /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);*/
        }
 
        .young-people-img {
@@ -545,9 +581,23 @@
          color: #ffffff;
        }
 
-       @media (min-width: 1920px) and (max-width: 2700px) {
+       @media (min-width: 370px) and (max-width: 570px) {
+        .green-line {
+          margin-left: 0px;
+          width: 135px;
+        }
+
+        .young-people-img {
+         width: 330px;
+         height: 270px;
+        }
+
+      
+      }
+
+       /*@media (min-width: 1920px) and (max-width: 2700px) {
         #about-section {
-          height: 60vh;
+          height: 75vh;
         }
        }
 
@@ -596,9 +646,9 @@
          }
 
          #about-section {
-           height: 165vh;
+           height: 125vh;
          }
-       }
+       }*/
 
 
 
