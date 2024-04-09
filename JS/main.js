@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 });
  
-$(window).scroll(function() {
+/*$(window).scroll(function() {
   var aboutSectionOffset = $('#moving-div').offset().top;
   var scrollPosition = $(window).scrollTop();
 
@@ -43,32 +43,44 @@ $(window).scroll(function() {
     $('body').css('background-color', '#ffffff');
     $('body').css('transition', 'background-color 2s ease, opacity 1.5s ease');
   }
-});
+}); */
 
 
-/*
-const leftDiv = document.getElementById("left-div-ID");
-const rightDiv = document.getElementById("right-div-ID");
-const thirdContainer = document.getElementById("third-container-ID");
+function startCounters() {
+  const feedbackCounter = document.getElementById('feedback-counter');
+  const clientsCounter = document.getElementById('clients-counter');
+  const downloadsCounter = document.getElementById('downloads-counter');
 
-function handleScroll() {
-  const scrollPosition = window.scrollY;
+  const feedbackTarget = 99.5;
+  const clientsTarget = 50;
+  const downloadsTarget = 100;
 
-  if (scrollPosition > 330) {
-    leftDiv.style.transform = "translateX(0)";
-    rightDiv.style.opacity = 1;
-    leftDiv.style.opacity = 1;
-    rightDiv.style.transform = "translateX(0)";
-    thirdContainer.style.transform = "translate(-50%, 0) scale(1)";
-    thirdContainer.style.opacity = 1;
-  } else {
-    leftDiv.style.transform = "translateX(-100%)";
-    rightDiv.style.opacity = 0;
-    leftDiv.style.opacity = 0;
-    rightDiv.style.transform = "translateX(100%)";
-    thirdContainer.style.transform = "translate(-50%, 100%) scale(0)";
-    thirdContainer.style.opacity = 0;
-  }
+  let feedbackCount = 0;
+  let clientsCount = 0;
+  let downloadsCount = 0;
+
+  const incrementCounters = () => {
+    if (feedbackCount < feedbackTarget) {
+      feedbackCount += .5; // Increase the increment value for faster counting
+      feedbackCounter.textContent = feedbackCount.toFixed(1) + '%';
+    }
+
+    if (clientsCount < clientsTarget) {
+      clientsCount += 1; // Increase the increment value for faster counting
+      clientsCounter.textContent = clientsCount;
+    }
+
+    if (downloadsCount < downloadsTarget) {
+      downloadsCount += 1; // Increase the increment value for faster counting
+      downloadsCounter.textContent = downloadsCount;
+    }
+
+    if (feedbackCount < feedbackTarget || clientsCount < clientsTarget || downloadsCount < downloadsTarget) {
+      requestAnimationFrame(incrementCounters);
+    }
+  };
+
+  incrementCounters();
 }
 
-window.addEventListener("scroll", handleScroll);*/
+document.addEventListener('DOMContentLoaded', startCounters);

@@ -1,0 +1,207 @@
+  /**------------------------------------------------- GENERAL -----------------------------------------------------**/
+
+  :root {
+    --primary-color: #2B3A67;
+    --secondary-color: #9AAEF2;
+    --tertiary-color: #7ADFBB;
+  }
+
+  body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.7rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-weight: 550;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.4rem;
+    color: #4e4e4e;
+    text-align: justify;
+  }
+
+  ul li {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.4rem;
+    color: #4e4e4e;
+    text-align: justify;
+  }
+
+  a {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+  }
+
+  strong {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+  }
+
+  li::marker {
+    color: var(--secondary-color);
+  }
+
+  /**------------------------------------------------- NAV BAR -----------------------------------------------------**/
+  /* Add this CSS for spacing to the left of the navbar brand */
+  .navbar-nav .nav-item .nav-link {
+    border-radius: 15px 15px 15px 15px;
+    /*transition: background-color 0.3s ease;*/
+    width: 180px;
+    text-align: center;
+    line-height: 20px;
+    padding: 5px 0px 5px 0px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4rem;
+    color: #2B3A67;
+  }
+
+  .navbar-nav .nav-item:hover .nav-link {
+    background-color: #7ADFBB;
+    color: #ffffff;
+  }
+
+  /* Add this CSS for spacing to the left of the navbar brand */
+  .navbar-brand {
+    margin-left: 100px;
+    margin-bottom: 10px;
+  }
+
+  /* Add this CSS for dropdown menu */
+  .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .right-btn {
+    margin-right: 100px;
+  }
+
+  .navbar>.navbar-nav>li>.navbar-right {
+    margin-left: 50px;
+  }
+
+  .nav-background {
+    background-color: #ffffff;
+  }
+
+  .dropdown-menu .dropdown-item {
+    color: #0a084c;
+    /* Font color for dropdown items */
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .dropdown-menu .dropdown-item:hover {
+    color: #9AAEF2;
+    background-color: #e9e7e7;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    margin-left: 10px;
+    background-color: #ffffff;
+    /* Dropdown background color */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    /* Dropdown shadow */
+    padding: 8px 0;
+  }
+
+  /* ------------------------------------------------- Title ----------------------------------------------------- */
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+
+  .vindme {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    text-align: center;
+  }
+
+  /* ------------------------------------------------- Translator ----------------------------------------------------- */
+
+  .translate-ltr {
+    margin-top: -40px;
+  }
+
+  .goog-te-banner-frame {
+    display: none;
+    margin-top: 20px;
+  }
+
+  .goog-logo-link {
+    display: none !important;
+  }
+
+  .goog-te-gadget {
+    color: transparent !important;
+    font-size: 0px !important;
+  }
+
+  .VIpgJd-ZVi9od-l4eHX-hSRGPd {
+    color: transparent !important;
+    font-size: 0px !important;
+  }
+
+  .goog-te-combo {
+    color: var(--primary-color) !important;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    box-shadow: inset;
+    border: 0.1em solid var(--primary-color);
+    border-radius: 5%;
+  }
+
+  img {
+    display: none;
+  }
+
+  #google_element {
+    margin-right: 40px;
+    font-family: 'Montserrat', sans-serif;
+  }

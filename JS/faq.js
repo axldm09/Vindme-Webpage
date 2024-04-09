@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
-  const anwser = document.getElementById('anwser');
+  const anwser = document.getElementById('answer');
   const search = document.getElementById('search');
 
   search.addEventListener('keypress', function(event) { 
@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
   function expandAccordionItem(accordionItem) {
     if (accordionItem) {
       const accordionButton = accordionItem.querySelector('.accordion-button');
