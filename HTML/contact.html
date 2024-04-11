@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Vindme</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Vindme</title>
 
   <!-- Favicon -->
+  <link rel="icon" href="/Assets/favicon.ico" type="image/x-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,10 +19,365 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link href="/CSS/bootstrap.min.css" rel="stylesheet">
   <link href="/CSS/about.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .form-container {
+      background-color: rgb(244, 244, 244);
+      border-radius: 10px;
+    }
+
+    .contact-form {
+      background-color: transparent;
+      padding: 30px;
+      transition: background-color 0.5s ease;
+    }
+
+    .form-group {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      font-size: 20px;
+      padding: 10px;
+      border: none;
+      background-color: transparent;
+      border-bottom: 2px solid #dedede; /* Initial border color */
+      transition: border-color 2.5s; /* Add transition */
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-bottom: 2px solid #9AAEF2; /* Border color on focus */
+    }
+
+    .form-group input:focus ~ label,
+    .form-group textarea:focus ~ label,
+    .form-group input:not(:focus):valid ~ label,
+    .form-group textarea:not(:focus):valid ~ label {
+      color: #9AAEF2;
+      top: -20px;
+    }
+
+    .form-group label {
+      font-size: 20px;
+      font-weight: 600;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      transition: color 0.3s, top 0.3s;
+    }
+
+    .form-group input:focus ~ label,
+    .form-group textarea:focus ~ label,
+    .form-group input:not(:focus):valid ~ label,
+    .form-group textarea:not(:focus):valid ~ label {
+      color: #9AAEF2;
+      top: -20px;
+    }
+
+    .form-group::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: transparent; /* Set initial background color to transparent */
+      transition: width 1s, background-color 1s; /* Add transition */
+    }
+
+    .form-group input:focus ~::before,
+    .form-group textarea:focus ~::before {
+      width: 100%;
+      background: linear-gradient(to right, #cdd7f8, #9AAEF2); /* Gradient border color */
+    }
+
+    .btn-submit-container {
+      text-align: center; /* Center the button */
+    }
+
+    .btn-submit {
+      display: inline-block;
+      font-size: 20px;
+      padding: 10px 20px;
+      width: 160px;
+      border: none;
+      background-color: #eb989f;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      transition: color 0.3s, transform 0.3s, background-color 0.3s, padding 0.3s;
+    }
+
+    .btn-submit::before {
+      content: "\2192"; 
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .btn-submit:hover::before {
+      color: #fff;
+      transform: translate(10px, -50%);
+    }
+
+    .btn-submit:hover {
+      background-color: #E84855;
+      color: #fff;
+      padding: 12px 25px;
+    }
+
+    .high {
+      color: #9AAEF2;
+    }
+
+  </style>
+
 </head>
+
 <body>
+
+  <!-- NAV BAR -->
+  <nav class="navbar navbar-expand-md sticky-top nav-background">
+    <div class="container-fluid justify-content-center">
+      <a class="navbar-brand" href="/HTML/index.html">
+        <img src="/Assets/Vindme600px.png" alt="Vindme" width="180px" height="50px"
+          class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse flex-grow-0 collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link scroll-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scroll-link " href="/HTML/about.html">About</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resources
+            </a>
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/HTML/privacy.html">Privacy Policy</a></li>
+              <li><a class="dropdown-item" href="/HTML/terms.html">Terms and Conditions</a></li>
+
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Contact Form -->
+  <section class="contact-section">
+    <div class="container my-5 form-container">
+      <h1 class="text-center py-5">Contact <span class="high">Us</span></h1>
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-6">
+          <form action="https://api.web3forms.com/submit" method="POST" class="contact-form my-4">
+            <div class="form-group py-3">
+              <input type="text" id="fullName" required>
+              <label for="fullName">Full Name</label>
+            </div>
+            <div class="form-group py-3">
+              <input type="hidden" name="access_key" value="8b2c2f2a-2572-4a34-a272-9f14cd7bcd23">
+              <input type="email" id="email" required>
+              <label for="email">Email address</label>
+            </div>
+            <div class="form-group py-3">
+              <input type="hidden" name="access_key" value="8b2c2f2a-2572-4a34-a272-9f14cd7bcd23">
+              <textarea id="message" rows="3" required></textarea>
+              <label for="message">Message</label>
+            </div>
+            <div class="btn-submit-container">
+              <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+             </div>
+          </form>
+        </div>
+      </div>
+    </div>
     
+  </section>
+  <!----------------------------------------------------- FOOTER SECTION ------------------------------------------------------------------------------>
+
+  <section id="footer-section" class="footer-bg">
+    <div class="container mt-5">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-5 border-top">
+        <div class="col mb-3">
+          <a href="#home" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+            <img src="/Assets/icon_01.png" width="50" height="50">
+          </a>
+          <p class="text-body-secondary">Vindme© 2024</p>
+        </div>
+
+        <div class="col mb-3"></div>
+
+        <div class="col mb-3"></div>
+
+        <div class="col mb-3">
+          <h4 style="font-family: Montserrat;">Legal</h4>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="/HTML/privacy_policy.html" class="nav-link p-0 text-body-secondary">Privacy</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="/HTML/terms.html" class="nav-link p-0 text-body-secondary">Terms of use</a>
+            </li>
+            <li class="nav-item mb-5">
+              <a href="#" class="nav-link p-0 text-body-secondary"></a>
+            </li>
+            <li class="nav-item mb-5"></li>
+            <li class="nav-item mb-4"></li>
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h4 style="font-family: Montserrat;">About</h4>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="/HTML/index.html" class="nav-link p-0 text-body-secondary">Home</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="/HTML/contact.html" class="nav-link p-0 text-body-secondary">Contact</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="/HTML/index.html" class="nav-link p-0 text-body-secondary">Pricing</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="/HTML/faq.html" class="nav-link p-0 text-body-secondary">FAQs</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="/HTML/about.html" class="nav-link p-0 text-body-secondary">About</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+      <div class="container justify-content-center">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center pb-4">
+          <ul class="nav col-md-12 justify-content-center list-unstyled d-flex">
+            <li class="ms-3 social-link"><a class="text-body-secondary" href="#"> <svg
+                  xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-facebook"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                </svg></a></li>
+            <li class="ms-3 social-link"><a class="text-body-secondary" href="https://www.instagram.com/vindme_app/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                  class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                </svg></a></li>
+            <li class="ms-3 social-link"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="#facebook"></use>
+                </svg></a></li>
+          </ul>
+        </footer>
+      </div>
+
+  </section>
+
+  <script src="/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+    <script>
+      $(document).ready(function() {
+        var currentInput = null;
+    
+        // Focus event listener
+        $('.contact-form input, .contact-form textarea').focus(function() {
+          currentInput = $(this);
+        });
+    
+        // Blur event listener
+        $('.contact-form input, .contact-form textarea').blur(function() {
+          var value = $(this).val();
+          
+          // Check if the input field is empty and not the same as the current input field
+          if (!value && currentInput !== $(this)) {
+            $(this).css('border-bottom', '2px solid red'); // Change border color
+            // Check if error message already exists
+            if (!$(this).siblings('.error-msg').length) {
+              $(this).siblings('label').after('<span class="error-msg" style="color: red;">Please fill out this field</span>');
+            }
+          } else {
+            $(this).css('border-bottom', '2px solid green'); // Change border color
+            // Remove error message
+            $(this).siblings('.error-msg').remove();
+            // Add checkmark
+            $(this).siblings('.checkmark').remove(); // Remove existing checkmark
+            $(this).after('<span class="checkmark">&#10004;</span>'); // Add checkmark
+          }
+        });
+    
+        // Form submission
+        $('.contact-form').submit(function(e) {
+          e.preventDefault(); // Prevent form submission
+    
+          // Remove any existing error messages
+          $('.error-msg').remove();
+    
+          // Get form inputs
+          var fullName = $('#fullName').val();
+          var email = $('#email').val();
+          var message = $('#message').val();
+    
+          // Regular expression to check if email is valid
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+          // Check if email is valid
+          if (!emailRegex.test(email)) {
+            $('#email').css('border-bottom', '2px solid red'); // Change border color
+            return;
+          }
+    
+          // Check if message has more than 5 characters
+          if (message.length < 5) {
+            $('#message').css('border-bottom', '2px solid red'); // Change border color
+            return;
+          }
+    
+          // If all conditions are met, reset border colors and submit the form
+          $('#email').css('border-bottom', '2px solid green'); // Change border color
+          $('#message').css('border-bottom', '2px solid green'); // Change border color
+    
+          // Remove error message
+          $('.error-msg').remove();
+    
+          // Add checkmark
+          $('.checkmark').remove(); // Remove existing checkmark
+          //$('.contact-form input, .contact-form textarea').each(function() {
+           // $(this).after('<span class="checkmark">&#10004;</span>'); // Add checkmark
+          //});
+    
+          // Submit the form
+          $(this).addClass('submitted'); // Add class for animation
+        });
+      });
+    </script>
+    
+  
+
 </body>
+
 </html>

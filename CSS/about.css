@@ -184,11 +184,6 @@ body {
       transform: translate(-50%, -50%);
    }
 
-   /*.center-content h1 {
-      font-family: "Montserrat", sans-serif;
-      font-size: 4.5em;
-   }*/
-
    .center-content .description {
       font-family: "Montserrat", sans-serif;
       font-size: 2rem;
@@ -269,7 +264,7 @@ body {
    font-weight: 600;
    font-style: normal;
    font-size: 2.5rem;
-   color: #ffffff;
+   color: var(--third);
    text-align: center;
 }
 
