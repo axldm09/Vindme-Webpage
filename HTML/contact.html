@@ -193,19 +193,17 @@
       <h1 class="text-center py-5">Contact <span class="high">Us</span></h1>
       <div class="row justify-content-center mb-5">
         <div class="col-md-6">
-          <form action="https://api.web3forms.com/submit" method="POST" class="contact-form my-4">
+          <form class="contact-form my-4"  action="https://formspree.io/f/moqgppva" method="POST">
             <div class="form-group py-3">
-              <input type="text" id="fullName" required>
+              <input type="text" id="fullName" name="fullName" required>
               <label for="fullName">Full Name</label>
             </div>
             <div class="form-group py-3">
-              <input type="hidden" name="access_key" value="8b2c2f2a-2572-4a34-a272-9f14cd7bcd23">
-              <input type="email" id="email" required>
+              <input type="email" id="email" name="email" required>
               <label for="email">Email address</label>
             </div>
             <div class="form-group py-3">
-              <input type="hidden" name="access_key" value="8b2c2f2a-2572-4a34-a272-9f14cd7bcd23">
-              <textarea id="message" rows="3" required></textarea>
+              <textarea id="message" rows="3" name="message" required></textarea>
               <label for="message">Message</label>
             </div>
             <div class="btn-submit-container">
@@ -351,13 +349,10 @@
             return;
           }
     
-          // Check if message has more than 5 characters
           if (message.length < 5) {
             $('#message').css('border-bottom', '2px solid red'); // Change border color
             return;
           }
-    
-          // If all conditions are met, reset border colors and submit the form
           $('#email').css('border-bottom', '2px solid green'); // Change border color
           $('#message').css('border-bottom', '2px solid green'); // Change border color
     
@@ -370,13 +365,11 @@
            // $(this).after('<span class="checkmark">&#10004;</span>'); // Add checkmark
           //});
     
-          // Submit the form
+        
           $(this).addClass('submitted'); // Add class for animation
         });
       });
     </script>
-    
-  
 
 </body>
 
