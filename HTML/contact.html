@@ -50,20 +50,23 @@
       padding: 10px;
       border: none;
       background-color: transparent;
-      border-bottom: 2px solid #dedede; /* Initial border color */
-      transition: border-color 2.5s; /* Add transition */
+      border-bottom: 2px solid #dedede;
+      /* Initial border color */
+      transition: border-color 2.5s;
+      /* Add transition */
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-bottom: 2px solid #9AAEF2; /* Border color on focus */
+      border-bottom: 2px solid #9AAEF2;
+      /* Border color on focus */
     }
 
-    .form-group input:focus ~ label,
-    .form-group textarea:focus ~ label,
-    .form-group input:not(:focus):valid ~ label,
-    .form-group textarea:not(:focus):valid ~ label {
+    .form-group input:focus~label,
+    .form-group textarea:focus~label,
+    .form-group input:not(:focus):valid~label,
+    .form-group textarea:not(:focus):valid~label {
       color: #9AAEF2;
       top: -20px;
     }
@@ -77,10 +80,10 @@
       transition: color 0.3s, top 0.3s;
     }
 
-    .form-group input:focus ~ label,
-    .form-group textarea:focus ~ label,
-    .form-group input:not(:focus):valid ~ label,
-    .form-group textarea:not(:focus):valid ~ label {
+    .form-group input:focus~label,
+    .form-group textarea:focus~label,
+    .form-group input:not(:focus):valid~label,
+    .form-group textarea:not(:focus):valid~label {
       color: #9AAEF2;
       top: -20px;
     }
@@ -93,18 +96,22 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background-color: transparent; /* Set initial background color to transparent */
-      transition: width 1s, background-color 1s; /* Add transition */
+      background-color: transparent;
+      /* Set initial background color to transparent */
+      transition: width 1s, background-color 1s;
+      /* Add transition */
     }
 
-    .form-group input:focus ~::before,
-    .form-group textarea:focus ~::before {
+    .form-group input:focus~::before,
+    .form-group textarea:focus~::before {
       width: 100%;
-      background: linear-gradient(to right, #cdd7f8, #9AAEF2); /* Gradient border color */
+      background: linear-gradient(to right, #cdd7f8, #9AAEF2);
+      /* Gradient border color */
     }
 
     .btn-submit-container {
-      text-align: center; /* Center the button */
+      text-align: center;
+      /* Center the button */
     }
 
     .btn-submit {
@@ -121,7 +128,7 @@
     }
 
     .btn-submit::before {
-      content: "\2192"; 
+      content: "\2192";
       position: absolute;
       right: 20px;
       top: 50%;
@@ -143,7 +150,6 @@
     .high {
       color: #9AAEF2;
     }
-
   </style>
 
 </head>
@@ -193,7 +199,7 @@
       <h1 class="text-center py-5">Contact <span class="high">Us</span></h1>
       <div class="row justify-content-center mb-5">
         <div class="col-md-6">
-          <form class="contact-form my-4"  action="https://formspree.io/f/moqgppva" method="POST">
+          <form class="contact-form my-4" action="https://formspree.io/f/moqgppva" method="POST">
             <div class="form-group py-3">
               <input type="text" id="fullName" name="fullName" required>
               <label for="fullName">Full Name</label>
@@ -208,12 +214,12 @@
             </div>
             <div class="btn-submit-container">
               <button type="submit" class="btn btn-primary btn-submit">Submit</button>
-             </div>
+            </div>
           </form>
         </div>
       </div>
     </div>
-    
+
   </section>
   <!----------------------------------------------------- FOOTER SECTION ------------------------------------------------------------------------------>
 
@@ -221,7 +227,7 @@
     <div class="container mt-5">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-5 border-top">
         <div class="col mb-3">
-          <a href="#home" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+          <a href="#home" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none logo-v">
             <img src="/Assets/icon_01.png" width="50" height="50">
           </a>
           <p class="text-body-secondary">Vindme© 2024</p>
@@ -235,10 +241,10 @@
           <h4 style="font-family: Montserrat;">Legal</h4>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
-              <a href="/HTML/privacy_policy.html" class="nav-link p-0 text-body-secondary">Privacy</a>
+              <a href="/HTML/privacy_policy.html" class="nav-link p-0 text-body-secondary foot-btn">Privacy</a>
             </li>
             <li class="nav-item mb-2">
-              <a href="/HTML/terms.html" class="nav-link p-0 text-body-secondary">Terms of use</a>
+              <a href="/HTML/terms.html" class="nav-link p-0 text-body-secondary foot-btn">Terms of use</a>
             </li>
             <li class="nav-item mb-5">
               <a href="#" class="nav-link p-0 text-body-secondary"></a>
@@ -298,78 +304,78 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-    <script>
-      $(document).ready(function() {
-        var currentInput = null;
-    
-        // Focus event listener
-        $('.contact-form input, .contact-form textarea').focus(function() {
-          currentInput = $(this);
-        });
-    
-        // Blur event listener
-        $('.contact-form input, .contact-form textarea').blur(function() {
-          var value = $(this).val();
-          
-          // Check if the input field is empty and not the same as the current input field
-          if (!value && currentInput !== $(this)) {
-            $(this).css('border-bottom', '2px solid red'); // Change border color
-            // Check if error message already exists
-            if (!$(this).siblings('.error-msg').length) {
-              $(this).siblings('label').after('<span class="error-msg" style="color: red;">Please fill out this field</span>');
-            }
-          } else {
-            $(this).css('border-bottom', '2px solid green'); // Change border color
-            // Remove error message
-            $(this).siblings('.error-msg').remove();
-            // Add checkmark
-            $(this).siblings('.checkmark').remove(); // Remove existing checkmark
-            $(this).after('<span class="checkmark">&#10004;</span>'); // Add checkmark
-          }
-        });
-    
-        // Form submission
-        $('.contact-form').submit(function(e) {
-          e.preventDefault(); // Prevent form submission
-    
-          // Remove any existing error messages
-          $('.error-msg').remove();
-    
-          // Get form inputs
-          var fullName = $('#fullName').val();
-          var email = $('#email').val();
-          var message = $('#message').val();
-    
-          // Regular expression to check if email is valid
-          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-          // Check if email is valid
-          if (!emailRegex.test(email)) {
-            $('#email').css('border-bottom', '2px solid red'); // Change border color
-            return;
-          }
-    
-          if (message.length < 5) {
-            $('#message').css('border-bottom', '2px solid red'); // Change border color
-            return;
-          }
-          $('#email').css('border-bottom', '2px solid green'); // Change border color
-          $('#message').css('border-bottom', '2px solid green'); // Change border color
-    
-          // Remove error message
-          $('.error-msg').remove();
-    
-          // Add checkmark
-          $('.checkmark').remove(); // Remove existing checkmark
-          //$('.contact-form input, .contact-form textarea').each(function() {
-           // $(this).after('<span class="checkmark">&#10004;</span>'); // Add checkmark
-          //});
-    
-        
-          $(this).addClass('submitted'); // Add class for animation
-        });
+  <script>
+    $(document).ready(function () {
+      var currentInput = null;
+
+      // Focus event listener
+      $('.contact-form input, .contact-form textarea').focus(function () {
+        currentInput = $(this);
       });
-    </script>
+
+      // Blur event listener
+      $('.contact-form input, .contact-form textarea').blur(function () {
+        var value = $(this).val();
+
+        // Check if the input field is empty and not the same as the current input field
+        if (!value && currentInput !== $(this)) {
+          $(this).css('border-bottom', '2px solid red'); // Change border color
+          // Check if error message already exists
+          if (!$(this).siblings('.error-msg').length) {
+            $(this).siblings('label').after('<span class="error-msg" style="color: red;">Please fill out this field</span>');
+          }
+        } else {
+          $(this).css('border-bottom', '2px solid green'); // Change border color
+          // Remove error message
+          $(this).siblings('.error-msg').remove();
+          // Add checkmark
+          $(this).siblings('.checkmark').remove(); // Remove existing checkmark
+          $(this).after('<span class="checkmark">&#10004;</span>'); // Add checkmark
+        }
+      });
+
+      // Form submission
+      $('.contact-form').submit(function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Remove any existing error messages
+        $('.error-msg').remove();
+
+        // Get form inputs
+        var fullName = $('#fullName').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+
+        // Regular expression to check if email is valid
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Check if email is valid
+        if (!emailRegex.test(email)) {
+          $('#email').css('border-bottom', '2px solid red'); // Change border color
+          return;
+        }
+
+        if (message.length < 5) {
+          $('#message').css('border-bottom', '2px solid red'); // Change border color
+          return;
+        }
+        $('#email').css('border-bottom', '2px solid green'); // Change border color
+        $('#message').css('border-bottom', '2px solid green'); // Change border color
+
+        // Remove error message
+        $('.error-msg').remove();
+
+        // Add checkmark
+        $('.checkmark').remove(); // Remove existing checkmark
+        //$('.contact-form input, .contact-form textarea').each(function() {
+        // $(this).after('<span class="checkmark">&#10004;</span>'); // Add checkmark
+        //});
+
+
+        $(this).addClass('submitted'); // Add class for animation
+      });
+    });
+  </script>
 
 </body>
 

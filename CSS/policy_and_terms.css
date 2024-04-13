@@ -205,3 +205,35 @@
     margin-right: 40px;
     font-family: 'Montserrat', sans-serif;
   }
+
+  /* ------------------------------------------------- Footer ----------------------------------------------------- */
+
+  .footer-bg {
+    background-color: #ecf3fa;
+  }
+
+  #footer-section p {
+    font-size: 1.3rem;
+  }
+
+  #footer-section a {
+    font-size: 1.3rem;
+  }
+
+  .social-link:hover {
+    background-color: #9AAEF2;
+    border-radius: 50%;
+  }
+
+  .foot-btn:hover {
+    color: #9AAEF2 !important;
+    text-decoration: underline;
+  }
+
+  .logo-v {
+    transition: all 1s;
+  }
+
+  .logo-v:hover {
+    transform: scale(1.1);
+  }

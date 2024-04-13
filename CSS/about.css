@@ -21,8 +21,8 @@ body {
    background-color: rgb(255, 239, 58);
    font-family: 'Montserrat', sans-serif;
    font-weight: 600;
-  color: #141313;
- }
+   color: #141313;
+}
 
 /**------------------------------------------------- NAV BAR -----------------------------------------------------**/
 
@@ -216,11 +216,12 @@ body {
 /**------------------------------------------------- ANOTHER SECTION  -----------------------------------------------------**/
 
 .head-title {
-   font-family: 'Montserrat', sans-serif; 
-   font-weight: 600; 
-   color: var(--secondary); 
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   color: var(--secondary);
    text-align: right;
 }
+
 .mision-text {
    font-family: "Montserrat", sans-serif;
    font-optical-sizing: auto;
@@ -298,68 +299,68 @@ body {
 }
 
 .card-cont {
-   width: 100%; 
-   height: 100%; 
+   width: 100%;
+   height: 100%;
    padding: 3%;
- }
+}
 
- .last-img {
+.last-img {
    width: auto;
    height: 100%;
    border-radius: 3%;
- }
+}
 
- .last-h1 {
+.last-h1 {
    font-family: "Montserrat", sans-serif;
    font-weight: 600;
    font-size: 2.3rem;
    color: #7ADFBB;
    text-align: left;
- }
+}
 
- .last-text {
+.last-text {
    font-family: "Montserrat", sans-serif;
    font-weight: 400;
    font-size: 1.4rem;
    color: #ffffff;
    text-align: justify;
- }
- 
- .custom-container:hover {
+}
+
+.custom-container:hover {
    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.6);
    transform: translateX(-3%) scale(1.05);
-   
- }
 
- @media (max-width: 768px){
+}
+
+@media (max-width: 768px) {
 
    .parent-container {
       height: 100%;
    }
 
    .custom-container {
-      width: calc(95vw - 40px); 
-      max-height: 650px; 
+      width: calc(95vw - 40px);
+      max-height: 650px;
       padding-left: 25px;
       margin: 10px;
    }
 
    .card-cont {
-      padding-left: 10px; 
+      padding-left: 10px;
    }
 
    .last-img {
-      width: 100%; 
+      width: 100%;
       max-height: 270px;
-      height: 100%; 
+      height: 100%;
    }
 
    .last-h1 {
-      font-size: 1.5rem; 
+      font-size: 1.5rem;
    }
 
    .last-text {
-      font-size: 1.1rem; 
+      font-size: 1.1rem;
    }
 }
 
@@ -368,26 +369,26 @@ body {
    width: 3rem;
    height: 3rem;
    border-radius: 0.75rem;
- }
+}
 
- .feat-title {
+.feat-title {
    margin-bottom: 30px;
    font-family: "Montserrat", sans-serif;
    font-size: 2.7rem;
    font-weight: 600;
    font-style: normal;
    color: var(--secondary) !important;
- }
+}
 
- .feat-content {
+.feat-content {
    margin-top: 5px;
    font-family: "Montserrat", sans-serif;
    font-weight: 500;
    font-size: 1.5rem;
    text-align: justify;
    color: var(--primary);
- }
- 
+}
+
 /**------------------------------------------------- FOOTER SECTION -----------------------------------------------------**/
 
 .footer-bg {
@@ -395,22 +396,27 @@ body {
  }
 
  #footer-section p {
-   font-family: "Montserrat", sans-serif;
-   /* Use Montserrat font family */
    font-size: 1.3rem;
  }
 
  #footer-section a {
-   font-family: "Montserrat", sans-serif;
    font-size: 1.3rem;
  }
 
  .social-link:hover {
-   background-color: #d3d1d1;
-   border-radius: 15%;
+   background-color: #9AAEF2;
+   border-radius: 50%;
  }
 
  .foot-btn:hover {
-  color: var(--primary) !important;
-  text-decoration: underline;
-}
+   color: #9AAEF2 !important;
+   text-decoration: underline;
+ }
+
+ .logo-v {
+   transition: all 1s;
+ }
+
+ .logo-v:hover {
+   transform: scale(1.1);
+ }
