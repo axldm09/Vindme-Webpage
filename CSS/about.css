@@ -24,6 +24,7 @@ html, body {
 .navbar-nav .nav-item .nav-link {
    border-radius: 15px;
    width: 160px;
+   margin: 0 5px;
    text-align: center;
    line-height: 20px;
    padding: 5px;

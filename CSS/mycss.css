@@ -172,8 +172,9 @@
          color: var(--dark);
        }
 
-       .main-section {
+       .main-bgn {
         background: linear-gradient(124deg, rgba(244,230,255,1) 17%, rgba(230,227,255,1) 53%, rgba(237,243,255,1) 96%);
+        /*background-color: rgb(221, 225, 253);*/
        }
 
        #stats {
@@ -214,8 +215,8 @@
        /**------------------------------------------------- SCREENSHOT -----------------------------------------------------**/
        .screenshot-carousel {
          position: relative;
-         max-width: 414px;
-         height: 866px;
+         max-width: 390px;
+         height: 760px;
          padding: 20px 10px 5px 10px;
        }
 
@@ -227,16 +228,16 @@
          right: 0px;
          top: 10px;
          background: url(../Assets/screenshot-frame.png) center center no-repeat;
-         background-size: 414px 866px;
+         background-size: 390px 760px;
          z-index: 1;
        }
 
        .screenshot-carousel .owl-item img {
          border-radius: 7%;
          position: relative;
-         max-width: 400px;
-         height: 835px;
-         max-height: 850px;
+         max-width: 375px;
+         height: 7450px;
+         max-height: 745px;
        }
 
        .owl-carousel .owl-loaded .owl-drag {
@@ -284,23 +285,23 @@
        @media (min-width: 1090px) and (max-width: 2340px) {
 
          .screenshot-carousel {
-           max-width: 330px;
-           height: 670px;
+           max-width: 300px;
+           height: 600px;
            padding: 20px 10px 5px 10px;
          }
 
          .screenshot-carousel::before {
            width: 100%;
            height: 100%;
-           background-size: 330px 670px;
+           background-size: 300px 600px;
            z-index: 1;
          }
 
          .screenshot-carousel .owl-item img {
            border-radius: 7%;
-           max-width: 310px;
-           height: 655px;
-           max-height: 650px;
+           max-width: 287px;
+           height: 585px;
+           max-height: 585px;
          }
 
          .owl-carousel .owl-loaded .owl-drag {
@@ -311,24 +312,24 @@
        /**------------------------------------------------- FOR TABLETS  -----------------------------------------------------**/
        @media (min-width: 568px) and (max-width: 1090px) {
          .screenshot-carousel {
-           max-width: 290px;
-           height: 580px;
+           max-width: 270px;
+           height: 510px;
            padding: 10px 5px 5px 5px;
          }
 
          .screenshot-carousel::before {
            width: 100%;
            height: 100%;
-           background-size: 290px 580px;
+           background-size: 270px 510px;
            z-index: 1;
          }
 
          .screenshot-carousel .owl-item img {
            bottom: -10px;
            border-radius: 7%;
-           max-width: 270px;
-           height: 560px;
-           max-height: 565px;
+           max-width: 257px;
+           height: 495px;
+           max-height: 495px;
          }
 
          .owl-carousel .owl-loaded .owl-drag {
@@ -340,22 +341,22 @@
        @media (min-width: 320px) and (max-width: 568px) {
          .screenshot-carousel {
            max-width: 270px;
-           height: 480px;
+           height: 470px;
            padding: 15px 5px 0px 10px;
          }
 
          .screenshot-carousel::before {
            width: 100%;
            height: 100%;
-           background-size: 270px 480px;
+           background-size: 270px 470px;
            z-index: 1;
          }
 
          .screenshot-carousel .owl-item img {
            border-radius: 7%;
            max-width: 250px;
-           height: 455px;
-           max-height: 465px;
+           height: 445px;
+           max-height: 455px;
          }
 
          .owl-carousel .owl-loaded .owl-drag {
@@ -694,11 +695,11 @@
 
        #footer-section p {
          font-size: 1.3rem;
-
        }
 
        #footer-section a {
          font-size: 1.3rem;
+         color: #4e4e4e;
        }
 
        .social-link:hover {
