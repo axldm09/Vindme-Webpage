@@ -173,7 +173,7 @@
        }
 
        .main-bgn {
-        background: linear-gradient(124deg, rgba(244,230,255,1) 17%, rgba(230,227,255,1) 53%, rgba(237,243,255,1) 96%);
+        background: linear-gradient(124deg, rgba(244,230,255,1) 17%, rgba(230,227,255,1) 53%, rgba(237,243,255,1) 96%) !important;
         /*background-color: rgb(221, 225, 253);*/
        }
 
@@ -690,7 +690,7 @@
        /**------------------------------------------------- FOOTER SECTION -----------------------------------------------------**/
 
        .footer-bg {
-         background-color: #ecf3fa;
+        background-color: #f7f5ff;
        }
 
        #footer-section p {
