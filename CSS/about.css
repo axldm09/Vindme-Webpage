@@ -1,6 +1,8 @@
-html,
-body {
+/* General Styles */
+
+html, body {
    overflow-x: hidden;
+   font-family: "Montserrat", sans-serif !important;
 }
 
 * {
@@ -17,29 +19,20 @@ body {
    --vindme: #9AAEF2;
 }
 
-.highlight {
-   background-color: rgb(255, 239, 58);
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 600;
-   color: #141313;
-}
-
-/**------------------------------------------------- NAV BAR -----------------------------------------------------**/
+/* Navigation Bar Styling */
 
 .navbar-nav .nav-item .nav-link {
-   border-radius: 15px 15px 15px 15px;
-   /*transition: background-color 0.3s ease;*/
+   border-radius: 15px;
    width: 160px;
    text-align: center;
    line-height: 20px;
-   padding: 5px 5px 5px 5px;
-   font-family: "Montserrat", sans-serif;
+   padding: 5px;
    font-size: 1.4rem;
-   color: #2B3A67;
+   color: var(--primary);
 }
 
 .navbar-nav .nav-item:hover .nav-link {
-   background-color: #7ADFBB;
+   background-color: var(--third);
    color: #ffffff;
 }
 
@@ -47,19 +40,16 @@ body {
    transform: rotate(180deg);
 }
 
-/* Add this CSS for spacing to the left of the navbar brand */
 .navbar-brand {
    margin-left: 20px;
    margin-bottom: 10px;
 }
 
-/* Add this CSS for dropdown menu */
 .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
    display: block;
 }
 
 .dropdown-menu .dropdown-item {
-   font-family: "Montserrat", sans-serif;
    font-size: 1.4rem;
    padding: 10px;
    text-decoration: none;
@@ -68,50 +58,36 @@ body {
 }
 
 .navbar-nav>li>.dropdown-menu a:hover {
-   background-color: #7ADFBB;
+   background-color: var(--third);
    color: #ffffff;
 }
 
-.navbar>.navbar-nav>li>.navbar-right {
-   margin-left: 50px;
-}
-
-.nav-background {
-   background-color: #ffffff;
-}
+/* Media Queries */
 
 @media (min-width: 1200px) and (max-width: 1900px) {
    .navbar-brand {
-      width: "190px";
-      height: "50px";
+      width: 190px;
+      height: 50px;
    }
 }
 
 @media (min-width: 370px) and (max-width: 1200px) {
    .navbar-brand {
-      width: "130px";
-      height: "50px";
+      width: 130px;
+      height: 50px;
    }
 }
 
 @media (max-width: 950px) {
-   .navbar-collapse .nav-item .nav-link {
-      justify-content: flex-end;
+   .navbar-collapse .nav-item .nav-link,
+   .navbar-collapse>.nav-item>li>.dropdown-item {
       width: 150px;
       margin-left: 30px;
       text-align: left;
    }
-
-   .navbar-collapse>.nav-item>li>.dropdown-item {
-      justify-content: flex-end;
-      font-size: 1.4rem;
-      width: 150px;
-      margin-left: 20px;
-      text-align: left;
-   }
 }
 
-/**------------------------------------------------- FIRST SECTION -----------------------------------------------------**/
+/* Section Styles */
 
 .main-section {
    position: relative;
@@ -132,19 +108,15 @@ body {
    position: absolute;
    top: 50%;
    left: 50%;
-   /* Adjusted to be a bit left of center */
    transform: translate(-50%, -50%);
    text-align: left;
-   /* Align content to the left */
-   color: white;
+   color: #ffffff;
    z-index: 1;
    max-width: 40%;
    height: auto;
-   /* Limiting content width */
 }
 
 .center-content h1 {
-   font-family: "Montserrat", sans-serif;
    max-width: 18em;
    font-size: 8vh;
    font-weight: 600;
@@ -154,9 +126,8 @@ body {
    color: #ffffff;
 }
 
-.center-content .description {
-   font-family: "Montserrat", sans-serif;
-   font-optical-sizing: auto;
+.center-content .description,
+.read {
    font-weight: 400;
    font-style: normal;
    font-size: 2.7rem;
@@ -165,89 +136,28 @@ body {
 }
 
 .read {
-   font-family: "Montserrat", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 400;
-   font-style: normal;
    font-size: 1.9rem;
-   color: #4affff;
-   text-align: justify;
+   color: var(--third);
    text-decoration: underline;
 }
 
-@media (min-width: 1020px) and (max-width: 1700px) {
-   .center-content {
-      max-width: 70% !important;
-      top: 50%;
-      left: 50%;
-      /* Adjusted to be a bit left of center */
-      transform: translate(-50%, -50%);
-   }
-
-   .center-content .description {
-      font-family: "Montserrat", sans-serif;
-      font-size: 2rem;
-   }
-
-   .read {
-      font-size: 1.6rem;
-   }
-}
-
-@media (min-width: 367px) and (max-width: 1020px) {
-   .center-content {
-      max-width: 85%;
-      max-height: 90%;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -40%);
-   }
-
-   .center-content .description {
-      font-family: "Montserrat", sans-serif;
-      font-size: 1.3rem;
-   }
-
-   .read {
-      font-size: 1.2rem;
-   }
-}
-
-/**------------------------------------------------- ANOTHER SECTION  -----------------------------------------------------**/
+/* Another Section Styles */
 
 .head-title {
-   font-family: 'Montserrat', sans-serif;
    font-weight: 600;
    color: var(--secondary);
-   text-align: right;
+   text-align:end;
 }
 
-.mision-text {
-   font-family: "Montserrat", sans-serif;
-   font-optical-sizing: auto;
+.main-font {
    font-weight: 400;
-   font-style: normal;
-   font-size: 1.4rem;
-   color: #2b2b2b;
-   text-align: justify;
-}
-
-.wwa-text {
-   font-family: "Montserrat", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 500;
    font-style: normal;
    font-size: 1.6rem;
    color: #2b2b2b;
    text-align: justify;
 }
 
-.marked-word {
-   color: var(--secondary);
-}
-
-/**------------------------------------------------- SCROLLING SECTION  -----------------------------------------------------**/
-
+/* Scrolling Section Styles */
 
 .scrolling {
    background: url(../Assets/cdmx.png) no-repeat fixed 100%;
@@ -260,27 +170,14 @@ body {
 }
 
 .title-banner {
-   font-family: "Montserrat", sans-serif;
-   font-optical-sizing: auto;
    font-weight: 600;
-   font-style: normal;
    font-size: 2.5rem;
    color: var(--third);
    text-align: center;
 }
 
-.text-banner {
-   font-family: "Montserrat", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 500;
-   font-style: normal;
-   font-size: 1.6rem;
-   color: #ffffff;
-   text-align: center;
-   padding-top: 0.5em;
-}
 
-/**------------------------------------------------- LAST SECTION -----------------------------------------------------**/
+/* Last Section Styles */
 
 .parent-container {
    display: flex;
@@ -294,7 +191,7 @@ body {
    width: 90vh;
    height: 80%;
    border-radius: 3%;
-   background-color: #2B3A67;
+   background-color: var(--primary);
    transition: all 0.5s;
 }
 
@@ -311,15 +208,13 @@ body {
 }
 
 .last-h1 {
-   font-family: "Montserrat", sans-serif;
    font-weight: 600;
    font-size: 2.3rem;
-   color: #7ADFBB;
+   color: var(--third);
    text-align: left;
 }
 
 .last-text {
-   font-family: "Montserrat", sans-serif;
    font-weight: 400;
    font-size: 1.4rem;
    color: #ffffff;
@@ -329,42 +224,59 @@ body {
 .custom-container:hover {
    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.6);
    transform: translateX(-3%) scale(1.05);
-
 }
 
-@media (max-width: 768px) {
-
-   .parent-container {
-      height: 100%;
+@media (min-width: 1020px) and (max-width: 1700px) {
+   .center-content {
+      max-width: 70% !important;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
    }
 
-   .custom-container {
-      width: calc(95vw - 40px);
-      max-height: 650px;
-      padding-left: 25px;
-      margin: 10px;
+   .center-content .description {
+      font-size: 2rem;
    }
 
-   .card-cont {
-      padding-left: 10px;
-   }
-
-   .last-img {
-      width: 100%;
-      max-height: 270px;
-      height: 100%;
-   }
-
-   .last-h1 {
-      font-size: 1.5rem;
-   }
-
-   .last-text {
-      font-size: 1.1rem;
+   .read {
+      font-size: 1.6rem;
    }
 }
 
-/**------------------------------------------------- VALUES SECTION -----------------------------------------------------**/
+@media (min-width: 365px) and (max-width: 1020px) {
+   .center-content {
+      max-width: 85%;
+      max-height: 90%;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+   }
+
+   .center-content, .description {
+      font-size: 1.3rem !important;
+   }
+
+   .main-font {
+      font-size: 1.2rem;
+      font-weight: 400;
+   }
+
+   .vindme-logo {
+      width: 120px;
+   }
+
+   .title-banner, .last-h1 {
+      font-size: 1.7rem;
+   }
+   
+   .scrolling {
+      background: url(../Assets/angel2.webp) no-repeat fixed 100% !important;
+      background-size: cover;
+   }
+}
+
+/* Values Section Styles */
+
 .icon-square {
    width: 3rem;
    height: 3rem;
@@ -373,50 +285,44 @@ body {
 
 .feat-title {
    margin-bottom: 30px;
-   font-family: "Montserrat", sans-serif;
    font-size: 2.7rem;
    font-weight: 600;
-   font-style: normal;
-   color: var(--secondary) !important;
+   color: var(--secondary);
 }
 
 .feat-content {
    margin-top: 5px;
-   font-family: "Montserrat", sans-serif;
    font-weight: 500;
    font-size: 1.5rem;
    text-align: justify;
    color: var(--primary);
 }
 
-/**------------------------------------------------- FOOTER SECTION -----------------------------------------------------**/
+/* Footer Section Styles */
 
 .footer-bg {
    background-color: #ecf3fa;
- }
+}
 
- #footer-section p {
+#footer-section p,
+#footer-section a {
    font-size: 1.3rem;
- }
+}
 
- #footer-section a {
-   font-size: 1.3rem;
- }
-
- .social-link:hover {
-   background-color: #9AAEF2;
+.social-link:hover {
+   background-color: var(--vindme);
    border-radius: 50%;
- }
+}
 
- .foot-btn:hover {
-   color: #9AAEF2 !important;
+.foot-btn:hover {
+   color: var(--vindme) !important;
    text-decoration: underline;
- }
+}
 
- .logo-v {
+.logo-v {
    transition: all 1s;
- }
+}
 
- .logo-v:hover {
+.logo-v:hover {
    transform: scale(1.1);
- }
+}

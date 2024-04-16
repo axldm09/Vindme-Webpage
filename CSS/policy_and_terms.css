@@ -8,7 +8,7 @@
 
   body {
     overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
     font-optical-sizing: auto;
   }
 
@@ -87,7 +87,6 @@
     text-align: center;
     line-height: 20px;
     padding: 5px 0px 5px 0px;
-    font-family: "Montserrat", sans-serif;
     font-size: 1.4rem;
     color: #2B3A67;
   }
@@ -122,8 +121,6 @@
 
   .dropdown-menu .dropdown-item {
     color: #0a084c;
-    /* Font color for dropdown items */
-    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 1.2rem;
   }
@@ -137,16 +134,27 @@
     position: absolute;
     margin-left: 10px;
     background-color: #ffffff;
-    /* Dropdown background color */
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    /* Dropdown shadow */
     padding: 8px 0;
+  }
+
+  @media (max-width: 950px) {
+    .navbar-collapse .nav-item .nav-link {
+      justify-content: flex-end;
+      font-size: 1.1em;
+      margin-left: 30px;
+      text-align: left;
+    }
+
+    .navbar-brand {
+      width: "130px";
+      height: "50px";
+    }
   }
 
   /* ------------------------------------------------- Title ----------------------------------------------------- */
 
   .title {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 2rem;
     color: var(--primary-color);
@@ -154,7 +162,6 @@
   }
 
   .vindme {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 2rem;
     color: var(--secondary-color);
@@ -189,7 +196,6 @@
   .goog-te-combo {
     color: var(--primary-color) !important;
     padding: 10px;
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.5em;
     font-weight: 700;
     box-shadow: inset;
@@ -203,7 +209,6 @@
 
   #google_element {
     margin-right: 40px;
-    font-family: 'Montserrat', sans-serif;
   }
 
   /* ------------------------------------------------- Footer ----------------------------------------------------- */

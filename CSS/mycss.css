@@ -18,60 +18,11 @@
          --primary: #7ADFBB;
          --secondary: #9AAEF2;
          --third: #2B3A67;
-         --light: #b8d5ff;
-         --dark: #2d3253;
-       }
-
-       .btn {
-         transition: .5s;
-       }
-
-       .btn.btn-primary-gradient,
-       .btn.btn-secondary-gradient {
-         position: relative;
-         overflow: hidden;
-         border: none;
-         color: #FFFFFF;
-         z-index: 1;
-         padding: 5px;
-       }
-
-       .btn.btn-primary-gradient::after,
-       .btn.btn-secondary-gradient::after {
-         position: absolute;
-         content: "";
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         transition: .5s;
-         z-index: -1;
-         opacity: 0;
-       }
-
-       .btn.btn-primary-gradient,
-       .btn.btn-secondary-gradient::after {
-         background: linear-gradient(to bottom right, var(--primary), var(--secondary));
-       }
-
-       .btn.btn-secondary-gradient,
-       .btn.btn-primary-gradient::after {
-         background: linear-gradient(to bottom right, var(--secondary), var(--primary));
-       }
-
-       .btn.btn-primary-gradient:hover::after,
-       .btn.btn-secondary-gradient:hover::after {
-         opacity: 0.8;
+         --light: #4e4e4e;
+         --dark: #1e2134;
        }
 
        /**--------------------------------------------------- FOR MOBILE---------------------------------------------------------- **/
-
-       .mobileShow {
-         display: none;
-       }
-
-       /* Smartphone Portrait and Landscape */
-
 
        @media only screen and (max-width: 600px) {
 
@@ -81,14 +32,12 @@
          }
        }
 
-       /**------------------------------------------------- FONTS IN GENERAL -----------------------------------------------------**/
-
        /* ---------- HEADERS -------------*/
 
        .first-header {
          font-weight: 500;
          font-style: normal;
-         color: #191d5a;
+         color: var(--third);
        }
 
        .second-header {
@@ -96,25 +45,24 @@
          font-style: normal;
        }
 
-       /* ---------- PARAGRAPHS -------------*/
+       /**------------------------------------------------- FONTS IN GENERAL -----------------------------------------------------**/
+
        .main-font {
          font-weight: 500;
-         font-style: normal;
          font-size: 1.4rem;
-         color: #4e4e4e;
+         color: var(--light);
          text-align: justify;
        }
 
        .main-typo {
          font-weight: 500;
-         font-style: normal;
-         color: #333;
+         color: var(--dark);
        }
 
        .slogan {
          font-weight: 600;
          font-size: 1.1rem;
-         color: #4e4e4e;
+         color: var(--light);
        }
 
        .lead {
@@ -124,7 +72,6 @@
 
        .h1-white {
          font-weight: 500;
-         font-style: normal;
          color: #ffffff;
        }
 
@@ -141,13 +88,12 @@
 
        .navbar-nav .nav-item .nav-link {
          border-radius: 15px 15px 15px 15px;
-         /*transition: background-color 0.3s ease;*/
          width: 160px;
          text-align: center;
          line-height: 20px;
          padding: 5px 0px 5px 0px;
          font-size: 1.4rem;
-         color: #2B3A67;
+         color: var(--third);
        }
 
 
@@ -175,7 +121,7 @@
          font-size: 1.4rem;
          padding: 10px;
          text-decoration: none;
-         color: #333;
+         color: var(--dark);
          transition: background-color 0.3s;
        }
 
@@ -214,41 +160,26 @@
            text-align: left;
          }
 
-         .navbar-collapse>.nav-item>li>.dropdown-item {
-           justify-content: flex-end;
-           font-size: 1.4rem;
-           width: 150px;
-           margin-left: 20px;
-           text-align: left;
-         }
+         .navbar-nav>li>.dropdown-menu a {
+          justify-content: flex-end;
+          font-size: 1.1rem;
+        }
        }
 
        /**----------------------------------------------------------   SECTION MAIN --------------------------------------------------**/
 
-       .gradient-background {
-         background: linear-gradient(300deg, #7ADFBB, #9AAEF2, #d5dffe);
-         background-size: 180% 180%;
-         animation: gradient-animation 18s ease infinite;
-       }
-
-       @keyframes gradient-animation {
-         0% {
-           background-position: 0% 50%;
-         }
-
-         50% {
-           background-position: 100% 50%;
-         }
-
-         100% {
-           background-position: 0% 50%;
-         }
-       }
-
        .lead {
-         color: #262B47;
+         color: var(--dark);
        }
 
+       .main-section {
+        background: linear-gradient(124deg, rgba(244,230,255,1) 17%, rgba(230,227,255,1) 53%, rgba(237,243,255,1) 96%);
+       }
+
+       #stats {
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+       }
 
        #title {
          position: relative;
@@ -354,22 +285,22 @@
 
          .screenshot-carousel {
            max-width: 330px;
-           height: 684px;
+           height: 670px;
            padding: 20px 10px 5px 10px;
          }
 
          .screenshot-carousel::before {
            width: 100%;
            height: 100%;
-           background-size: 330px 684px;
+           background-size: 330px 670px;
            z-index: 1;
          }
 
          .screenshot-carousel .owl-item img {
            border-radius: 7%;
            max-width: 310px;
-           height: 660px;
-           max-height: 665px;
+           height: 655px;
+           max-height: 650px;
          }
 
          .owl-carousel .owl-loaded .owl-drag {
@@ -408,7 +339,7 @@
        /**------------------------------------------------- FOR MOBILE  -----------------------------------------------------**/
        @media (min-width: 320px) and (max-width: 568px) {
          .screenshot-carousel {
-           max-width: 280px;
+           max-width: 270px;
            height: 480px;
            padding: 15px 5px 0px 10px;
          }
@@ -416,13 +347,13 @@
          .screenshot-carousel::before {
            width: 100%;
            height: 100%;
-           background-size: 280px 480px;
+           background-size: 270px 480px;
            z-index: 1;
          }
 
          .screenshot-carousel .owl-item img {
            border-radius: 7%;
-           max-width: 270px;
+           max-width: 250px;
            height: 455px;
            max-height: 465px;
          }
@@ -469,9 +400,23 @@
        .content p {
          margin-top: 5px;
          font-weight: 500;
-         font-style: normal;
          font-size: 1.5rem;
-         color: #4e4e4e;
+         color: var(--dark);
+       }
+
+       @media (min-width: 320px) and (max-width: 568px) {
+        .content {
+          width: auto;
+        }
+
+         .content h2 {
+           font-size: 1.5em;
+         }
+
+         .content p {
+           font-size: 1.1rem;
+         }
+
        }
 
        /** ----------------------------------------------------------- SECOND DIV --------------------------------------------------------------------------------**/
@@ -593,7 +538,7 @@
 
        .wrapper {
          position: relative;
-         background-color: #d3d4f5;
+         background-color: #eeeeff;
        }
 
        .pricing-card-title {
@@ -749,6 +694,7 @@
 
        #footer-section p {
          font-size: 1.3rem;
+
        }
 
        #footer-section a {

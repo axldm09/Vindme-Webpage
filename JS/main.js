@@ -1,14 +1,3 @@
-(function ($) {
-  /*  $(".screenshot-carousel").owlCarousel({
-    autoplay: true,
-    smartSpeed: 1000,
-    items: 1,
-    loop: true,
-    dots: true,
-}); */
-
-})(jQuery);
-
 
 $(document).ready(function () {
   var owl = $('.owl-carousel');
@@ -19,7 +8,6 @@ $(document).ready(function () {
     margin: 25,
     smartSpeed: 2000,
     onTranslated: function (event) {
-      // Remove the 'center' class from all items
       $(".owl-carousel .owl-item").removeClass("center");
 
       // Add the 'center' class to the currently centered item
@@ -31,20 +19,6 @@ $(document).ready(function () {
 
 });
  
-/*$(window).scroll(function() {
-  var aboutSectionOffset = $('#moving-div').offset().top;
-  var scrollPosition = $(window).scrollTop();
-
-  if (scrollPosition >= aboutSectionOffset) {
-    $('body').css('background-color', '#d3d4f5');
-    $('body').css('transition', 'background-color 4s ease, opacity 2.5s ease');
-    $('body').css('opacity', '1');
-  } else {
-    $('body').css('background-color', '#ffffff');
-    $('body').css('transition', 'background-color 2s ease, opacity 1.5s ease');
-  }
-}); */
-
 
 function startCounters() {
   const feedbackCounter = document.getElementById('feedback-counter');
