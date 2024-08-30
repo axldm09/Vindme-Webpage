@@ -3,7 +3,6 @@
        body {
          margin: 0px;
          padding: 0px;
-         background-color: #ffffff !important;
          overflow-x: hidden;
          font-family: "Montserrat", sans-serif !important;
          font-optical-sizing: auto;
@@ -26,8 +25,7 @@
 
        @media only screen and (max-width: 600px) {
 
-         html,
-         body {
+         html {
            overflow-x: hidden
          }
        }
@@ -98,7 +96,7 @@
 
 
        .navbar-nav .nav-item:hover .nav-link {
-         background-color: #7ADFBB;
+         background-color: var(--secondary);
          color: #fff;
        }
 
@@ -126,7 +124,7 @@
        }
 
        .navbar-nav>li>.dropdown-menu a:hover {
-         background-color: #7ADFBB;
+         background-color: var(--secondary);
          color: #fff;
        }
 
@@ -173,7 +171,7 @@
        }
 
        .main-bgn {
-        background: linear-gradient(124deg, rgba(244,230,255,1) 17%, rgba(230,227,255,1) 53%, rgba(237,243,255,1) 96%) !important;
+        background: linear-gradient(124deg, rgba(244,230,255,1) 17%, rgba(230,227,255,1) 53%, rgba(237,243,255,1) 96%);
         /*background-color: rgb(221, 225, 253);*/
        }
 
@@ -216,8 +214,8 @@
        .screenshot-carousel {
          position: relative;
          max-width: 390px;
-         height: 760px;
-         padding: 20px 10px 5px 10px;
+         height: 750px;
+         padding: 10px 15px 10px 10px;
        }
 
        .screenshot-carousel::before {
@@ -225,23 +223,25 @@
          content: "";
          width: 100%;
          height: 100%;
-         right: 0px;
-         top: 10px;
+         right: 5px;
+         top: 0px;
          background: url(../Assets/screenshot-frame.png) center center no-repeat;
-         background-size: 390px 760px;
+         background-size: 390px 765px;
          z-index: 1;
        }
 
        .screenshot-carousel .owl-item img {
-         border-radius: 7%;
+         border-radius: 10%;
          position: relative;
-         max-width: 375px;
-         height: 7450px;
-         max-height: 745px;
+         width: 360px;
+         max-width: 360px;
+         height: 735px;
+         max-height: 735px;
        }
 
        .owl-carousel .owl-loaded .owl-drag {
-         border-radius: 10%;
+         border-radius: 5%;
+         max-width: 300px;
        }
 
        .screenshot-carousel .owl-dots {
@@ -299,9 +299,9 @@
 
          .screenshot-carousel .owl-item img {
            border-radius: 7%;
-           max-width: 287px;
-           height: 585px;
-           max-height: 585px;
+           max-width: 260px;
+           height: 580px;
+           max-height: 580px;
          }
 
          .owl-carousel .owl-loaded .owl-drag {
@@ -314,7 +314,7 @@
          .screenshot-carousel {
            max-width: 270px;
            height: 510px;
-           padding: 10px 5px 5px 5px;
+           padding: 5px 10px 5px 5px;
          }
 
          .screenshot-carousel::before {
@@ -327,8 +327,8 @@
          .screenshot-carousel .owl-item img {
            bottom: -10px;
            border-radius: 7%;
-           max-width: 257px;
-           height: 495px;
+           max-width: 260px;
+           height: 493px;
            max-height: 495px;
          }
 
@@ -340,21 +340,22 @@
        /**------------------------------------------------- FOR MOBILE  -----------------------------------------------------**/
        @media (min-width: 320px) and (max-width: 568px) {
          .screenshot-carousel {
-           max-width: 270px;
+           max-width: 250px;
            height: 470px;
-           padding: 15px 5px 0px 10px;
+           padding: 15px 0px 0px 0px;
          }
 
          .screenshot-carousel::before {
            width: 100%;
            height: 100%;
-           background-size: 270px 470px;
+           background-size: 250px 470px;
            z-index: 1;
+           object-fit: cover;
          }
 
          .screenshot-carousel .owl-item img {
            border-radius: 7%;
-           max-width: 250px;
+           max-width: 235px;
            height: 445px;
            max-height: 455px;
          }
@@ -460,13 +461,6 @@
          border-radius: 10%;
        }
 
-       /* ---------------------------------------------------------  END OF MOVING DIV ---------------------------------------------------------------------------*/
-
-       /* ------------------------------------------------------------  FEATURES --------------------------------------------------------------*/
-       .featurette-divider {
-         margin: 5rem 0;
-       }
-
        /* -------------------------------------------------------------  ABOUT SECTION  ---------------------------------------------------------------------*/
        #about-section {
 
@@ -491,7 +485,7 @@
          position: relative;
          z-index: 1;
          overflow: hidden;
-         border-width: 1px;
+         border: none !important;
          color: #ffffff !important;
          background-color: var(--primary) !important;
        }
@@ -518,7 +512,7 @@
        }
 
        .read-more:hover {
-         border-color: var(--third);
+         border-color: var(--secondary);
          color: #ffffff;
        }
 
@@ -614,8 +608,13 @@
          color: var(--third) !important;
        }
 
+       .card {
+        border-radius: 50%;
+       }
+
        .card-body {
          background-color: #ffffff;
+         border-radius: 60%;
        }
 
        .card-body>ul>li {
