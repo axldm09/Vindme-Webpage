@@ -1,720 +1,721 @@
-       /*  ------------------- GENERAL --------------------*/
-
-       body {
-         margin: 0px;
-         padding: 0px;
-         overflow-x: hidden;
-         font-family: "Montserrat", sans-serif !important;
-         font-optical-sizing: auto;
-       }
-
-       p {
-         margin: 0px;
-         padding: 0px;
-       }
-
-       :root {
-         --primary: #7ADFBB;
-         --secondary: #9AAEF2;
-         --third: #2B3A67;
-         --light: #4e4e4e;
-         --dark: #1e2134;
-       }
-
-       /**--------------------------------------------------- FOR MOBILE---------------------------------------------------------- **/
-
-       @media only screen and (max-width: 600px) {
-
-         html {
-           overflow-x: hidden
-         }
-       }
-
-       /* ---------- HEADERS -------------*/
-
-       .first-header {
-         font-weight: 500;
-         font-style: normal;
-         color: var(--third);
-       }
-
-       .second-header {
-         font-weight: 500;
-         font-style: normal;
-       }
-
-       /**------------------------------------------------- FONTS IN GENERAL -----------------------------------------------------**/
-
-       .main-font {
-         font-weight: 500;
-         font-size: 1.4rem;
-         color: var(--light);
-         text-align: justify;
-       }
-
-       .main-typo {
-         font-weight: 500;
-         color: var(--dark);
-       }
-
-       .slogan {
-         font-weight: 600;
-         font-size: 1.1rem;
-         color: var(--light);
-       }
-
-       .lead {
-         text-align: justify;
-         color: #ffffff;
-       }
-
-       .h1-white {
-         font-weight: 500;
-         color: #ffffff;
-       }
-
-       .general-font {
-         text-align: justify;
-         font-weight: 500;
-         font-size: 1.4rem;
-         color: #ffffff !important;
-       }
-
-       /**------------------------------------------------- BODY HTML -----------------------------------------------------**/
-
-       /**------------------------------------------------- NAV BAR -----------------------------------------------------**/
-
-       .navbar-nav .nav-item .nav-link {
-         border-radius: 15px 15px 15px 15px;
-         width: 160px;
-         text-align: center;
-         line-height: 20px;
-         padding: 5px 0px 5px 0px;
-         font-size: 1.4rem;
-         color: var(--third);
-       }
-
-
-       .navbar-nav .nav-item:hover .nav-link {
-         background-color: var(--secondary);
-         color: #fff;
-       }
-
-       .nav-item.dropdown:hover .nav-link::after {
-         transform: rotate(180deg);
-       }
-
-       /* Add this CSS for spacing to the left of the navbar brand */
-       .navbar-brand {
-         margin-left: 20px;
-         margin-bottom: 10px;
-       }
-
-       /* Add this CSS for dropdown menu */
-       .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-         display: block;
-       }
-
-       .dropdown-menu .dropdown-item {
-         font-size: 1.4rem;
-         padding: 10px;
-         text-decoration: none;
-         color: var(--dark);
-         transition: background-color 0.3s;
-       }
-
-       .navbar-nav>li>.dropdown-menu a:hover {
-         background-color: var(--secondary);
-         color: #fff;
-       }
-
-       .navbar>.navbar-nav>li>.navbar-right {
-         margin-left: 50px;
-       }
-
-       .nav-background {
-         background-color: #ffffff;
-       }
-
-       @media (min-width: 1200px) and (max-width: 1000px) {
-         .navbar-brand {
-           width: "190px";
-           height: "50px";
-         }
-       }
-
-       @media (min-width: 770px) and (max-width: 1200px) {
-         .navbar-brand {
-           width: "130px";
-           height: "50px";
-         }
-       }
-
-       @media (max-width: 950px) {
-         .navbar-collapse .nav-item .nav-link {
-           justify-content: flex-end;
-           width: 150px;
-           margin-left: 30px;
-           text-align: left;
-         }
-
-         .navbar-nav>li>.dropdown-menu a {
-          justify-content: flex-end;
-          font-size: 1.1rem;
-        }
-       }
-
-       /**----------------------------------------------------------   SECTION MAIN --------------------------------------------------**/
-
-       .lead {
-         color: var(--dark);
-       }
-
-       .main-bgn {
-        background: linear-gradient(124deg, rgba(244,230,255,1) 17%, rgba(230,227,255,1) 53%, rgba(237,243,255,1) 96%);
-        /*background-color: rgb(221, 225, 253);*/
-       }
-
-       #stats {
-        border-bottom-left-radius: 50% 20%;
-        border-bottom-right-radius: 50% 20%;
-       }
-
-       #title {
-         position: relative;
-         background-color: #e4e3e3;
-       }
-
-       #title::before,
-       #title::after {
-         content: '';
-         position: absolute;
-         width: 140px;
-         height: 140px;
-         background: #7ADFBB;
-       }
-
-       #title::before {
-         bottom: 0;
-         left: 0;
-         border-radius: 0 140px 0 0;
-         -moz-border-radius: 0 140px 0 0;
-         -webkit-border-radius: 0 140px 0 0;
-       }
-
-       #title::after {
-         bottom: 0;
-         right: 0;
-         border-radius: 140px 0 0 0;
-         -moz-border-radius: 140px 0 0 0;
-         -webkit-border-radius: 140px 0 0 0;
-       }
-
-       /**------------------------------------------------- SCREENSHOT -----------------------------------------------------**/
-       .screenshot-carousel {
-         position: relative;
-         max-width: 390px;
-         height: 750px;
-         padding: 10px 15px 10px 10px;
-       }
-
-       .screenshot-carousel::before {
-         position: absolute;
-         content: "";
-         width: 100%;
-         height: 100%;
-         right: 5px;
-         top: 0px;
-         background: url(../Assets/screenshot-frame.png) center center no-repeat;
-         background-size: 390px 765px;
-         z-index: 1;
-       }
-
-       .screenshot-carousel .owl-item img {
-         border-radius: 10%;
-         position: relative;
-         width: 360px;
-         max-width: 360px;
-         height: 735px;
-         max-height: 735px;
-       }
-
-       .owl-carousel .owl-loaded .owl-drag {
-         border-radius: 5%;
-         max-width: 300px;
-       }
-
-       .screenshot-carousel .owl-dots {
-         position: absolute;
-         top: 50%;
-         right: -20px;
-         transform: translateY(-50%);
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
-       }
-
-       .screenshot-carousel .owl-dot {
-         position: relative;
-         display: inline-block;
-         margin: 5px 0;
-         width: 15px;
-         height: 15px;
-         background: linear-gradient(to bottom right, var(--primary), var(--secondary));
-         border-radius: 15px;
-         transition: .5s;
-       }
-
-       .screenshot-carousel .owl-dot::after {
-         position: absolute;
-         content: "";
-         width: 5px;
-         height: 5px;
-         top: 5px;
-         left: 5px;
-         background: #FFFFFF;
-         border-radius: 5px;
-       }
-
-       .screenshot-carousel .owl-dot.active {
-         box-shadow: 0 0 10px var(--dark);
-       }
-
-       /**------------------------------------------------- FOR LAPTOPS  -----------------------------------------------------**/
-       @media (min-width: 1090px) and (max-width: 2340px) {
-
-         .screenshot-carousel {
-           max-width: 300px;
-           height: 600px;
-           padding: 20px 10px 5px 10px;
-         }
-
-         .screenshot-carousel::before {
-           width: 100%;
-           height: 100%;
-           background-size: 300px 600px;
-           z-index: 1;
-         }
-
-         .screenshot-carousel .owl-item img {
-           border-radius: 7%;
-           max-width: 260px;
-           height: 580px;
-           max-height: 580px;
-         }
-
-         .owl-carousel .owl-loaded .owl-drag {
-           border-radius: 10%;
-         }
-       }
-
-       /**------------------------------------------------- FOR TABLETS  -----------------------------------------------------**/
-       @media (min-width: 568px) and (max-width: 1090px) {
-         .screenshot-carousel {
-           max-width: 270px;
-           height: 510px;
-           padding: 5px 10px 5px 5px;
-         }
-
-         .screenshot-carousel::before {
-           width: 100%;
-           height: 100%;
-           background-size: 270px 510px;
-           z-index: 1;
-         }
-
-         .screenshot-carousel .owl-item img {
-           bottom: -10px;
-           border-radius: 7%;
-           max-width: 260px;
-           height: 493px;
-           max-height: 495px;
-         }
-
-         .owl-carousel .owl-loaded .owl-drag {
-           border-radius: 10%;
-         }
-       }
-
-       /**------------------------------------------------- FOR MOBILE  -----------------------------------------------------**/
-       @media (min-width: 320px) and (max-width: 568px) {
-         .screenshot-carousel {
-           max-width: 250px;
-           height: 470px;
-           padding: 15px 0px 0px 0px;
-         }
-
-         .screenshot-carousel::before {
-           width: 100%;
-           height: 100%;
-           background-size: 250px 470px;
-           z-index: 1;
-           object-fit: cover;
-         }
-
-         .screenshot-carousel .owl-item img {
-           border-radius: 7%;
-           max-width: 235px;
-           height: 445px;
-           max-height: 455px;
-         }
-
-         .owl-carousel .owl-loaded .owl-drag {
-           border-radius: 7%;
-         }
-       }
-
-
-       /** ----------------------------------------------------------- END OF CAROUSEL -------------------------------------------------------------------------**/
-
-       /** ----------------------------------------------------------- STATS -------------------------------------------------------------------------**/
-       #stats {
-         background-color: #ffffff;
-       }
-
-       footer {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-       }
-
-       .content {
-         margin: 0 20;
-         padding: 20px;
-         line-height: 1.5;
-       }
-
-       .divider {
-         border-left: 0.7px solid #7c7b7b;
-         height: 100px;
-         margin: 0 10px;
-       }
-
-       .content h2 {
-         margin-bottom: 30px;
-         font-size: 2.7rem;
-         font-weight: 600;
-         text-align: center;
-         color: var(--third);
-       }
-
-       .content p {
-         margin-top: 5px;
-         font-weight: 500;
-         font-size: 1.5rem;
-         color: var(--dark);
-       }
-
-       @media (min-width: 320px) and (max-width: 568px) {
-        .content {
-          width: auto;
-        }
-
-         .content h2 {
-           font-size: 1.5em;
-         }
-
-         .content p {
-           font-size: 1.1rem;
-         }
-
-       }
-
-       /** ----------------------------------------------------------- SECOND DIV --------------------------------------------------------------------------------**/
-
-       .moving-container {
-         position: relative;
-         background-color: #ffffff;
-         height: 90%;
-         margin: 100px 0px 200px 0px;
-       }
-
-       #left-div-ID {
-         position: absolute;
-         top: 0;
-         left: 10%;
-         width: 50%;
-         background-color: rgb(225, 241, 255);
-         height: calc(100% + 100px);
-         z-index: 2;
-         border-radius: 30% 70% 15% 85% / 61% 46% 54% 39%;
-       }
-
-       #right-div-ID {
-         position: absolute;
-         left: 40%;
-         width: 50%;
-         height: calc(100% + 100px);
-         background-color: #f3f0fe;
-         z-index: 1;
-         border-radius: 59% 41% 57% 43% / 45% 47% 53% 55%;
-       }
-
-       #third-container-ID {
-         position: relative;
-         padding-top: 100px;
-         z-index: 3;
-       }
-
-       .working-img {
-         border-radius: 10%;
-       }
-
-       /* -------------------------------------------------------------  ABOUT SECTION  ---------------------------------------------------------------------*/
-       #about-section {
-
-         background-color: hsl(219, 35%, 58%);
-         /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);*/
-       }
-
-       .young-people-img {
-         /*clip-path: polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%)*/
-         border-radius: 5%;
-       }
-
-       .green-line {
-         background-color: #7ADFBB;
-         width: 200px;
-         height: 10px;
-         margin-left: 5px;
-         margin-bottom: 20px;
-       }
-
-       .read-more {
-         position: relative;
-         z-index: 1;
-         overflow: hidden;
-         border: none !important;
-         color: #ffffff !important;
-         background-color: var(--primary) !important;
-       }
-
-       .read-more::before {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background-color: var(--third);
-         opacity: 0.5;
-         clip-path: circle(0% at 50% 50%);
-         -webkit-clip-path: circle(0% at 50% 50%);
-         transition: all 0.8s ease-in-out;
-         z-index: -1;
-       }
-
-       .read-more:hover::before {
-         clip-path: circle(150% at 50% 50%);
-         -webkit-clip-path: circle(150% at 50% 50%);
-         opacity: 0.9;
-       }
-
-       .read-more:hover {
-         border-color: var(--secondary);
-         color: #ffffff;
-       }
-
-       @media (min-width: 370px) and (max-width: 570px) {
-         .green-line {
-           margin-left: 0px;
-           width: 135px;
-         }
-
-         .young-people-img {
-           width: 330px;
-           height: 270px;
-         }
-
-       }
-
-       /* -----------------------------------------------------------  PRICING  ---------------------------------------------------------------------*/
-
-       .wrapper {
-         position: relative;
-         background-color: #eeeeff;
-       }
-
-       .pricing-card-title {
-         color: var(--third);
-       }
-
-       .sign-up {
-         border-color: var(--secondary) !important;
-         color: #4e4e4e !important;
-       }
-
-       .sign-up:hover {
-         background-color: var(--secondary) !important;
-         color: #ffffff !important;
-       }
-
-       .sign-up-btn {
-         position: relative;
-         z-index: 1;
-         overflow: hidden;
-         border-color: var(--secondary);
-         border-width: 1px;
-         color: #ffffff;
-         background-color: var(--secondary);
-       }
-
-       .sign-up-btn::before {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background-color: var(--third);
-         /* Change this line */
-         opacity: 0.2;
-         clip-path: circle(0% at 50% 50%);
-         -webkit-clip-path: circle(0% at 50% 50%);
-         transition: all 0.8s ease-in-out;
-         z-index: -1;
-       }
-
-       .sign-up-btn:hover::before {
-         clip-path: circle(150% at 50% 50%);
-         -webkit-clip-path: circle(150% at 50% 50%);
-         opacity: 0.9;
-       }
-
-       .sign-up-btn:hover {
-         border-color: var(--third);
-         color: #ffffff;
-       }
-
-       .pricing-section {
-         background-color: hsl(220, 93%, 94%);
-       }
-
-       .ph-card-header {
-         color: white !important;
-         background-color: var(--secondary) !important;
-       }
-
-       .ph-title {
-         color: var(--third) !important;
-       }
-
-       .pricing-section {
-         background-color: #f5f5f5;
-       }
-
-       .pricing-title {
-         color: var(--third) !important;
-       }
-
-       .card {
-        border-radius: 50%;
-       }
-
-       .card-body {
-         background-color: #ffffff;
-         border-radius: 60%;
-       }
-
-       .card-body>ul>li {
-         text-align: left;
-         font-weight: 500;
-         padding-left: 20%;
-       }
-
-       /* -------------------------------  END OF PRICING  ----------------------------------------------*/
-       /*---------------------------------------------------------- WAVES ----------------------------------------------------- */
-
-       .spacer {
-         aspect-ratio: 960/200;
-         width: 100%;
-         background-repeat: no-repeat;
-         background-position: center;
-         background-size: cover;
-       }
-
-       .layer-bg {
-         background-image: url('/Assets/waves.svg');
-       }
-
-       .cta-section {
-         background-color: var(--third);
-       }
-
-       .cta-button {
-         font-family: 'Montserrat', sans-serif;
-         font-weight: 500;
-         font-size: 1.7rem;
-         z-index: 1;
-         position: relative;
-         display: inline-block;
-         padding: 10px 20px;
-         border: 2px solid #ffffff;
-         border-radius: 50px;
-         overflow: hidden;
-         color: #ffffff;
-         background-color: var(--third);
-         transition: all 2s;
-         text-decoration: none;
-       }
-
-       .cta-button::before {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background-color: #ffffff;
-         opacity: 0.2;
-         clip-path: circle(0% at 50% 50%);
-         -webkit-clip-path: circle(0% at 50% 50%);
-         transition: all 0.8s ease-in-out;
-         z-index: -1;
-       }
-
-       .cta-button:hover::before {
-         clip-path: circle(150% at 50% 50%);
-         -webkit-clip-path: circle(150% at 50% 50%);
-         opacity: 0.9;
-       }
-
-       .cta-button:hover {
-         color: var(--third) !important;
-         border-color: var(--third);
-         background-color: #ffffff;
-       }
-
-       /**------------------------------------------------- FOOTER SECTION -----------------------------------------------------**/
-
-       .footer-bg {
-        background-color: #f7f5ff;
-       }
-
-       #footer-section p {
-         font-size: 1.3rem;
-       }
-
-       #footer-section a {
-         font-size: 1.3rem;
-         color: #4e4e4e;
-       }
-
-       .social-link:hover {
-         background-color: var(--secondary);
-         border-radius: 50%;
-       }
-
-       .foot-btn:hover {
-         color: var(--secondary) !important;
-         text-decoration: underline;
-       }
-
-       .logo-v {
-         transition: all 1s;
-       }
-
-       .logo-v:hover {
-         transform: scale(1.1);
-       }
+   /*  ------------------- GENERAL --------------------*/
+   body,
+   p {
+     margin: 0;
+     padding: 0;
+   }
+
+   body {
+     overflow-x: hidden;
+     font-family: "Montserrat", sans-serif !important;
+     font-optical-sizing: auto;
+   }
+
+   :root {
+     --primary: #7ADFBB;
+     --secondary: #9AAEF2;
+     --third: #2B3A67;
+     --light: #4e4e4e;
+     --dark: #1e2134;
+   }
+
+   @media only screen and (max-width: 600px) {
+     html {
+       overflow-x: hidden;
+     }
+   }
+
+   /* ---------- HEADERS -------------*/
+
+   .first-header,
+   .second-header {
+     font-weight: 500;
+     font-style: normal;
+   }
+
+   .first-header {
+     color: var(--third);
+   }
+
+   /**------------------------------------------------- FONTS IN GENERAL -----------------------------------------------------**/
+
+   .main-font,
+   .general-font {
+     font-weight: 500;
+     font-size: 1.4rem;
+     text-align: justify;
+   }
+
+   .main-font {
+     color: var(--light);
+   }
+
+   .general-font {
+     color: #ffffff !important;
+   }
+
+   .main-typo {
+     font-weight: 500;
+     color: var(--dark);
+   }
+
+   .slogan {
+     font-weight: 600;
+     font-size: 1.1rem;
+     color: var(--light);
+   }
+
+   .lead {
+     text-align: justify;
+     color: #ffffff;
+   }
+
+   .h1-white {
+     font-weight: 500;
+     color: #ffffff;
+   }
+
+   /**------------------------------------------------- BODY HTML -----------------------------------------------------**/
+
+   /**------------------------------------------------- NAV BAR -----------------------------------------------------**/
+
+   .navbar-nav .nav-item .nav-link {
+     border-radius: 15px 15px 15px 15px;
+     width: 160px;
+     text-align: center;
+     line-height: 20px;
+     padding: 5px 0px 5px 0px;
+     font-size: 1.4rem;
+     color: var(--third);
+   }
+
+
+   .navbar-nav .nav-item:hover .nav-link {
+     background-color: var(--secondary);
+     color: #fff;
+   }
+
+   .nav-item.dropdown:hover .nav-link::after {
+     transform: rotate(180deg);
+   }
+
+   /* Add this CSS for spacing to the left of the navbar brand */
+   .navbar-brand {
+     margin-left: 20px;
+     margin-bottom: 10px;
+   }
+
+   /* Add this CSS for dropdown menu */
+   .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+     display: block;
+   }
+
+   .dropdown-menu .dropdown-item {
+     font-size: 1.4rem;
+     padding: 10px;
+     text-decoration: none;
+     color: var(--dark);
+     transition: background-color 0.3s;
+   }
+
+   .navbar-nav>li>.dropdown-menu a:hover {
+     background-color: var(--secondary);
+     color: #fff;
+   }
+
+   .navbar>.navbar-nav>li>.navbar-right {
+     margin-left: 50px;
+   }
+
+   .nav-background {
+     background-color: #ffffff;
+   }
+
+   @media (min-width: 1200px) and (max-width: 1000px) {
+     .navbar-brand {
+       width: "190px";
+       height: "50px";
+     }
+   }
+
+   @media (min-width: 770px) and (max-width: 1200px) {
+     .navbar-brand {
+       width: "130px";
+       height: "50px";
+     }
+   }
+
+   @media (max-width: 950px) {
+     .navbar-collapse .nav-item .nav-link {
+       justify-content: flex-end;
+       width: 150px;
+       margin-left: 30px;
+       text-align: left;
+     }
+
+     .navbar-nav>li>.dropdown-menu a {
+       justify-content: flex-end;
+       font-size: 1.1rem;
+     }
+   }
+
+   /**----------------------------------------------------------   SECTION MAIN --------------------------------------------------**/
+
+   .lead {
+     color: var(--dark);
+   }
+
+   .main-bgn {
+     background: linear-gradient(140deg, var(--secondary) 27%, var(--primary) 99%);
+     /*background-color: rgb(221, 225, 253);*/
+   }
+
+   #stats {
+     border-bottom-left-radius: 50% 20%;
+     border-bottom-right-radius: 50% 20%;
+   }
+
+   #title {
+     position: relative;
+     background-color: #e4e3e3;
+   }
+
+   #title::before,
+   #title::after {
+     content: '';
+     position: absolute;
+     width: 140px;
+     height: 140px;
+     background: #7ADFBB;
+   }
+
+   #title::before {
+     bottom: 0;
+     left: 0;
+     border-radius: 0 140px 0 0;
+     -moz-border-radius: 0 140px 0 0;
+     -webkit-border-radius: 0 140px 0 0;
+   }
+
+   #title::after {
+     bottom: 0;
+     right: 0;
+     border-radius: 140px 0 0 0;
+     -moz-border-radius: 140px 0 0 0;
+     -webkit-border-radius: 140px 0 0 0;
+   }
+
+   /**------------------------------------------------- SCREENSHOT -----------------------------------------------------**/
+   .screenshot-carousel {
+     position: relative;
+     max-width: 390px;
+     height: 750px;
+     padding: 0;
+     /* Remove all padding */
+     display: flex;
+     /* Add flex display */
+     align-items: center;
+     /* Center content vertically */
+     justify-content: center;
+     /* Center content horizontally */
+   }
+
+   .screenshot-carousel::before {
+     position: absolute;
+     content: "";
+     width: 100%;
+     height: 100%;
+     right: 10px;
+     /* Align background frame properly */
+     top: 5px;
+     background: url(../Assets/screenshot-frame.png) center center no-repeat;
+     background-size: 390px 750px;
+     z-index: 1;
+   }
+
+   .screenshot-carousel .owl-item img {
+     border-radius: 10%;
+     position: relative;
+     width: 360px;
+     height: 720px;
+     z-index: 2;
+     /* Ensure the image is above the background frame */
+     /* Remove max-width and max-height for consistent sizing */
+   }
+
+   .owl-carousel .owl-loaded .owl-drag {
+     border-radius: 5%;
+     max-width: 300px;
+   }
+
+   .screenshot-carousel .owl-dots {
+     position: absolute;
+     top: 50%;
+     right: -20px;
+     transform: translateY(-50%);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+   }
+
+   .screenshot-carousel .owl-dot {
+     position: relative;
+     display: inline-block;
+     margin: 5px 0;
+     width: 15px;
+     height: 15px;
+     background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+     border-radius: 15px;
+     transition: .5s;
+   }
+
+   .screenshot-carousel .owl-dot::after {
+     position: absolute;
+     content: "";
+     width: 5px;
+     height: 5px;
+     top: 5px;
+     left: 5px;
+     background: #FFFFFF;
+     border-radius: 5px;
+   }
+
+   .screenshot-carousel .owl-dot.active {
+     box-shadow: 0 0 10px var(--dark);
+   }
+
+   /**------------------------------------------------- FOR LAPTOPS  -----------------------------------------------------**/
+   @media (min-width: 1090px) and (max-width: 2340px) {
+
+     .screenshot-carousel {
+       max-width: 300px;
+       height: 600px;
+       padding: 20px 10px 5px 10px;
+     }
+
+     .screenshot-carousel::before {
+       width: 100%;
+       height: 100%;
+       background-size: 300px 600px;
+       z-index: 1;
+     }
+
+     .screenshot-carousel .owl-item img {
+       border-radius: 7%;
+       max-width: 260px;
+       height: 580px;
+       max-height: 580px;
+     }
+
+     .owl-carousel .owl-loaded .owl-drag {
+       border-radius: 10%;
+     }
+   }
+
+   /**------------------------------------------------- FOR TABLETS  -----------------------------------------------------**/
+   @media (min-width: 568px) and (max-width: 1090px) {
+     .screenshot-carousel {
+       max-width: 270px;
+       height: 510px;
+       padding: 5px 5px 5px 5px;
+     }
+
+     .screenshot-carousel::before {
+       width: 100%;
+       height: 100%;
+       right: 5px;
+       background-size: 270px 510px;
+       z-index: 1;
+     }
+
+     .screenshot-carousel .owl-item img {
+       bottom: -10px;
+       border-radius: 7%;
+       max-width: 250px;
+       height: 493px;
+       max-height: 495px;
+     }
+
+     .owl-carousel .owl-loaded .owl-drag {
+       border-radius: 10%;
+     }
+   }
+
+   /**------------------------------------------------- FOR MOBILE  -----------------------------------------------------**/
+   @media (min-width: 320px) and (max-width: 568px) {
+     .screenshot-carousel {
+       max-width: 250px;
+       height: 470px;
+       padding: 15px 0px 0px 0px;
+     }
+
+     .screenshot-carousel::before {
+       width: 100%;
+       height: 100%;
+       bottom: 5px;
+       background-size: 250px 470px;
+       z-index: 1;
+       object-fit: cover;
+     }
+
+     .screenshot-carousel .owl-item img {
+       border-radius: 7%;
+       max-width: 230px;
+       margin-top: 3px;
+       height: 450px;
+       max-height: 455px;
+     }
+
+     .owl-carousel .owl-loaded .owl-drag {
+       border-radius: 7%;
+     }
+   }
+
+
+   /** ----------------------------------------------------------- END OF CAROUSEL -------------------------------------------------------------------------**/
+
+   /** ----------------------------------------------------------- STATS -------------------------------------------------------------------------**/
+   #stats {
+     background-color: #ffffff;
+   }
+
+   footer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   .content {
+     margin: 0 20;
+     padding: 20px;
+     line-height: 1.5;
+   }
+
+   .divider {
+     border-left: 0.7px solid #7c7b7b;
+     height: 100px;
+     margin: 0 10px;
+   }
+
+   .content h2 {
+     margin-bottom: 30px;
+     font-size: 2.7rem;
+     font-weight: 600;
+     text-align: center;
+     color: var(--third);
+   }
+
+   .content p {
+     margin-top: 5px;
+     font-weight: 500;
+     font-size: 1.5rem;
+     color: var(--dark);
+   }
+
+   @media (min-width: 320px) and (max-width: 568px) {
+     .content {
+       width: auto;
+     }
+
+     .content h2 {
+       font-size: 1.5em;
+     }
+
+     .content p {
+       font-size: 1.1rem;
+     }
+   }
+
+   /** ----------------------------------------------------------- SECOND DIV --------------------------------------------------------------------------------**/
+
+   .moving-container {
+     position: relative;
+     background-color: #ffffff;
+     height: 90%;
+     margin: 100px 0px 200px 0px;
+   }
+
+   #left-div-ID {
+     position: absolute;
+     top: 0;
+     left: 10%;
+     width: 50%;
+     background-color: rgb(225, 241, 255);
+     height: calc(100% + 100px);
+     z-index: 2;
+     border-radius: 30% 70% 15% 85% / 61% 46% 54% 39%;
+   }
+
+   #right-div-ID {
+     position: absolute;
+     left: 40%;
+     width: 50%;
+     height: calc(100% + 100px);
+     background-color: #f3f0fe;
+     z-index: 1;
+     border-radius: 59% 41% 57% 43% / 45% 47% 53% 55%;
+   }
+
+   #third-container-ID {
+     position: relative;
+     padding-top: 100px;
+     z-index: 3;
+   }
+
+   .working-img {
+     border-radius: 10%;
+   }
+
+   /* -------------------------------------------------------------  ABOUT SECTION  ---------------------------------------------------------------------*/
+   #about-section {
+     background-color: hsl(219, 35%, 58%);
+     /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);*/
+   }
+
+   .young-people-img {
+     border-radius: 5%;
+   }
+
+   .green-line {
+     background-color: #7ADFBB;
+     width: 200px;
+     height: 10px;
+     margin-left: 5px;
+     margin-bottom: 20px;
+   }
+
+   .read-more {
+     position: relative;
+     z-index: 1;
+     overflow: hidden;
+     border: none !important;
+     color: #ffffff !important;
+     background-color: var(--primary) !important;
+   }
+
+   .read-more::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: var(--third);
+     opacity: 0.5;
+     clip-path: circle(0% at 50% 50%);
+     -webkit-clip-path: circle(0% at 50% 50%);
+     transition: all 0.8s ease-in-out;
+     z-index: -1;
+   }
+
+   .read-more:hover::before {
+     clip-path: circle(150% at 50% 50%);
+     -webkit-clip-path: circle(150% at 50% 50%);
+     opacity: 0.9;
+   }
+
+   .read-more:hover {
+     border-color: var(--secondary);
+     color: #ffffff;
+   }
+
+   @media (min-width: 370px) and (max-width: 570px) {
+     .green-line {
+       margin-left: 0px;
+       width: 135px;
+     }
+
+     .young-people-img {
+       width: 330px;
+       height: 270px;
+     }
+
+   }
+
+   /* -----------------------------------------------------------  PRICING  ---------------------------------------------------------------------*/
+
+   .wrapper {
+     position: relative;
+     background-color: #eeeeff;
+   }
+
+   .pricing-card-title {
+     color: var(--third);
+   }
+
+   .sign-up {
+     border-color: var(--secondary) !important;
+     color: #4e4e4e !important;
+   }
+
+   .sign-up:hover {
+     background-color: var(--secondary) !important;
+     color: #ffffff !important;
+   }
+
+   .sign-up-btn {
+     position: relative;
+     z-index: 1;
+     overflow: hidden;
+     border-color: var(--secondary);
+     border-width: 1px;
+     color: #ffffff;
+     background-color: var(--secondary);
+   }
+
+   .sign-up-btn::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: var(--third);
+     /* Change this line */
+     opacity: 0.2;
+     clip-path: circle(0% at 50% 50%);
+     -webkit-clip-path: circle(0% at 50% 50%);
+     transition: all 0.8s ease-in-out;
+     z-index: -1;
+   }
+
+   .sign-up-btn:hover::before {
+     clip-path: circle(150% at 50% 50%);
+     -webkit-clip-path: circle(150% at 50% 50%);
+     opacity: 0.9;
+   }
+
+   .sign-up-btn:hover {
+     border-color: var(--third);
+     color: #ffffff;
+   }
+
+   .pricing-section {
+     background-color: hsl(220, 93%, 94%);
+   }
+
+   .ph-card-header {
+     color: white !important;
+     background-color: var(--secondary) !important;
+   }
+
+   .ph-title {
+     color: var(--third) !important;
+   }
+
+   .pricing-section {
+     background-color: #f5f5f5;
+   }
+
+   .pricing-title {
+     color: var(--third) !important;
+   }
+
+   .card {
+     border-radius: 50%;
+   }
+
+   .card-body {
+     background-color: #ffffff;
+     border-radius: 60%;
+   }
+
+   .card-body>ul>li {
+     text-align: left;
+     font-weight: 500;
+     padding-left: 20%;
+   }
+
+   /* -------------------------------  END OF PRICING  ----------------------------------------------*/
+   /*---------------------------------------------------------- WAVES ----------------------------------------------------- */
+
+   .spacer {
+     aspect-ratio: 960/200;
+     width: 100%;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+   }
+
+   .layer-bg {
+     background-image: url('/Assets/waves.svg');
+   }
+
+   .cta-section {
+     background-color: var(--third);
+   }
+
+   .cta-button {
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 500;
+     font-size: 1.7rem;
+     z-index: 1;
+     position: relative;
+     display: inline-block;
+     padding: 10px 20px;
+     border: 2px solid #ffffff;
+     border-radius: 50px;
+     overflow: hidden;
+     color: #ffffff;
+     background-color: var(--third);
+     transition: all 2s;
+     text-decoration: none;
+   }
+
+   .cta-button::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #ffffff;
+     opacity: 0.2;
+     clip-path: circle(0% at 50% 50%);
+     -webkit-clip-path: circle(0% at 50% 50%);
+     transition: all 0.8s ease-in-out;
+     z-index: -1;
+   }
+
+   .cta-button:hover::before {
+     clip-path: circle(150% at 50% 50%);
+     -webkit-clip-path: circle(150% at 50% 50%);
+     opacity: 0.9;
+   }
+
+   .cta-button:hover {
+     color: var(--third) !important;
+     border-color: var(--third);
+     background-color: #ffffff;
+   }
+
+   /**------------------------------------------------- FOOTER SECTION -----------------------------------------------------**/
+
+   .footer-bg {
+     background-color: #f7f5ff;
+   }
+
+   #footer-section p,
+   #footer-section a {
+     font-size: 1.3rem;
+     color: #4e4e4e;
+   }
+
+   .social-link:hover {
+     background-color: var(--secondary);
+     border-radius: 50%;
+   }
+
+   .foot-btn:hover {
+     color: var(--secondary) !important;
+     text-decoration: underline;
+   }
+
+   .logo-v {
+     transition: all 1s;
+   }
+
+   .logo-v:hover {
+     transform: scale(1.1);
+   }
