@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Vindme FAQ </title>
+  <title>Vindme FAQ - Help Center</title>
 
   <link rel="icon" href="/Assets/favicon.ico" type="image/x-icon">
 
@@ -14,293 +14,658 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Bootstrap CSS -->
   <link href="/CSS/bootstrap.min.css" rel="stylesheet">
-    
+  <link href="/CSS/navbar.css" rel="stylesheet">
   <link href="/CSS/faq.css" rel="stylesheet">
+  <link href="/CSS/footer.css" rel="stylesheet">
 </head>
 
 <body>
   <!-------------------------------------------------------------------------------- NAVBAR ------------------------------------------------------------------------------>
-  <nav class="navbar navbar-expand-lg" aria-label="Eighth navbar example">
-    <div class="container">
+  <nav class="navbar navbar-expand-md sticky-top nav-background">
+    <div class="container-fluid justify-content-center">
       <a class="navbar-brand" href="/index.html">
-        <img src="/Assets/Vindme.png" alt="Vindme" width="180px" height="50px"
-          class="d-inline-block align-text-top">
+        <img src="/Assets/Vindme.png" alt="Vindme" width="180px" height="50px" class="d-inline-block align-text-top">
       </a>
-      <button id="toggleButton" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExample07">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="navbar-collapse flex-grow-0 collapse" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <a id="homeLink" class="nav-link" aria-current="page" href="/index.html">Home</a>
+            <a class="nav-link scroll-link" href="/index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link scroll-link " href="/contact.html">Contact</a>
+            <a class="nav-link scroll-link" href="/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/faq.html">FAQ</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resources
+            </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/privacy.html">Privacy Policy</a></li>
               <li><a class="dropdown-item" href="/terms.html">Terms and Conditions</a></li>
-
+              <li><a class="dropdown-item" href="/contact.html">Contact</a></li>
             </ul>
           </li>
         </ul>
-
-        <form>
-          <label for="search">Search</label>
-          <input id="search" type="search" pattern=".*\S.*" required>
-          <span class="caret"></span>
-        </form>
       </div>
     </div>
   </nav>
 
-  <!----------------------------------------------------------------------- TITLE ------------------------------------------------------------------------------>
-
-  <div class="container my-5" style="background-color: #fff;">
-    <div class="pt-5 pb-5 rounded-3">
-      <div class="h-cont">
-        <h1 class="text-body-emphasis title">Frequently Asked Questions</h1>
-        <hr style="height: 0.5em; background-color: #7ADFBB; ">
+  <!----------------------------------------------------------------------- HERO SECTION ------------------------------------------------------------------------------>
+  <section class="faq-hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">
+          <i class="bi bi-question-circle-fill"></i> Help Center
+        </span>
+        <h1 class="hero-title">How can we help you?</h1>
+        <p class="hero-subtitle">Find answers to common questions about Vindme</p>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+          <div class="search-wrapper">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" id="faqSearch" class="search-input" placeholder="Search for answers...">
+            <button class="search-clear" id="clearSearch" style="display: none;">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <p class="search-hint">Popular: <span class="hint-tag" data-search="email">Email</span> <span class="hint-tag" data-search="free">Free</span> <span class="hint-tag" data-search="friends">Friends</span></p>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
 
-  <!----------------------------------------------------------------------- FAQ ------------------------------------------------------------------------------>
+  <!----------------------------------------------------------------------- CATEGORY FILTER ------------------------------------------------------------------------------>
+  <section class="category-section">
+    <div class="container">
+      <div class="category-grid">
+        <button class="category-card active" data-category="all">
+          <div class="category-icon">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+          </div>
+          <span>All Topics</span>
+        </button>
+        <button class="category-card" data-category="trial">
+          <div class="category-icon trial">
+            <i class="bi bi-gift-fill"></i>
+          </div>
+          <span>Pricing</span>
+        </button>
+        <button class="category-card" data-category="setup">
+          <div class="category-icon setup">
+            <i class="bi bi-gear-fill"></i>
+          </div>
+          <span>Set Up</span>
+        </button>
+        <button class="category-card" data-category="account">
+          <div class="category-icon account">
+            <i class="bi bi-person-fill-gear"></i>
+          </div>
+          <span>Account</span>
+        </button>
+        <button class="category-card" data-category="friends">
+          <div class="category-icon friends">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <span>Friends</span>
+        </button>
+        <button class="category-card" data-category="privacy">
+          <div class="category-icon privacy">
+            <i class="bi bi-shield-lock-fill"></i>
+          </div>
+          <span>Privacy</span>
+        </button>
+      </div>
+    </div>
+  </section>
 
+  <!----------------------------------------------------------------------- FAQ ACCORDION ------------------------------------------------------------------------------>
   <section id="faq">
     <div class="container">
-      <div class="accordion" id="accordionPanelsStayOpenExample">
-        <h2 class="group py-3">Free Trial</h2>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-              aria-controls="panelsStayOpen-collapseOne">
-              Is there a free trial available?
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-            <div class="accordion-body">
-              <p id="answer"><strong>Yes</strong>, we offer a 7-day free trial for our Premium Plan.
-                 This allows you to experience all the features and benefits of our app before committing to a subscription.
-              </p>
-            </div>
+      <div class="faq-results-info" id="resultsInfo" style="display: none;">
+        <span id="resultsCount">0</span> results found
+      </div>
+      
+      <div class="faq-container">
+        <!-- Pricing & Plans Section -->
+        <div class="faq-category" data-category="trial">
+          <div class="category-header">
+            <i class="bi bi-gift-fill"></i>
+            <h2>Pricing & Plans</h2>
           </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseTwo">
-              What happens after the free trial ends?
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <p id="answer">If you choose not to subscribe after the free trial period, your account will automatically revert to our Free Plan.
-                 You'll still have access to basic features, but some premium features will be restricted.
-              </p>
+          
+          <div class="accordion" id="trialAccordion">
+            <div class="faq-item" data-category="trial">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#trial1" aria-expanded="false">
+                <span class="question-text">Is the app free to use?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="trial1" class="faq-answer collapse">
+                <div class="answer-content">
+                  <div class="answer-highlight">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <strong>Yes!</strong> Vindme is completely free to download and use.
+                  </div>
+                  <p>With the free version, you can add <strong>1 contact member</strong> and <strong>1 friend</strong>. This is perfect for staying connected with your closest loved ones.</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <h2 class="group py-3">Set Up</h2>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseThree">
-              How easy is it to set up the app?
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <p id="answer"><strong>Our app is designed</strong> to be incredibly user-friendly and easy to set up. Simply download the app, create an account, and follow the guided setup process. 
-                You'll be up and running in minutes.
-              </p>
+
+            <div class="faq-item" data-category="trial">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#trial2" aria-expanded="false">
+                <span class="question-text">What are the limits on the free version?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="trial2" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>The free version includes:</p>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-check2"></i> <strong>1 contact member</strong> - Add one family member or loved one</li>
+                    <li><i class="bi bi-check2"></i> <strong>1 friend</strong> - Connect with one friend</li>
+                    <li><i class="bi bi-check2"></i> Full location sharing features</li>
+                    <li><i class="bi bi-check2"></i> All core safety features</li>
+                  </ul>
+                  <div class="info-box">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span>Want to add more people? Upgrade to our Premium Plan for unlimited contacts and friends.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="trial">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#trial3" aria-expanded="false">
+                <span class="question-text">What do I get with the Premium Plan?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="trial3" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>The Premium Plan unlocks:</p>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-star-fill" style="color: #FFA630;"></i> <strong>Unlimited contact members</strong></li>
+                    <li><i class="bi bi-star-fill" style="color: #FFA630;"></i> <strong>Unlimited friends</strong></li>
+                    <li><i class="bi bi-star-fill" style="color: #FFA630;"></i> Bulk contact import</li>
+                    <li><i class="bi bi-star-fill" style="color: #FFA630;"></i> Priority support</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseFour">
-              Do I need any technical expertise to set up the app?
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <p id="answer"><strong>No technical expertise is required.</strong>
-                 Our intuitive interface and step-by-step instructions make it easy for anyone to set up and use the app.
-              </p>
+        <!-- Set Up Section -->
+        <div class="faq-category" data-category="setup">
+          <div class="category-header">
+            <i class="bi bi-gear-fill"></i>
+            <h2>Set Up</h2>
+          </div>
+          
+          <div class="accordion" id="setupAccordion">
+            <div class="faq-item" data-category="setup">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#setup1" aria-expanded="false">
+                <span class="question-text">How easy is it to set up the app?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="setup1" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>Our app is designed to be incredibly <strong>user-friendly</strong> and easy to set up. Simply:</p>
+                  <ol class="step-list">
+                    <li><span class="step-number">1</span> Download the app from your device's app store</li>
+                    <li><span class="step-number">2</span> Create an account with your email</li>
+                    <li><span class="step-number">3</span> Follow the guided setup process</li>
+                  </ol>
+                  <p>You'll be up and running in minutes!</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="setup">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#setup2" aria-expanded="false">
+                <span class="question-text">Do I need any technical expertise to set up the app?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="setup2" class="faq-answer collapse">
+                <div class="answer-content">
+                  <div class="answer-highlight success">
+                    <i class="bi bi-hand-thumbs-up-fill"></i>
+                    <strong>No technical expertise required!</strong>
+                  </div>
+                  <p>Our intuitive interface and step-by-step instructions make it easy for anyone to set up and use the app, regardless of technical background.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <h2 class="group py-3">Friends</h2>
+        <!-- Account & Email Section -->
+        <div class="faq-category" data-category="account">
+          <div class="category-header">
+            <i class="bi bi-person-fill-gear"></i>
+            <h2>Account & Email</h2>
+          </div>
+          
+          <div class="accordion" id="accountAccordion">
+            <div class="faq-item" data-category="account">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#account1" aria-expanded="false">
+                <span class="question-text">How do I change my email address?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="account1" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>To change your email address:</p>
+                  <ol class="step-list">
+                    <li><span class="step-number">1</span> Go to <strong>Settings</strong> in the app</li>
+                    <li><span class="step-number">2</span> Tap on <strong>Account</strong></li>
+                    <li><span class="step-number">3</span> Select <strong>Change Email</strong></li>
+                    <li><span class="step-number">4</span> Enter your new email address</li>
+                    <li><span class="step-number">5</span> Check your new email for a verification link</li>
+                  </ol>
+                  <div class="warning-box">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <span>You must verify your new email within 24 hours, or the change will be cancelled.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseFive">
-              How do I add friends to the app?
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <p id="answer">To add a friend, simply navigate to the main panel and click on the "Add Member" button. Enter their phone number,
-                 including the country code if they are from a different country, and send them an invitation. 
-                Please note that this feature is available exclusively for Premium Plan subscribers.
-              </p>
+            <div class="faq-item" data-category="account">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#account2" aria-expanded="false">
+                <span class="question-text">I didn't receive the email verification. What should I do?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="account2" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>If you haven't received the verification email, please check the following:</p>
+                  <div class="checklist">
+                    <div class="check-item">
+                      <i class="bi bi-folder-fill"></i>
+                      <span><strong>Check your Spam/Junk folder</strong> - Our emails sometimes get filtered there</span>
+                    </div>
+                    <div class="check-item">
+                      <i class="bi bi-clock-fill"></i>
+                      <span><strong>Wait a few minutes</strong> - Emails can take up to 5 minutes to arrive</span>
+                    </div>
+                    <div class="check-item">
+                      <i class="bi bi-envelope-check-fill"></i>
+                      <span><strong>Verify the email address</strong> - Make sure you entered it correctly</span>
+                    </div>
+                  </div>
+                  <div class="info-box">
+                    <i class="bi bi-lightbulb-fill"></i>
+                    <span>Add <strong>no-reply@vindme.io</strong> to your contacts to prevent future emails from going to spam.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="account">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#account3" aria-expanded="false">
+                <span class="question-text">What if I can't verify my new email address?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="account3" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>If you're unable to verify your new email address, <strong>don't worry!</strong> Here's what you can do:</p>
+                  <div class="solution-box">
+                    <div class="solution-header">
+                      <i class="bi bi-arrow-repeat"></i>
+                      <strong>Use your old email to log in</strong>
+                    </div>
+                    <p>Your old email remains active until the new one is verified. Simply log in with your original email and try the email change process again.</p>
+                  </div>
+                  <ol class="step-list">
+                    <li><span class="step-number">1</span> Log in with your <strong>original email address</strong></li>
+                    <li><span class="step-number">2</span> Go to Settings → Account → Change Email</li>
+                    <li><span class="step-number">3</span> Double-check the new email address for typos</li>
+                    <li><span class="step-number">4</span> Request a new verification email</li>
+                  </ol>
+                  <div class="info-box">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span>If you continue to have issues, please <a href="/contact.html">contact our support team</a>.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="account">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#account4" aria-expanded="false">
+                <span class="question-text">How do I reset my password?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="account4" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>To reset your password:</p>
+                  <ol class="step-list">
+                    <li><span class="step-number">1</span> On the login screen, tap <strong>"Forgot Password?"</strong></li>
+                    <li><span class="step-number">2</span> Enter your registered email address</li>
+                    <li><span class="step-number">3</span> Check your email for the reset link</li>
+                    <li><span class="step-number">4</span> Click the link and create a new password</li>
+                  </ol>
+                  <div class="warning-box">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    <span>For security, password reset links expire after 1 hour.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="account">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#account5" aria-expanded="false">
+                <span class="question-text">Can I delete my account?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="account5" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>Yes, you can delete your account at any time. Go to <strong>Settings → Account → Delete Account</strong>.</p>
+                  <div class="warning-box danger">
+                    <i class="bi bi-exclamation-octagon-fill"></i>
+                    <span><strong>Warning:</strong> Account deletion is permanent. All your data, including location history, friends, and settings will be permanently removed and cannot be recovered.</span>
+                  </div>
+                  <p>If you're having issues with the app, consider <a href="/contact.html">contacting support</a> before deleting your account.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseSix">
-              Is my friend notified when I add them on the app?
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <p id="answer">Yes, your friend will receive a notification informing them that you've added them on the app.
-                 They'll have the option to accept or decline your invitation.
-              </p>
+        <!-- Friends Section -->
+        <div class="faq-category" data-category="friends">
+          <div class="category-header">
+            <i class="bi bi-people-fill"></i>
+            <h2>Friends & Connections</h2>
+          </div>
+          
+          <div class="accordion" id="friendsAccordion">
+            <div class="faq-item" data-category="friends">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#friends1" aria-expanded="false">
+                <span class="question-text">How do I add friends to the app?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="friends1" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>To add a friend:</p>
+                  <ol class="step-list">
+                    <li><span class="step-number">1</span> Navigate to the main panel</li>
+                    <li><span class="step-number">2</span> Tap on <strong>"Add"</strong></li>
+                    <li><span class="step-number">3</span> Enter their phone number (include country code for international contacts)</li>
+                    <li><span class="step-number">4</span> Send them an invitation</li>
+                  </ol>
+                  <div class="info-box">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span>Free users can add 1 contact member and 1 friend. Upgrade to Premium for unlimited connections.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="friends">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#friends2" aria-expanded="false">
+                <span class="question-text">Is my friend notified when I add them on the app?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="friends2" class="faq-answer collapse">
+                <div class="answer-content">
+                  <div class="answer-highlight">
+                    <i class="bi bi-bell-fill"></i>
+                    <strong>Yes!</strong> Your friend will receive a notification.
+                  </div>
+                  <p>They'll be informed that you've added them on the app and will have the option to <strong>accept</strong> or <strong>decline</strong> your invitation.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="friends">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#friends3" aria-expanded="false">
+                <span class="question-text">Can I add multiple friends at once?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="friends3" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>Yes! With the <strong>Premium Plan</strong>, you can add multiple friends at once by:</p>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-check2"></i> Importing contacts from your phone</li>
+                    <li><i class="bi bi-check2"></i> Manually entering multiple phone numbers</li>
+                  </ul>
+                  <div class="info-box">
+                    <i class="bi bi-globe"></i>
+                    <span>Remember to include the country code for international contacts (e.g., +1 for USA, +44 for UK).</span>
+                  </div>
+                  <div class="info-box">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span>Free users are limited to 1 contact member and 1 friend.</span>
+                  </div>
+                  <div class="premium-badge">
+                    <i class="bi bi-star-fill"></i>
+                    <span>Premium Feature</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="friends">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#friends4" aria-expanded="false">
+                <span class="question-text">Are there any requirements for adding contacts?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="friends4" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>To add a contact, they must have:</p>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-check2"></i> A valid phone number</li>
+                    <li><i class="bi bi-check2"></i> Country code included for international numbers</li>
+                  </ul>
+                  <div class="example-box">
+                    <strong>Examples:</strong>
+                    <code>+1 555 123 4567</code> (United States)
+                    <code>+52 55 1234 5678</code> (Mexico)
+                    <code>+44 20 7946 0958</code> (United Kingdom)
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseSeven">
-              Can I add multiple friends at once?
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <p id="answer">The ability to add multiple friends at once is a premium feature available exclusively for Premium Plan subscribers. 
-                Simply import your contacts or manually enter their information, ensuring each contact has a valid phone number with the country code included.
-              </p>
-            </div>
+        <!-- Privacy & Security Section -->
+        <div class="faq-category" data-category="privacy">
+          <div class="category-header">
+            <i class="bi bi-shield-lock-fill"></i>
+            <h2>Privacy & Security</h2>
           </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseEight">
-              Are there any requirements for adding contacts?
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <p id="answer">
-                Yes, to add a contact, they must have a valid phone number and if they are outside the country the phone number must include
-                 the country code (e.g., +1 for the United States). 
-                This ensures accurate and seamless connection within the app.
-              </p>
+          
+          <div class="accordion" id="privacyAccordion">
+            <div class="faq-item" data-category="privacy">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#privacy1" aria-expanded="false">
+                <span class="question-text">How is my location data protected?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="privacy1" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>Your privacy is our top priority. We protect your location data with:</p>
+                  <ul class="feature-list secure">
+                    <li><i class="bi bi-shield-check"></i> End-to-end encryption for all location data</li>
+                    <li><i class="bi bi-shield-check"></i> Secure servers with industry-standard protocols</li>
+                    <li><i class="bi bi-shield-check"></i> No sharing of your data with third parties</li>
+                    <li><i class="bi bi-shield-check"></i> Complete control over who can see your location</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="privacy">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#privacy2" aria-expanded="false">
+                <span class="question-text">Can I hide my location temporarily?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="privacy2" class="faq-answer collapse">
+                <div class="answer-content">
+                  <div class="answer-highlight success">
+                    <i class="bi bi-eye-slash-fill"></i>
+                    <strong>Yes!</strong> You have full control.
+                  </div>
+                  <p>You can enable <strong>"Ghost Mode"</strong> at any time to hide your location from all connections. Go to Settings → Privacy → Ghost Mode.</p>
+                  <div class="info-box">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span>Ghost Mode can be scheduled to turn off automatically after a set time.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="privacy">
+              <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#privacy3" aria-expanded="false">
+                <span class="question-text">Who can see my location?</span>
+                <span class="faq-icon">
+                  <i class="bi bi-plus-lg"></i>
+                </span>
+              </button>
+              <div id="privacy3" class="faq-answer collapse">
+                <div class="answer-content">
+                  <p>Only people you've explicitly added and approved can see your location. You control:</p>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-check2"></i> Who can send you connection requests</li>
+                    <li><i class="bi bi-check2"></i> Who can view your real-time location</li>
+                    <li><i class="bi bi-check2"></i> When to hide your location (Ghost Mode)</li>
+                    <li><i class="bi bi-check2"></i> Individual permissions for each connection</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
+      </div>
+
+      <!-- No Results Message -->
+      <div class="no-results" id="noResults" style="display: none;">
+        <div class="no-results-content">
+          <i class="bi bi-search"></i>
+          <h3>No results found</h3>
+          <p>We couldn't find any questions matching your search. Try different keywords or browse our categories above.</p>
+          <button class="btn-clear-search" id="resetSearch">Clear Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!----------------------------------------------------------------------- CONTACT CTA ------------------------------------------------------------------------------>
+  <section class="contact-cta">
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-icon">
+          <i class="bi bi-headset"></i>
+        </div>
+        <div class="cta-text">
+          <h3>Still have questions?</h3>
+          <p>Can't find the answer you're looking for? Our support team is here to help!</p>
+        </div>
+        <a href="/contact.html" class="cta-button">
+          <span>Contact Support</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
       </div>
     </div>
   </section>
 
 
   <!------------------------------------- FOOTER SECTION -------------------------------------------->
-  <section id="footer-section" class="footer-bg">
-    <div class="container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5">
-        <div class="col mb-3">
-          <a href="/index.html" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none logo-v">
-            <img src="/Assets/icon_01.png" width="50" height="50">
-          </a>
-          <p class="text-body-secondary">Vindme© 2024</p>
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/Assets/Vindme.png" alt="Vindme">
+          <p>Connect with confidence, locate with ease. Your family's safety is our priority.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61557662404010" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/vindme_app/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg>
+            </a>
+          </div>
         </div>
-
-        <div class="col mb-3"></div>
-
-        <div class="col mb-3"></div>
-
-        <div class="col mb-3">
-          <h4 style="font-family: Montserrat;">Legal</h4>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">
-              <a href="/privacy.html" class="nav-link p-0 text-body-secondary foot-btn">Privacy</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="/terms.html" class="nav-link p-0 text-body-secondary foot-btn">Terms of use</a>
-            </li>
-            <li class="nav-item mb-5">
-              <a href="#" class="nav-link p-0 text-body-secondary"></a>
-            </li>
-            <li class="nav-item mb-5"></li>
-            <li class="nav-item mb-4"></li>
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/index.html#pricing-section">Pricing</a></li>
+            <li><a href="/faq.html">FAQs</a></li>
           </ul>
         </div>
-
-        <div class="col mb-3">
-          <h4 style="font-family: Montserrat;">About</h4>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">
-              <a href="/index.html" class="nav-link p-0 text-body-secondary foot-btn">Home</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="/about.html" class="nav-link p-0 text-body-secondary foot-btn">About</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="/index.html#pricing-section" class="nav-link p-0 text-body-secondary foot-btn">Pricing</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="/contact.html" class="nav-link p-0 text-body-secondary foot-btn">Contact</a>
-            </li>
-            <li class="nav-item mb-2 ">
-              <a href="/faq.html" class="nav-link p-0 text-body-secondary foot-btn">FAQs</a>
-            </li>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Use</a></li>
           </ul>
         </div>
-      </footer>
-      <div class="container justify-content-center">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-          <ul class="nav col-md-12 justify-content-center list-unstyled d-flex">
-            <li class="ms-3 social-link"><a class="text-body-secondary" href="#"> <svg
-                  xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-facebook"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                </svg></a></li>
-            <li class="ms-3 social-link"><a class="text-body-secondary" href="https://www.instagram.com/vindme_app/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                  class="bi bi-instagram" viewBox="0 0 16 16">
-                  <path
-                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-                </svg></a></li>
-            <li class="ms-3 social-link"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
-                  <use xlink:href="#facebook"></use>
-                </svg></a></li>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="/contact.html">Get in Touch</a></li>
+            <li><a href="mailto:support@vindme.io">support@vindme.io</a></li>
           </ul>
-        </footer>
+        </div>
       </div>
-  </section>
-
+      <div class="footer-bottom">
+        <p>© 2026 Vindme. All rights reserved.</p>
+        <p>Made with ❤️ in Mexico</p>
+      </div>
+    </div>
+  </footer>
   <script src="/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

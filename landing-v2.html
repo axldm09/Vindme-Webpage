@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vindme - The #1 Family Safety App. Real-time location sharing, smart alerts, and peace of mind for modern families.">
+  <meta name="theme-color" content="#8B5CF6">
+  <title>Vindme - Keep Your Family Safe | #1 Location Sharing App</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/Assets/favicon.ico" type="image/x-icon">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link href="/CSS/landing-v2.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Noise Texture Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/Assets/Vindme.png" alt="Vindme" width="120" height="35">
+      </a>
+      
+      <div class="nav-menu">
+        <a href="#story" class="nav-link" data-text="Story">Story</a>
+        <a href="#features" class="nav-link" data-text="Features">Features</a>
+        <a href="#proof" class="nav-link" data-text="Proof">Proof</a>
+        <a href="#pricing" class="nav-link" data-text="Pricing">Pricing</a>
+      </div>
+
+      <a href="https://apps.apple.com/us/app/vindme/id6499384102" class="nav-cta magnetic">
+        <span class="cta-text">Get Vindme</span>
+        <span class="cta-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Menu">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-bg"></div>
+    <div class="mobile-menu-content">
+      <a href="#story" class="mobile-link">Story</a>
+      <a href="#features" class="mobile-link">Features</a>
+      <a href="#proof" class="mobile-link">Proof</a>
+      <a href="#pricing" class="mobile-link">Pricing</a>
+      <a href="https://apps.apple.com/us/app/vindme/id6499384102" class="mobile-cta">Download Now</a>
+    </div>
+  </div>
+
+  <!-- Hero Section - Cinematic Opening -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-content">
+      <!-- Animated Badge -->
+      <div class="hero-badge reveal">
+        <div class="badge-dot pulse"></div>
+        <span>50,000+ families protected</span>
+        <div class="badge-rating">
+          <span class="stars">★★★★★</span>
+          <span class="score">4.9</span>
+        </div>
+      </div>
+
+      <!-- Kinetic Typography -->
+      <h1 class="hero-headline">
+        <span class="headline-row reveal">
+          <span class="word">Your</span>
+          <span class="word">family's</span>
+        </span>
+        <span class="headline-row reveal reveal-delay-1">
+          <span class="word-accent">
+            <span class="word-inner">safety</span>
+            <svg class="word-underline" viewBox="0 0 200 20" preserveAspectRatio="none">
+              <path d="M0 15 Q50 5 100 15 T200 15" stroke="currentColor" stroke-width="4" fill="none"/>
+            </svg>
+          </span>
+          <span class="word">in</span>
+        </span>
+        <span class="headline-row reveal reveal-delay-2">
+          <span class="word">your</span>
+          <span class="word-highlight">pocket</span>
+        </span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle reveal reveal-delay-3">
+        Real-time location sharing that brings peace of mind.<br>
+        Know they're safe. Always.
+      </p>
+
+      <!-- CTA Group -->
+      <div class="hero-cta-group reveal reveal-delay-4">
+        <a href="https://apps.apple.com/us/app/vindme/id6499384102" class="hero-cta-primary magnetic">
+          <span class="cta-inner">
+            <svg class="apple-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span class="cta-label">
+              <small>Download on the</small>
+              <strong>App Store</strong>
+            </span>
+          </span>
+          <div class="cta-shine"></div>
+        </a>
+
+        <a href="#story" class="hero-cta-secondary magnetic">
+          <span class="play-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </span>
+          <span>Watch the story</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Visual - 3D Phone with Cards -->
+    <div class="hero-visual">
+      <div class="phone-wrapper">
+        <div class="phone-shadow"></div>
+        <div class="phone-device" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="/Assets/app1.png" alt="Vindme App" class="screen-image active">
+              <img src="/Assets/app2.png" alt="Vindme App" class="screen-image">
+              <img src="/Assets/app3.png" alt="Vindme App" class="screen-image">
+              <img src="/Assets/app4.png" alt="Vindme App" class="screen-image">
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Notification Cards -->
+        <div class="notification-card card-1 float-animation">
+          <div class="notif-icon safe">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1.06 13.54L7.4 12l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z"/>
+            </svg>
+          </div>
+          <div class="notif-content">
+            <strong>Emma arrived safely</strong>
+            <span>Home • Just now</span>
+          </div>
+        </div>
+
+        <div class="notification-card card-2 float-animation-delayed">
+          <div class="notif-icon alert">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          <div class="notif-content">
+            <strong>Family check-in</strong>
+            <span>4 members • All safe</span>
+          </div>
+        </div>
+
+        <div class="notification-card card-3 float-animation-delayed-2">
+          <div class="notif-icon battery">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4zM11 20v-5.5H9L13 7v5.5h2L11 20z"/>
+            </svg>
+          </div>
+          <div class="notif-content">
+            <strong>Ultra battery saver</strong>
+            <span>Active • 48h+ tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-cue">
+      <div class="scroll-line">
+        <div class="scroll-dot"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- Story Section - Horizontal Scroll Narrative -->
+  <section class="story-section" id="story">
+    <div class="story-intro">
+      <span class="section-label reveal">Our Story</span>
+      <h2 class="section-headline reveal reveal-delay-1">
+        We built Vindme because<br>
+        <span class="text-gradient">we are parents too</span>
+      </h2>
+      <p class="section-desc reveal reveal-delay-2">
+        Every parent knows the anxiety of not knowing where their child is. 
+        That split second of panic when they don't answer the phone.
+        We created Vindme to end that worry — forever.
+      </p>
+    </div>
+
+    <div class="story-cards-wrapper">
+      <div class="story-cards">
+        <article class="story-card">
+          <div class="card-number">01</div>
+          <div class="card-visual">
+            <div class="visual-circle">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="283" stroke-dashoffset="70"/>
+              </svg>
+              <span class="visual-icon">👨‍👩‍👧‍👦</span>
+            </div>
+          </div>
+          <h3>Born from real needs</h3>
+          <p>Created by parents who experienced the same fears and worries you have every single day.</p>
+        </article>
+
+        <article class="story-card">
+          <div class="card-number">02</div>
+          <div class="card-visual">
+            <div class="visual-circle">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="283" stroke-dashoffset="140"/>
+              </svg>
+              <span class="visual-icon">🔒</span>
+            </div>
+          </div>
+          <h3>Privacy obsessed</h3>
+          <p>Your family's data belongs to you alone. End-to-end encryption ensures total privacy.</p>
+        </article>
+
+        <article class="story-card">
+          <div class="card-number">03</div>
+          <div class="card-visual">
+            <div class="visual-circle">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="283" stroke-dashoffset="210"/>
+              </svg>
+              <span class="visual-icon">⚡</span>
+            </div>
+          </div>
+          <h3>Built for real life</h3>
+          <p>Optimized for battery life because a dead phone helps no one. Smart tracking that just works.</p>
+        </article>
+
+        <article class="story-card">
+          <div class="card-number">04</div>
+          <div class="card-visual">
+            <div class="visual-circle complete">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="283" stroke-dashoffset="0"/>
+              </svg>
+              <span class="visual-icon">💚</span>
+            </div>
+          </div>
+          <h3>Peace of mind</h3>
+          <p>That's what we're really selling. Not an app — a feeling of safety and connection.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section - Bento Grid -->
+  <section class="features-section" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label reveal">Features</span>
+        <h2 class="section-headline reveal reveal-delay-1">
+          Everything you need,<br>
+          <span class="text-gradient">nothing you don't</span>
+        </h2>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Main Feature - Large -->
+        <div class="bento-card bento-large reveal">
+          <div class="bento-content">
+            <div class="bento-icon-wrapper">
+              <div class="bento-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </div>
+              <div class="icon-ring pulse"></div>
+            </div>
+            <h3>Real-time location</h3>
+            <p>See your family's exact location on a beautiful, live-updating map. GPS accuracy down to 10 meters.</p>
+            <ul class="feature-list">
+              <li>
+                <span class="check-icon">✓</span>
+                Live updates every 30 seconds
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Full location history
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Works worldwide
+              </li>
+            </ul>
+          </div>
+          <div class="bento-visual">
+            <div class="map-preview">
+              <div class="map-marker animate-bounce">
+                <div class="marker-pulse"></div>
+              </div>
+              <div class="map-path"></div>
+              <div class="map-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Alerts -->
+        <div class="bento-card bento-medium reveal reveal-delay-1">
+          <div class="bento-icon gradient-purple">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+            </svg>
+          </div>
+          <h3>Smart alerts</h3>
+          <p>Automatic notifications when family arrives or leaves important places.</p>
+          <div class="alert-demo">
+            <div class="alert-item">
+              <span class="alert-place">🏠 Home</span>
+              <span class="alert-status arrived">Arrived</span>
+            </div>
+            <div class="alert-item">
+              <span class="alert-place">🏫 School</span>
+              <span class="alert-status departed">Left</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOS Emergency -->
+        <div class="bento-card bento-medium reveal reveal-delay-2">
+          <div class="bento-icon gradient-red">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+            </svg>
+          </div>
+          <h3>SOS emergency</h3>
+          <p>One tap to alert all family members with your exact location instantly.</p>
+          <div class="sos-button">
+            <div class="sos-pulse"></div>
+            <span>SOS</span>
+          </div>
+        </div>
+
+        <!-- Privacy -->
+        <div class="bento-card bento-small reveal reveal-delay-3">
+          <div class="bento-icon gradient-green">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+            </svg>
+          </div>
+          <h3>Privacy first</h3>
+          <p>End-to-end encrypted. Your data is yours alone.</p>
+        </div>
+
+        <!-- Battery -->
+        <div class="bento-card bento-small reveal reveal-delay-4">
+          <div class="bento-icon gradient-blue">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4zM11 20v-5.5H9L13 7v5.5h2L11 20z"/>
+            </svg>
+          </div>
+          <h3>Battery smart</h3>
+          <p>All-day tracking without draining your battery.</p>
+        </div>
+
+        <!-- Stats Card -->
+        <div class="bento-card bento-wide reveal reveal-delay-5">
+          <div class="stats-row">
+            <div class="stat-block">
+              <span class="stat-value" data-count="50000">0</span>
+              <span class="stat-label">Families protected</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-block">
+              <span class="stat-value" data-count="99" data-suffix="%">0%</span>
+              <span class="stat-label">Uptime</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-block">
+              <span class="stat-value">4.9</span>
+              <span class="stat-label">App Store rating</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-block">
+              <span class="stat-value">24/7</span>
+              <span class="stat-label">Real-time updates</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works - Vertical Timeline -->
+  <section class="how-section" id="how">
+    <div class="section-container">
+      <div class="section-header centered">
+        <span class="section-label reveal">How it works</span>
+        <h2 class="section-headline reveal reveal-delay-1">
+          Setup takes<br>
+          <span class="text-gradient">three minutes</span>
+        </h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line">
+          <div class="timeline-progress"></div>
+        </div>
+
+        <div class="timeline-step reveal">
+          <div class="step-marker">
+            <span class="step-number">1</span>
+            <div class="step-dot"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+              </svg>
+            </div>
+            <h3>Download the app</h3>
+            <p>Free download from the App Store. Create your account in seconds with just your email.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal reveal-delay-1">
+          <div class="step-marker">
+            <span class="step-number">2</span>
+            <div class="step-dot"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+            </div>
+            <h3>Add your family</h3>
+            <p>Search for family and friends. Send a connection request and build your safety circle.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal reveal-delay-2">
+          <div class="step-marker">
+            <span class="step-number">3</span>
+            <div class="step-dot complete"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+            </div>
+            <h3>Enjoy peace of mind</h3>
+            <p>See everyone's location in real-time. Set up alerts and relax knowing your family is safe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Section -->
+  <section class="proof-section" id="proof">
+    <div class="section-container">
+      <div class="section-header centered">
+        <span class="section-label reveal">Social proof</span>
+        <h2 class="section-headline reveal reveal-delay-1">
+          Loved by families<br>
+          <span class="text-gradient">around the world</span>
+        </h2>
+      </div>
+
+      <div class="testimonials-marquee">
+        <div class="marquee-track">
+          <!-- First set -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"As a parent of two teenagers, Vindme gives me peace of mind. I know exactly when they arrive at school and when they're heading home."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar gradient-1">S</div>
+              <div class="author-info">
+                <strong>Sarah M.</strong>
+                <span>Mother of 2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card featured">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The SOS feature saved us during an emergency. My daughter was able to alert us immediately when she felt unsafe. Can't recommend this app enough!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar gradient-2">M</div>
+              <div class="author-info">
+                <strong>Michael R.</strong>
+                <span>Father of 3</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"I use Vindme to check on my elderly parents. It's comforting to know they're safe without having to call them constantly."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar gradient-3">J</div>
+              <div class="author-info">
+                <strong>Jennifer L.</strong>
+                <span>Caregiver</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Finally an app that doesn't kill my battery! I've tried others but Vindme is the only one that lasts all day."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar gradient-4">D</div>
+              <div class="author-info">
+                <strong>David K.</strong>
+                <span>Father of 1</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Simple, beautiful, and it just works. Set it up in 2 minutes and haven't worried about my kids' safety since."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar gradient-5">A</div>
+              <div class="author-info">
+                <strong>Amanda T.</strong>
+                <span>Mother of 3</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicate for seamless loop -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"As a parent of two teenagers, Vindme gives me peace of mind. I know exactly when they arrive at school and when they're heading home."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar gradient-1">S</div>
+              <div class="author-info">
+                <strong>Sarah M.</strong>
+                <span>Mother of 2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card featured">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The SOS feature saved us during an emergency. My daughter was able to alert us immediately when she felt unsafe. Can't recommend this app enough!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar gradient-2">M</div>
+              <div class="author-info">
+                <strong>Michael R.</strong>
+                <span>Father of 3</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"I use Vindme to check on my elderly parents. It's comforting to know they're safe without having to call them constantly."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar gradient-3">J</div>
+              <div class="author-info">
+                <strong>Jennifer L.</strong>
+                <span>Caregiver</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-container">
+      <div class="section-header centered">
+        <span class="section-label reveal">Pricing</span>
+        <h2 class="section-headline reveal reveal-delay-1">
+          Simple, honest<br>
+          <span class="text-gradient">pricing</span>
+        </h2>
+        <p class="section-desc reveal reveal-delay-2">
+          No hidden fees. No surprises. Cancel anytime.
+        </p>
+      </div>
+
+      <div class="pricing-cards">
+        <!-- Free Plan -->
+        <div class="pricing-card reveal">
+          <div class="pricing-header">
+            <h3>Free</h3>
+            <div class="pricing-amount">
+              <span class="currency">$</span>
+              <span class="price">0</span>
+            </div>
+            <span class="pricing-period">Forever free</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <span class="feature-check">✓</span>
+              Location tracking
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              1 family member
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              1 daily alert
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              Basic history (24h)
+            </li>
+          </ul>
+          <a href="https://apps.apple.com/us/app/vindme/id6499384102" class="pricing-cta">
+            <span>Get started free</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Monthly Plan -->
+        <div class="pricing-card reveal reveal-delay-1">
+          <div class="pricing-header">
+            <h3>Monthly</h3>
+            <div class="pricing-amount">
+              <span class="currency">$</span>
+              <span class="price">2.99</span>
+            </div>
+            <span class="pricing-period">per month</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <span class="feature-check">✓</span>
+              30-day history
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              Unlimited members
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              Unlimited alerts
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              Priority support
+            </li>
+          </ul>
+          <a href="https://apps.apple.com/us/app/vindme/id6499384102" class="pricing-cta">
+            <span>Get started</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Yearly Plan - Featured -->
+        <div class="pricing-card featured reveal reveal-delay-2">
+          <div class="pricing-badge">Best value</div>
+          <div class="pricing-header">
+            <h3>Yearly</h3>
+            <div class="pricing-amount">
+              <span class="currency">$</span>
+              <span class="price">29.99</span>
+            </div>
+            <span class="pricing-period">per year</span>
+            <span class="pricing-savings">Save 17%</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <span class="feature-check">✓</span>
+              Everything in Monthly
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              Extended history
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              Advanced analytics
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              VIP support
+            </li>
+          </ul>
+          <a href="https://apps.apple.com/us/app/vindme/id6499384102" class="pricing-cta primary">
+            <span>Get started</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="final-cta">
+    <div class="cta-bg">
+      <div class="cta-orb orb-1"></div>
+      <div class="cta-orb orb-2"></div>
+    </div>
+    <div class="cta-container">
+      <h2 class="cta-headline reveal">
+        Ready to protect<br>
+        <span class="text-gradient">your family?</span>
+      </h2>
+      <p class="cta-desc reveal reveal-delay-1">
+        Join 50,000+ families who trust Vindme every day.
+      </p>
+      <a href="https://apps.apple.com/us/app/vindme/id6499384102" class="cta-button magnetic reveal reveal-delay-2">
+        <span class="cta-button-inner">
+          <svg class="apple-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          <span>Download on the App Store</span>
+        </span>
+        <div class="cta-button-shine"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="/Assets/Vindme.png" alt="Vindme" width="120">
+          <p>Connect with confidence,<br>locate with ease.</p>
+        </div>
+        
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="/faq.html">FAQs</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Use</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="/contact.html">Contact</a>
+            <a href="mailto:support@vindme.io">Support</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61557662404010" aria-label="Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/vindme_app/" aria-label="Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+        </div>
+        <p class="footer-copy">© 2026 Vindme. All rights reserved.</p>
+        <p class="footer-made">Made with ❤️ in Mexico</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/JS/landing-v2.js"></script>
+</body>
+
+</html>

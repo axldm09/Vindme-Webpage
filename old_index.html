@@ -25,217 +25,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Non-critical CSS deferred -->
+  <link href="/OwlCarousel/dist/assets/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="/OwlCarousel/dist/assets/owl.theme.default.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'">
   
   <!-- Noscript fallback -->
   <noscript>
+    <link href="/OwlCarousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/OwlCarousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
   </noscript>
-
-  <!-- Phone Mockup Styles -->
-  <style>
-    /* Phone Mockup Animation Styles */
-    .phone-mockup-container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .phone-mockup {
-      position: relative;
-      z-index: 2;
-      animation: phoneFloat 6s ease-in-out infinite;
-    }
-
-    @keyframes phoneFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
-
-    .phone-frame {
-      position: relative;
-      width: 280px;
-      height: 580px;
-      background: linear-gradient(145deg, #3a3a4a, #2a2a3a);
-      border-radius: 45px;
-      padding: 12px;
-      box-shadow: 
-        0 50px 100px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    .phone-notch {
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 28px;
-      background: #1a1a24;
-      border-radius: 20px;
-      z-index: 10;
-    }
-
-    .phone-screen {
-      width: 100%;
-      height: 100%;
-      background: #ffffff;
-      border-radius: 35px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .app-screenshot {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
-
-    .app-screenshot.active {
-      opacity: 1;
-    }
-
-    /* Floating Cards */
-    .hero-floating-card {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 16px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 14px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-      z-index: 10;
-      animation: cardFloat 6s ease-in-out infinite;
-    }
-
-    .hero-floating-card.card-1 {
-      top: 40px;
-      left: -40px;
-      animation-delay: -2s;
-    }
-
-    .hero-floating-card.card-2 {
-      top: 180px;
-      right: -60px;
-      animation-delay: -4s;
-    }
-
-    .hero-floating-card.card-3 {
-      bottom: 100px;
-      left: -30px;
-      animation-delay: -1s;
-    }
-
-    @keyframes cardFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .card-icon {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
-      border-radius: 10px;
-      color: white;
-    }
-
-    .card-icon.icon-success {
-      background: linear-gradient(135deg, #10B981, #34D399);
-    }
-
-    .card-icon.icon-blue {
-      background: linear-gradient(135deg, #3B82F6, #60A5FA);
-    }
-
-    .card-icon.pulse {
-      animation: iconPulse 2s infinite;
-    }
-
-    @keyframes iconPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
-      50% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
-    }
-
-    .card-content {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: #1a1a24;
-    }
-
-    .card-subtitle {
-      font-size: 0.75rem;
-      color: #666;
-    }
-
-    /* Phone Glow Effect */
-    .phone-glow {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: 1;
-      animation: glowPulse 4s ease-in-out infinite;
-    }
-
-    @keyframes glowPulse {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 0.3; }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 991px) {
-      .phone-frame {
-        width: 240px;
-        height: 500px;
-      }
-      
-      .hero-floating-card {
-        display: none;
-      }
-      
-      .phone-glow {
-        width: 300px;
-        height: 300px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .phone-frame {
-        width: 200px;
-        height: 420px;
-        border-radius: 35px;
-        padding: 10px;
-      }
-      
-      .phone-notch {
-        width: 80px;
-        height: 22px;
-      }
-      
-      .phone-screen {
-        border-radius: 28px;
-      }
-    }
-  </style>
 </head>
+<!-- for the navbar: bg-body-tertiary-->
 
 <body>
   <!------------------------------------------- NAV BAR   -------------------------------------------------->
@@ -256,7 +57,7 @@
             <a class="nav-link scroll-link active" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link scroll-link" href="/about.html">About</a>
+            <a class="nav-link scroll-link" href="#about-section">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/faq.html">FAQ</a>
@@ -284,62 +85,43 @@
 
         <div class="col-lg-5 d-flex justify-content-center justify-content-lg-end" data-aos="fade-left"
           data-aos-duration="2000">
-          <!------------------------------ PHONE MOCKUP BEGIN   -------------------------------------->
-          <div class="phone-mockup-container">
-            <div class="phone-mockup">
-              <div class="phone-frame">
-                <div class="phone-notch"></div>
-                <div class="phone-screen">
-                  <img src="/Assets/app1.png" alt="Vindme App Screenshot" class="app-screenshot active">
-                  <img src="/Assets/app2.png" alt="Vindme App Screenshot" class="app-screenshot">
-                  <img src="/Assets/app3.png" alt="Vindme App Screenshot" class="app-screenshot">
-                  <img src="/Assets/app4.png" alt="Vindme App Screenshot" class="app-screenshot">
-                </div>
-              </div>
-              
-              <!-- Floating Cards -->
-              <div class="hero-floating-card card-1">
-                <div class="card-icon pulse">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                  </svg>
-                </div>
-                <div class="card-content">
-                  <span class="card-title">Mom arrived</span>
-                  <span class="card-subtitle">Home • Just now</span>
-                </div>
-              </div>
+          <!------------------------------ CAROUSEL BEGIN   -------------------------------------->
+          <div class="owl-carousel screenshot-carousel owl-loaded">
+            <div class="owl-stage-outer">
+              <div class="owl-stage">
 
-              <div class="hero-floating-card card-2">
-                <div class="card-icon icon-success">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                  </svg>
+                <div class="owl-item" style="width: 223px;">
+                  <img class="img-fluid" src="../Assets/app1.png" alt="">
                 </div>
-                <div class="card-content">
-                  <span class="card-title">All family safe</span>
-                  <span class="card-subtitle">4 members online</span>
+                <div class="owl-item" style="width: 223px;">
+                  <img class="img-fluid" src="../Assets/app2.png" alt="" loading="lazy">
                 </div>
-              </div>
-
-              <div class="hero-floating-card card-3">
-                <div class="card-icon icon-blue">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M2 6h5v4H2z"/>
-                    <path d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
-                  </svg>
+                <div class="owl-item" style="width: 223px;">
+                  <img class="img-fluid" src="../Assets/app3.png" alt="" loading="lazy">
                 </div>
-                <div class="card-content">
-                  <span class="card-title">Battery optimized</span>
-                  <span class="card-subtitle">All-day tracking</span>
+                <div class="owl-item" style="width: 223px;">
+                  <img class="img-fluid" src="../Assets/app4.png" alt="" loading="lazy">
                 </div>
               </div>
             </div>
 
-            <!-- Background Glow -->
-            <div class="phone-glow"></div>
+            <div class="owl-nav disabled">
+              <div class="owl-prev">prev</div>
+              <div class="owl-next">next</div>
+            </div>
+
+            <div class="owl-dots">
+              <div class="owl-dot"><span></span></div>
+              <div class="owl-dot"><span></span></div>
+              <div class="owl-dot"><span></span></div>
+              <div class="owl-dot">
+                <span></span>
+              </div>
+            </div>
+
           </div>
-          <!------------------------------ PHONE MOCKUP END   -------------------------------------->
+
+          <!------------------------------ CAROUSEL END   -------------------------------------->
         </div>
 
         <div class="col-lg-7" data-aos="fade-right" data-aos-duration="2000">
@@ -823,6 +605,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous" defer></script>
+  <!-- Carousel -->
+  <script src="/OwlCarousel/dist/owl.carousel.min.js" defer></script>
   <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
   <!-- Main JS -->
@@ -832,26 +616,11 @@
       // Initialize AOS with optimized settings
       if (typeof AOS !== 'undefined') {
         AOS.init({
-          once: true,
+          once: true, // Animate only once
           duration: 800,
           easing: 'ease-out-cubic',
           offset: 50
         });
-      }
-
-      // Phone Screenshot Carousel
-      const screenshots = document.querySelectorAll('.app-screenshot');
-      if (screenshots.length > 0) {
-        let currentIndex = 0;
-        
-        function showNextScreenshot() {
-          screenshots[currentIndex].classList.remove('active');
-          currentIndex = (currentIndex + 1) % screenshots.length;
-          screenshots[currentIndex].classList.add('active');
-        }
-        
-        // Auto-rotate every 3 seconds
-        setInterval(showNextScreenshot, 3000);
       }
     });
   </script>

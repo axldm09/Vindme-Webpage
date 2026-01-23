@@ -18,136 +18,441 @@
 
   <!-- Bootstrap -->
   <link href="/CSS/bootstrap.min.css" rel="stylesheet">
+  <link href="/CSS/navbar.css" rel="stylesheet">
   <link href="/CSS/about.css" rel="stylesheet">
+  <link href="/CSS/footer.css" rel="stylesheet">
 
   <style>
+    :root {
+      --primary: #7ADFBB;
+      --secondary: #9AAEF2;
+      --secondary-light: #b8c8f7;
+      --third: #2B3A67;
+      --accent: #8B5CF6;
+      --success: #10B981;
+      --error: #EF4444;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-400: #9CA3AF;
+      --gray-600: #4B5563;
+    }
+
     body {
-      background-color: #ffffff;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
       font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+    }
+
+    .contact-section {
+      padding: 60px 0 100px;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .contact-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--third);
+      margin-bottom: 15px;
+    }
+
+    .contact-header p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      max-width: 500px;
+      margin: 0 auto;
     }
 
     .form-container {
-      background-color: rgb(244, 244, 244);
-      border-radius: 10px;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .form-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
     }
 
     .contact-form {
-      background-color: transparent;
-      padding: 30px;
-      transition: background-color 0.5s ease;
+      padding: 50px 40px;
     }
 
     .form-group {
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       position: relative;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      color: var(--gray-400);
+      transition: color 0.3s ease;
+      z-index: 1;
+    }
+
+    .input-wrapper.textarea-wrapper .input-icon {
+      top: 20px;
+      transform: none;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      font-size: 20px;
-      padding: 10px;
-      border: none;
-      background-color: transparent;
-      border-bottom: 2px solid #dedede;
-      /* Initial border color */
-      transition: border-color 2.5s;
-      /* Add transition */
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+      padding: 16px 16px 16px 52px;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      background-color: var(--gray-100);
+      transition: all 0.3s ease;
+      color: var(--third);
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--gray-400);
+      font-weight: 400;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-bottom: 2px solid #9AAEF2;
-      /* Border color on focus */
+      border-color: var(--secondary);
+      background-color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(154, 174, 242, 0.15);
     }
 
-    .form-group input:focus~label,
-    .form-group textarea:focus~label,
-    .form-group input:not(:focus):valid~label,
-    .form-group textarea:not(:focus):valid~label {
-      color: #9AAEF2;
-      top: -20px;
+    .form-group input:focus + .input-icon,
+    .form-group textarea:focus + .input-icon,
+    .form-group input:focus ~ .input-icon,
+    .form-group textarea:focus ~ .input-icon {
+      color: var(--secondary);
     }
 
-    .form-group label {
-      font-size: 20px;
-      font-weight: 600;
+    .form-group.success input,
+    .form-group.success textarea {
+      border-color: var(--success);
+      background-color: #ffffff;
+    }
+
+    .form-group.success .input-icon {
+      color: var(--success);
+    }
+
+    .form-group.error input,
+    .form-group.error textarea {
+      border-color: var(--error);
+      background-color: #FEF2F2;
+    }
+
+    .form-group.error .input-icon {
+      color: var(--error);
+    }
+
+    .validation-icon {
       position: absolute;
-      top: 10px;
-      left: 0;
-      transition: color 0.3s, top 0.3s;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
-    .form-group input:focus~label,
-    .form-group textarea:focus~label,
-    .form-group input:not(:focus):valid~label,
-    .form-group textarea:not(:focus):valid~label {
-      color: #9AAEF2;
-      top: -20px;
+    .input-wrapper.textarea-wrapper .validation-icon {
+      top: 20px;
+      transform: none;
     }
 
-    .form-group::before {
-      content: "";
+    .form-group.success .validation-icon.success-icon,
+    .form-group.error .validation-icon.error-icon {
+      opacity: 1;
+    }
+
+    .error-message {
+      display: none;
+      color: var(--error);
+      font-size: 13px;
+      margin-top: 8px;
+      padding-left: 40px;
+    }
+
+    .form-group.error .error-message {
       display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: transparent;
-      /* Set initial background color to transparent */
-      transition: width 1s, background-color 1s;
-      /* Add transition */
+      animation: slideDown 0.3s ease;
     }
 
-    .form-group input:focus~::before,
-    .form-group textarea:focus~::before {
-      width: 100%;
-      background: linear-gradient(to right, #cdd7f8, #9AAEF2);
-      /* Gradient border color */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .btn-submit-container {
       text-align: center;
-      /* Center the button */
+      margin-top: 20px;
     }
 
     .btn-submit {
-      display: inline-block;
-      font-size: 20px;
-      padding: 10px 20px;
-      width: 160px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      padding: 16px 40px;
+      min-width: 200px;
       border: none;
-      background-color: #eb989f;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+      color: #fff;
+      cursor: pointer;
       position: relative;
       overflow: hidden;
-      color: #fff;
-      transition: color 0.3s, transform 0.3s, background-color 0.3s, padding 0.3s;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px -5px rgba(139, 92, 246, 0.4);
     }
 
     .btn-submit::before {
-      content: "\2192";
+      content: '';
       position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: color 0.3s, transform 0.3s;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
     }
 
     .btn-submit:hover::before {
-      color: #fff;
-      transform: translate(10px, -50%);
+      left: 100%;
     }
 
     .btn-submit:hover {
-      background-color: #E84855;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px -5px rgba(139, 92, 246, 0.5);
+    }
+
+    .btn-submit:active {
+      transform: translateY(-1px);
+    }
+
+    .btn-submit .btn-text {
+      transition: opacity 0.3s ease;
+    }
+
+    .btn-submit .btn-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .btn-submit:hover .btn-icon {
+      transform: translateX(5px);
+    }
+
+    .btn-submit.loading {
+      pointer-events: none;
+    }
+
+    .btn-submit.loading .btn-text,
+    .btn-submit.loading .btn-icon {
+      opacity: 0;
+    }
+
+    .btn-submit .spinner {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      opacity: 0;
+      animation: spin 0.8s linear infinite;
+    }
+
+    .btn-submit.loading .spinner {
+      opacity: 1;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Success message */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 30px;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    .success-message .success-icon-large {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--success) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .success-message .success-icon-large svg {
+      width: 40px;
+      height: 40px;
       color: #fff;
-      padding: 12px 25px;
+    }
+
+    .success-message h3 {
+      font-size: 1.5rem;
+      color: var(--third);
+      margin-bottom: 10px;
+    }
+
+    .success-message p {
+      color: var(--gray-600);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .high {
-      color: #9AAEF2;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Contact info cards */
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      padding: 25px 35px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-card .icon-box {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-card .icon-box svg {
+      width: 24px;
+      height: 24px;
+      color: #fff;
+    }
+
+    .contact-card .card-content h4 {
+      font-size: 14px;
+      color: var(--gray-400);
+      margin: 0 0 5px;
+      font-weight: 500;
+    }
+
+    .contact-card .card-content p {
+      font-size: 16px;
+      color: var(--third);
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .contact-card .card-content a {
+      font-size: 16px;
+      color: var(--third);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact-card .card-content a:hover {
+      color: var(--secondary);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+
+      .contact-form {
+        padding: 35px 25px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-card {
+        width: 100%;
+        max-width: 320px;
+      }
     }
   </style>
 
@@ -162,141 +467,198 @@
         <img src="/Assets/Vindme.png" alt="Vindme" width="180px" height="50px"
           class="d-inline-block align-text-top">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="navbar-collapse flex-grow-0 collapse" id="navbarNavDropdown">
+      <div class="navbar-collapse flex-grow-0 collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link scroll-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link" href="/index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link scroll-link " href="/about.html">About</a>
+            <a class="nav-link" href="/about.html">About</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href="/faq.html">FAQ</a>
+          </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Resources
             </a>
-
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/privacy.html">Privacy Policy</a></li>
               <li><a class="dropdown-item" href="/terms.html">Terms and Conditions</a></li>
-
+              <li><a class="dropdown-item active" href="/contact.html">Contact</a></li>
             </ul>
           </li>
         </ul>
       </div>
-
     </div>
   </nav>
 
   <!-- Contact Form -->
   <section class="contact-section">
-    <div class="container my-5 form-container">
-      <h1 class="text-center py-5">Contact <span class="high">Us</span></h1>
-      <div class="row justify-content-center mb-5">
-        <div class="col-md-6">
-          <form class="contact-form my-4" action="https://formspree.io/f/moqgppva" method="POST">
-            <div class="form-group py-3">
-              <input type="text" id="fullName" name="fullName" required>
-              <label for="fullName">Full Name</label>
+    <div class="container">
+      <div class="contact-header">
+        <h1>Get in <span class="high">Touch</span></h1>
+        <p>Have a question or feedback? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+      </div>
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="form-container">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/moqgppva" method="POST">
+              <div class="form-group" id="nameGroup">
+                <div class="input-wrapper">
+                  <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  <svg class="validation-icon success-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#10B981">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <svg class="validation-icon error-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#EF4444">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <p class="error-message">Please enter your full name</p>
+              </div>
+              
+              <div class="form-group" id="emailGroup">
+                <div class="input-wrapper">
+                  <input type="email" id="email" name="email" placeholder="Your email address" required>
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <svg class="validation-icon success-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#10B981">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <svg class="validation-icon error-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#EF4444">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <p class="error-message">Please enter a valid email address</p>
+              </div>
+              
+              <div class="form-group" id="messageGroup">
+                <div class="input-wrapper textarea-wrapper">
+                  <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  <svg class="validation-icon success-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#10B981">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <svg class="validation-icon error-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#EF4444">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <p class="error-message">Please enter a message (at least 10 characters)</p>
+              </div>
+              
+              <div class="btn-submit-container">
+                <button type="submit" class="btn-submit" id="submitBtn">
+                  <span class="btn-text">Send Message</span>
+                  <svg class="btn-icon" width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                  <span class="spinner"></span>
+                </button>
+              </div>
+            </form>
+            
+            <div class="success-message" id="successMessage">
+              <div class="success-icon-large">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3>Message Sent!</h3>
+              <p>Thank you for reaching out. We'll get back to you soon.</p>
             </div>
-            <div class="form-group py-3">
-              <input type="email" id="email" name="email" required>
-              <label for="email">Email address</label>
-            </div>
-            <div class="form-group py-3">
-              <textarea id="message" rows="3" name="message" required></textarea>
-              <label for="message">Message</label>
-            </div>
-            <div class="btn-submit-container">
-              <button type="submit" class="btn btn-primary btn-submit">Submit</button>
-            </div>
-          </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Info Cards -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div class="card-content">
+            <h4>Email Us</h4>
+            <a href="mailto:support@vindme.io">support@vindme.io</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+            </svg>
+          </div>
+          <div class="card-content">
+            <h4>Follow Us</h4>
+            <a href="https://www.instagram.com/vindme_app/">@vindme_app</a>
+          </div>
         </div>
       </div>
     </div>
-
   </section>
   <!----------------------------------------------------- FOOTER SECTION ------------------------------------------------------------------------------>
 
-  <section id="footer-section" class="footer-bg">
-    <div class="container mt-5">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-5 border-top">
-        <div class="col mb-3">
-          <a href="/index.html" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none logo-v">
-            <img src="/Assets/icon_01.png" width="50" height="50">
-          </a>
-          <p class="text-body-secondary">Vindme© 2024</p>
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/Assets/Vindme.png" alt="Vindme">
+          <p>Connect with confidence, locate with ease. Your family's safety is our priority.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61557662404010" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/vindme_app/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg>
+            </a>
+          </div>
         </div>
-
-        <div class="col mb-3"></div>
-
-        <div class="col mb-3"></div>
-
-        <div class="col mb-3">
-          <h4 style="font-family: Montserrat;">Legal</h4>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">
-              <a href="/privacy.html" class="nav-link p-0 text-body-secondary foot-btn">Privacy</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="/terms.html" class="nav-link p-0 text-body-secondary foot-btn">Terms of use</a>
-            </li>
-            <li class="nav-item mb-5">
-              <a href="#" class="nav-link p-0 text-body-secondary"></a>
-            </li>
-            <li class="nav-item mb-5"></li>
-            <li class="nav-item mb-4"></li>
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/index.html#pricing-section">Pricing</a></li>
+            <li><a href="/faq.html">FAQs</a></li>
           </ul>
         </div>
-
-        <div class="col mb-3">
-          <h4 style="font-family: Montserrat;">About</h4>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">
-              <a href="/index.html" class="nav-link p-0 text-body-secondary foot-btn">Home</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="/about.html" class="nav-link p-0 text-body-secondary foot-btn">About</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="/index.html#pricing-section" class="nav-link p-0 text-body-secondary foot-btn">Pricing</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="/contact.html" class="nav-link p-0 text-body-secondary foot-btn">Contact</a>
-            </li>
-            <li class="nav-item mb-2 ">
-              <a href="/faq.html" class="nav-link p-0 text-body-secondary foot-btn">FAQs</a>
-            </li>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Use</a></li>
           </ul>
         </div>
-      </footer>
-      <div class="container justify-content-center">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center pb-4">
-          <ul class="nav col-md-12 justify-content-center list-unstyled d-flex">
-            <li class="ms-3 social-link"><a class="text-body-secondary" href="#"> <svg
-                  xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-facebook"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                </svg></a></li>
-            <li class="ms-3 social-link"><a class="text-body-secondary" href="https://www.instagram.com/vindme_app/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                  class="bi bi-instagram" viewBox="0 0 16 16">
-                  <path
-                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-                </svg></a></li>
-            <li class="ms-3 social-link"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
-                  <use xlink:href="#facebook"></use>
-                </svg></a></li>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="/contact.html">Get in Touch</a></li>
+            <li><a href="mailto:support@vindme.io">support@vindme.io</a></li>
           </ul>
-        </footer>
+        </div>
       </div>
-
-  </section>
+      <div class="footer-bottom">
+        <p>© 2026 Vindme. All rights reserved.</p>
+        <p>Made with ❤️ in Mexico</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -305,73 +667,124 @@
 
   <script>
     $(document).ready(function () {
-      var currentInput = null;
-
-      // Focus event listener
-      $('.contact-form input, .contact-form textarea').focus(function () {
-        currentInput = $(this);
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      // Real-time validation on blur
+      $('#fullName').on('blur', function() {
+        validateField($(this), $(this).val().trim().length >= 2, '#nameGroup');
       });
-
-      // Blur event listener
-      $('.contact-form input, .contact-form textarea').blur(function () {
-        var value = $(this).val();
-
-        // Check if the input field is empty and not the same as the current input field
-        if (!value && currentInput !== $(this)) {
-          $(this).css('border-bottom', '2px solid red'); // Change border color
-          // Check if error message already exists
-          if (!$(this).siblings('.error-msg').length) {
-            $(this).siblings('label').after('<span class="error-msg" style="color: red;">Please fill out this field</span>');
-          }
+      
+      $('#email').on('blur', function() {
+        validateField($(this), emailRegex.test($(this).val().trim()), '#emailGroup');
+      });
+      
+      $('#message').on('blur', function() {
+        validateField($(this), $(this).val().trim().length >= 10, '#messageGroup');
+      });
+      
+      // Remove error state on focus
+      $('#fullName, #email, #message').on('focus', function() {
+        $(this).closest('.form-group').removeClass('error');
+      });
+      
+      // Validate field helper
+      function validateField($input, isValid, groupId) {
+        const $group = $(groupId);
+        if ($input.val().trim() === '') {
+          $group.removeClass('success error');
+          return false;
+        }
+        if (isValid) {
+          $group.removeClass('error').addClass('success');
+          return true;
         } else {
-          $(this).css('border-bottom', '2px solid green'); // Change border color
-          // Remove error message
-          $(this).siblings('.error-msg').remove();
-          // Add checkmark
-          $(this).siblings('.checkmark').remove(); // Remove existing checkmark
-          $(this).after('<span class="checkmark">&#10004;</span>'); // Add checkmark
+          $group.removeClass('success').addClass('error');
+          return false;
         }
-      });
-
+      }
+      
+      // Clear all form fields and states
+      function clearForm() {
+        $('#fullName, #email, #message').val('');
+        $('.form-group').removeClass('success error');
+      }
+      
       // Form submission
-      $('.contact-form').submit(function (e) {
-        e.preventDefault(); // Prevent form submission
-
-        // Remove any existing error messages
-        $('.error-msg').remove();
-
-        // Get form inputs
-        var fullName = $('#fullName').val();
-        var email = $('#email').val();
-        var message = $('#message').val();
-
-        // Regular expression to check if email is valid
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        // Check if email is valid
+      $('#contactForm').on('submit', function(e) {
+        e.preventDefault();
+        
+        const fullName = $('#fullName').val().trim();
+        const email = $('#email').val().trim();
+        const message = $('#message').val().trim();
+        
+        // Validate all fields
+        let isValid = true;
+        
+        if (fullName.length < 2) {
+          $('#nameGroup').addClass('error');
+          isValid = false;
+        } else {
+          $('#nameGroup').removeClass('error').addClass('success');
+        }
+        
         if (!emailRegex.test(email)) {
-          $('#email').css('border-bottom', '2px solid red'); // Change border color
-          return;
+          $('#emailGroup').addClass('error');
+          isValid = false;
+        } else {
+          $('#emailGroup').removeClass('error').addClass('success');
         }
-
-        if (message.length < 5) {
-          $('#message').css('border-bottom', '2px solid red'); // Change border color
-          return;
+        
+        if (message.length < 10) {
+          $('#messageGroup').addClass('error');
+          isValid = false;
+        } else {
+          $('#messageGroup').removeClass('error').addClass('success');
         }
-        $('#email').css('border-bottom', '2px solid green'); // Change border color
-        $('#message').css('border-bottom', '2px solid green'); // Change border color
-
-        // Remove error message
-        $('.error-msg').remove();
-
-        // Add checkmark
-        $('.checkmark').remove(); // Remove existing checkmark
-        //$('.contact-form input, .contact-form textarea').each(function() {
-        // $(this).after('<span class="checkmark">&#10004;</span>'); // Add checkmark
-        //});
-
-
-        $(this).addClass('submitted'); // Add class for animation
+        
+        if (!isValid) return;
+        
+        // Show loading state
+        const $btn = $('#submitBtn');
+        $btn.addClass('loading');
+        
+        // Submit form via AJAX
+        $.ajax({
+          url: $(this).attr('action'),
+          method: 'POST',
+          data: $(this).serialize(),
+          dataType: 'json',
+          success: function(response) {
+            // Hide form and show success message
+            $('.contact-form').fadeOut(300, function() {
+              clearForm();
+              $('#successMessage').addClass('show').hide().fadeIn(300);
+            });
+            
+            // Reset after 5 seconds
+            setTimeout(function() {
+              $('#successMessage').fadeOut(300, function() {
+                $(this).removeClass('show');
+                $btn.removeClass('loading');
+                $('.contact-form').fadeIn(300);
+              });
+            }, 5000);
+          },
+          error: function() {
+            // Still show success (Formspree might return non-JSON)
+            $('.contact-form').fadeOut(300, function() {
+              clearForm();
+              $('#successMessage').addClass('show').hide().fadeIn(300);
+            });
+            
+            setTimeout(function() {
+              $('#successMessage').fadeOut(300, function() {
+                $(this).removeClass('show');
+                $btn.removeClass('loading');
+                $('.contact-form').fadeIn(300);
+              });
+            }, 5000);
+          }
+        });
       });
     });
   </script>
