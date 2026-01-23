@@ -8,31 +8,6 @@
 // Prevent horizontal scroll
 document.body.style.overflowX = "hidden";
 
-// Initialize Owl Carousel when jQuery is ready
-$(document).ready(function () {
-  var owl = $('.owl-carousel');
-  if (owl.length) {
-    owl.owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 4000,
-      autoplayHoverPause: true,
-      margin: 25,
-      smartSpeed: 1500,
-      lazyLoad: true,
-      nav: false,
-      dots: true,
-      onTranslated: function (event) {
-        $(".owl-carousel .owl-item").removeClass("center");
-        $(".owl-carousel .owl-item.active.center").each(function () {
-          $(this).find(".owl-item").addClass("center");
-        });
-      },
-    });
-  }
-});
-
 /**
  * Animated counter with easing
  * Uses requestAnimationFrame for smooth animation
